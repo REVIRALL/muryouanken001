@@ -1,0 +1,6 @@
+{
+  "_comment": "utm_code をキーに、遷移先LIFF URL を値としてマップする。デフォルトは空文字列キー。本番で使う場合はこのファイルを `url-map.json` にリネーム。",
+  "": "https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx",
+  "ad1": "https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx&source=ad1",
+  "ad2": "https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx&source=ad2"
+}
