@@ -1,5 +1,7 @@
 # REVIRALL Meta広告 自動化リポジトリ
 
+> 🚦 **今すぐ現況を知りたい人は** → [`STATUS.md`](./STATUS.md)（配信状態・予算・実績・保留タスクを一元表示）
+
 - **対象**: Meta広告運用者（Claude Code 経験あり、MCPセルフホストは初めてでOK）
 - **できること**: セルフホストMCPで Meta Ads API を Claude Code から直接操作（Pipeboard無料プラン制限を回避）
 - **初回セットアップ所要時間**: 45〜75分（Meta App作成・2FA・TOS承諾・LPデプロイ含む。トラブル吸収で最大90分）
