@@ -1,0 +1,51 @@
+Premium editorial documentary-style photograph for a Japanese women's lifestyle magazine cover feature and national commercial advertising campaign. Cinematic, warm, restrained urgency — conveys "limited opportunity" without aggressive sales tactics.
+
+Subject: One Japanese woman, age 30-34, natural beauty with fresh dewy skin (visible fine skin texture, barely-there makeup, subtle warm blush), chestnut-brown hair in a loose low ponytail with face-framing wisps, a tiny gold chain necklace visible. She wears a soft oatmeal-cream oversized cashmere turtleneck. She sits on a low pale oak bench by a large window, holding a simple small leather-bound appointment planner (open to a page with a small circled date) in her lap, looking gently down at it with a calm thoughtful expression. A thin elegant gold fountain pen rests loose between her fingers. A subtle half-smile of quiet decision forming. Her posture is upright but relaxed.
+
+Scene elements near her:
+- A small matte-white ceramic mug on the oak bench beside her, steam rising softly
+- A single sprig of dried seeded eucalyptus in a hand-thrown small ceramic bud vase on the bench
+- The appointment planner is a small cream leather notebook with visible weekly spread and hand-drawn circles around one date (the circles are drawn in blue ink but date digits are indistinct, suggesting "a specific chosen date" without being legible)
+
+Setting: Minimalist Tokyo apartment interior in Japandi style, mid-morning golden light. Behind her, a large floor-to-ceiling window with sheer natural linen curtains gently glowing with warm morning sunlight, soft out-of-focus hint of Tokyo cityscape in the distance. Off-white plaster walls on either side. A low pale oak shelf partially visible with a few Japanese art books and a small handmade ceramic object.
+
+Composition: 4:5 vertical portrait, 1080x1350. Subject anchored in the LOWER-LEFT THREE-QUARTERS of the frame, visible from just above her head down to her thighs. The UPPER-RIGHT QUARTER of the frame is seamless cream-beige plaster wall with soft golden diagonal light bands — reserved for the headline. Her gaze leads the eye toward the appointment planner (lower-center) creating a natural reading rhythm: top-right headline → woman → planner.
+
+Lighting: Golden-hour morning light from camera-right through sheer linen creating a soft backlit warmth: gentle rim halo on her hair, creamy glow on her cashmere sweater shoulder, delicate catchlights in her eyes, soft warm shadows on her left side. Warm 5000K-5200K. Shadows soft, highlights creamy, never hazy or flat.
+
+Camera: Leica SL3 with Summilux 90mm f/1.5 APO at f/2.2, ISO 160, 1/250s. Tack-sharp critical focus on her nearest eye, silky shallow depth with the planner softly in focus, background window and shelf luxuriously blurred. Sixteen-bit color depth, Capture One with Kinfolk muted-warm Kodak Portra 400 grade, imperceptible organic grain, zero noise.
+
+Color palette: Warm oatmeal, cream, pale sage (eucalyptus), washed oak, soft peachy-amber (window light), dusty charcoal. Ultra-restrained cohesive editorial palette.
+
+Style references: Kinfolk magazine cover story, Casa Brutus editorial feature, &Premium Japan lifestyle, Muji lifestyle campaign, Aesop brand film.
+
+INTEGRATED TEXT OVERLAYS (Japanese, Hiragino Kaku Gothic Pro W6 for headline, Hiragino Kaku Gothic Pro W3 Light for subcopy — flawless glyph rendering, precise editorial typesetting):
+
+1. QUALIFIER LABEL — very top-right of frame above the headline, left-aligned, small tracking-expanded letters, warm gray #777777, roughly one-eighth of frame width:
+   今月の無料面談枠
+
+2. HEADLINE — upper-right quadrant floating on the warm plaster wall, LEFT-ALIGNED two lines, display weight, deep soft charcoal #2a2a2a, large commanding size. The number "20" is rendered slightly larger and bolder for visual rhythm:
+   残り 20名 の方と、
+   静かにはじめます。
+
+3. SUBCOPY — one line directly below the headline, light weight, approximately one-third the headline size, warm gray #666666:
+   初期費用0・在庫0・声かけ不要の、新しい選択肢
+
+4. CTA PILL — bottom-right corner, softly rounded pill, dusty sage green #7a9b7e fill, no stroke, subtle warm drop shadow, two centered white lines of medium-weight Japanese:
+   LINEで15分
+   無料面談
+
+Strict rules:
+- Subject is Japanese, ethnically unambiguous.
+- One continuous seamless plaster wall background behind her — NO visible corners, seams, or wall divisions.
+- All Japanese glyphs must render with absolute accuracy — no ghosting, no broken kana, no duplicate strokes.
+- The number "20" must render as clear Arabic numerals "20" (not 二十).
+- Text must NOT overlap her body, face, hair, planner, or hands.
+- Five fingers per visible hand, natural proportions, no finger fusion or merging — ALL fingers clearly separated.
+- No additional graphics, logos, watermarks, icons, arrows, sparkles, stars, or badges beyond the CTA pill.
+- No currency symbols, no monetary imagery.
+- The word "勧誘" must NEVER appear anywhere in the image.
+- No MLM visual cues (no group photos, no raised celebration, no suits, no presentation postures).
+- No forced smile, no looking directly at camera.
+
+Final goal: A quiet-urgency Meta Feed ad that communicates "limited intake" through restrained composition and a subtle number cue — NOT through red banners, countdown timers, or aggressive urgency typography. The viewer should feel "I should act before this closes" through atmosphere, not through pressure tactics.

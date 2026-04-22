@@ -1,0 +1,291 @@
+================================================================
+Gemini (Nano Banana) 修正依頼プロンプト集 v3
+対象: FV画像 + Meta広告CR 全サイズ刷新
+元画像: C:/Users/ooxmi/Downloads/C_shosentaku_v3_pro4k_master.jpg
+         （3712x4608 / 5:6.2 / ベージュ基調の女性×ラップトップ）
+生成先モデル推奨: gemini-3-pro-image-preview（Nano Banana Pro）
+フォールバック: gemini-3-flash-image-preview（Nano Banana 2）
+================================================================
+
+【使い方 概要】
+
+  運用ルート A（推奨・高品質）
+    テキスト無しの背景画像をGeminiで生成
+    → HTML/CSSでテキストオーバーレイ
+    → メンテ容易・A/Bテスト可能・解像度無限
+
+  運用ルート B（速攻）
+    日本語テキスト入り完成画像をGeminiに生成させる
+    → Photoshop等で細部微調整
+    → LP/広告にそのまま入稿
+    ※ 日本語レンダリング精度に個体差あり、要3-5回リトライ
+
+【共通の世界観トークン（全プロンプトに適用）】
+
+  art_direction:
+    lighting: "soft natural window light from left, warm golden hour tone"
+    palette:  "warm beige (#C3AC90), cream, off-white, soft sage green accent"
+    mood:     "calm, composed, quietly confident, not salesy"
+    texture:  "subtle linen/paper feel, 35mm film grain (low)"
+  subject:
+    person: "Japanese woman in her 30s, shoulder-length brown hair,
+             natural makeup, wearing cream cardigan over white tee"
+    pose:   "gently holding coffee cup, laptop open, gaze toward
+             window (slight smile, no teeth)"
+    expression: "contemplative, approachable, not overly cheerful"
+  scene:
+    setting: "minimal Japanese-style home office / cafe corner,
+              wooden desk, small potted plant, linen curtain"
+    props:   "MacBook-like laptop, stoneware mug, eucalyptus branch"
+  negative_prompt:
+    - "loud colors, neon, corporate stock photo look"
+    - "fake smile, model pose, influencer-like aesthetic"
+    - "logo, watermark, busy background, clutter"
+    - "MLM imagery, money pile, flashy success symbols"
+    - "text artifacts, garbled japanese characters"
+
+
+================================================================
+■ ルートA: テキスト無し背景画像（推奨）
+================================================================
+
+─────────────────────────────────────────────
+A-1. LP用 FV画像 (横長 5:4 / 1500x1200px)
+─────────────────────────────────────────────
+【用途】replacement_v3.txt § セクション1 FV画像
+【日本語プロンプト（参考）】
+元画像をベースに、横長5:4（1500x1200）で再構図してください。
+
+ ・ 被写体（女性）は画面右 1/3 に配置
+ ・ 左上 1/3 は「余白（上部の壁・カーテン）」を広めに確保する
+     → ここにHTMLで H1 とサブキャッチを重ねる
+ ・ 下部右側の「LINEで15分 無料面談」バッジは削除
+ ・ 元画像の質感（自然光・ベージュ基調・静謐さ）を完全に保つ
+ ・ 文字・ロゴ・透かしは一切描画しないこと
+ ・ 被写体の視線は左窓方向、穏やかな微笑み
+ ・ 画像全体をわずかにブラー（背景）で人物を引き立てる
+
+【英語プロンプト（Gemini推奨）】
+Recompose the provided reference image to a 5:4 landscape
+(1500x1200px) canvas. Place the Japanese woman subject on the
+right one-third of the frame. Keep the top-left one-third empty
+(warm beige wall and sheer linen curtain) as negative space for
+future text overlay. Remove any graphic badges or on-image text.
+Preserve the exact warmth, natural window light, cream-beige
+palette, and quiet contemplative mood of the original. Subject:
+woman in cream cardigan, shoulder-length hair, holding coffee mug,
+laptop open, gazing toward the window with a soft closed-lip
+smile. Background softly out of focus to emphasize depth. 35mm
+film aesthetic. Strictly NO text, NO logos, NO watermarks,
+NO badges. Output: photo-realistic, 1500x1200px, WebP-ready.
+
+─────────────────────────────────────────────
+A-2. Meta Feed 4:5 (1080x1350)
+─────────────────────────────────────────────
+【英語プロンプト】
+Based on the reference image, reframe to 4:5 portrait
+(1080x1350px). Keep the subject centered slightly right.
+Remove the existing Japanese text at top and the small rounded
+"LINEで15分 無料面談" badge at bottom-right. Create clean negative
+space at the top 40% of the frame (wall + curtain, warm beige)
+for future HTML text overlay. Preserve all lighting, palette,
+texture, and mood from the original. Strictly NO text, logos,
+or badges in the final image. Photo-realistic, 1080x1350px.
+
+─────────────────────────────────────────────
+A-3. Meta Feed 1:1 Square (1080x1080)
+─────────────────────────────────────────────
+【英語プロンプト】
+Reframe the reference image to a 1:1 square (1080x1080px).
+Since the original is portrait, extend the left side with
+matching beige wall and curtain texture (outpainting). Subject
+stays center-left with laptop and coffee. Remove on-image
+Japanese text and LINE badge. Keep top ~30% as negative space
+for text overlay. Preserve warmth, window light, and contemplative
+mood. Strictly NO text, logos, or badges. Photo-realistic,
+1080x1080px.
+
+─────────────────────────────────────────────
+A-4. Meta Stories/Reels 9:16 (1080x1920)
+─────────────────────────────────────────────
+【英語プロンプト】
+Reframe the reference image to 9:16 vertical (1080x1920px).
+Extend the top and bottom with matching warm beige wall and
+wooden desk/floor (outpainting). Subject stays center-vertical.
+Reserve:
+  - Top 25% as negative space (text overlay: headline)
+  - Middle 50% as subject (woman + laptop + coffee)
+  - Bottom 25% as negative space (CTA button overlay)
+Remove all on-image Japanese text and badges. Preserve exact
+warmth, natural light, and color palette from the reference.
+Strictly NO text, logos, or watermarks. Photo-realistic,
+1080x1920px.
+
+
+================================================================
+■ ルートB: 日本語テキスト入り完成画像（速攻版）
+================================================================
+
+※ 日本語フォントの精度はGeminiモデル依存。出力後に必ず目視確認、
+  崩れたらルートAに切替 or Photoshopで修正。
+
+─────────────────────────────────────────────
+B-1. Meta広告 4:5 (1080x1350) 完成品
+─────────────────────────────────────────────
+【英語プロンプト】
+Using the provided reference image as the base style and subject,
+recompose to 4:5 (1080x1350px) and render the following Japanese
+text elements with pixel-perfect clarity using a modern Japanese
+sans-serif (Noto Sans JP Bold for headline, Regular for sub):
+
+TOP HEADLINE (large, bold, dark charcoal #1A1A2E, 2 lines):
+  "売り込まない"コミュニティ運営の、
+  新しい選択肢。
+
+SUB-HEADLINE (medium, regular, muted gray #4A4A5E, 1 line):
+  初期費用0・月額0・勧誘なし
+
+BOTTOM-RIGHT CTA BADGE (rounded pill, soft sage green #9FB89A
+with white text, 2 lines):
+  LINEで友だち追加
+  → 15分で相談
+
+Subject: Japanese woman in cream cardigan, laptop, coffee mug,
+gazing left toward window, soft natural light. Background: beige
+wall + linen curtain + eucalyptus. Warm, calm, non-salesy mood.
+
+CRITICAL REQUIREMENTS:
+  - Japanese characters MUST be perfectly legible and correct
+  - No misspellings, no missing strokes, no phantom characters
+  - Text must NOT overlap with the subject's face or hands
+  - Use ample line-spacing (1.5x), generous letter-spacing for headline
+  - If any Japanese character looks uncertain, leave blank space
+    rather than rendering broken text
+
+Output: 1080x1350px JPEG, 85% quality target.
+
+─────────────────────────────────────────────
+B-2. Meta広告 1:1 Square (1080x1080) 完成品
+─────────────────────────────────────────────
+同上の仕様で、画面構成のみ 1:1 に変更。
+Headlineはやや短縮: "売り込まない"コミュニティ運営に、新しい選択肢。
+サブ・CTAは同一。被写体と余白比率を再バランス。
+
+─────────────────────────────────────────────
+B-3. Meta Stories 9:16 (1080x1920) 完成品
+─────────────────────────────────────────────
+Top 25%: ヘッドライン2行（サイズやや大きめ）
+Middle 50%: 被写体
+Bottom 25%: CTAボタン（中央大きめ配置）
+
+
+================================================================
+■ MCP経由で投げる実コマンド例
+================================================================
+
+【Claude Code から nanobanana-mcp で編集リクエストする場合】
+
+  mcp__nanobanana__nano_edit(
+    image_path = "C:/Users/ooxmi/Downloads/C_shosentaku_v3_pro4k_master.jpg",
+    prompt = "<A-2 の英語プロンプトをここに貼付>",
+    output_path = "C:/Users/ooxmi/Downloads/revirall-meta-ads-automation/lp/assets/fv_v3_1080x1350.png",
+    model = "gemini-3-pro-image-preview",
+    aspect_ratio = "4:5"
+  )
+
+【Google AI Studio / Generative AI SDK で直接投げる場合（Python）】
+
+  import google.generativeai as genai
+  from pathlib import Path
+
+  genai.configure(api_key="YOUR_GOOGLE_AI_API_KEY")
+  model = genai.GenerativeModel("gemini-3-pro-image-preview")
+
+  ref_image = genai.upload_file(
+    path="C:/Users/ooxmi/Downloads/C_shosentaku_v3_pro4k_master.jpg",
+    mime_type="image/jpeg",
+  )
+
+  prompt = """
+  <A-2 の英語プロンプト全文>
+  """
+
+  response = model.generate_content([ref_image, prompt])
+  for part in response.candidates[0].content.parts:
+      if hasattr(part, "inline_data") and part.inline_data:
+          Path("fv_v3_1080x1350.png").write_bytes(part.inline_data.data)
+
+
+================================================================
+■ 生成後チェックリスト
+================================================================
+
+全画像共通:
+  [ ] 元画像の温かみ・ベージュ色調が保たれている
+  [ ] 被写体の顔・手が不自然に崩れていない
+  [ ] 過剰な販促感（ネオン色・笑顔演出過多）が出ていない
+  [ ] 透かし・ロゴ・ノイズ文字が混入していない
+
+ルートA（テキスト無し）:
+  [ ] 意図した位置に「余白」が確保されている
+  [ ] 余白の色がHTML側のテキスト色と十分コントラストが取れる
+  [ ] WebP/AVIF/JPEGで書き出して 200KB 以下
+
+ルートB（テキスト有り）:
+  [ ] 日本語が一文字も崩れていない
+  [ ] 「売り込まない」「コミュニティ運営」「新しい選択肢」全部読める
+  [ ] カーニング（字間）が不自然でない
+  [ ] テキストが顔・手に被っていない
+  [ ] Metaの画像内テキスト20%ルール抵触なし
+      （文字占有面積をMeta Ads Managerで事前確認）
+
+
+================================================================
+■ バッチ実行スクリプト（参考）
+================================================================
+
+【全サイズ一括生成の Python 例】
+
+  import google.generativeai as genai
+  from pathlib import Path
+
+  genai.configure(api_key=YOUR_KEY)
+  model = genai.GenerativeModel("gemini-3-pro-image-preview")
+  ref = genai.upload_file(
+    path="C:/Users/ooxmi/Downloads/C_shosentaku_v3_pro4k_master.jpg",
+    mime_type="image/jpeg",
+  )
+
+  tasks = {
+    "fv_1500x1200.png":   "<A-1 prompt>",
+    "feed_1080x1350.png": "<A-2 prompt>",
+    "sq_1080x1080.png":   "<A-3 prompt>",
+    "story_1080x1920.png":"<A-4 prompt>",
+  }
+
+  out = Path("C:/Users/ooxmi/Downloads/revirall-meta-ads-automation/lp/assets/v3")
+  out.mkdir(parents=True, exist_ok=True)
+
+  for fname, prompt in tasks.items():
+      resp = model.generate_content([ref, prompt])
+      for part in resp.candidates[0].content.parts:
+          if hasattr(part, "inline_data") and part.inline_data:
+              (out / fname).write_bytes(part.inline_data.data)
+              print(f"Saved: {fname}")
+              break
+
+
+================================================================
+■ 推奨ワークフロー（効率最大化）
+================================================================
+
+Step 1  [A-1] LP用FV 1500x1200 を生成 → LP刷新用
+Step 2  [A-2] Meta Feed 4:5 を生成 → 広告素材ベース
+Step 3  A系画像をLP/広告に一度組み込み、HTMLオーバーレイで
+        テキストを乗せて実装テスト
+Step 4  反応が取れたら [B系] でテキスト焼き込み版を作成
+        （静的画像CRの方がCVが高い場合に切替）
+Step 5  A/Bテストで上位を特定 → 予算集約
+
+================================================================
+EOF

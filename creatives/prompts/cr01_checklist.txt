@@ -1,0 +1,47 @@
+Premium editorial overhead flat-lay photograph for a Japanese women's lifestyle magazine and national commercial advertising campaign. Cinematographic, restrained luxury aesthetic.
+
+Subject composition: Top-down 90-degree bird's-eye view of a pale oak solid wood desk surface. On the desk, arranged with calm editorial intent:
+- An open linen-bound notebook, cream paper, with a handwritten checklist in blue ballpoint pen (handwriting is neat feminine Japanese cursive), visible short phrases, checkmarks drawn. The checklist items are written in Japanese.
+- A slim silver ultrabook laptop, half-closed, positioned diagonally to the upper-right of the notebook.
+- A small matte-white ceramic mug of light-colored tea or coffee, steam rising softly, placed at the upper-left.
+- A single sprig of dried eucalyptus laid elegantly across the desk near the notebook.
+- A woman's hand with natural short manicured nails (soft beige polish) partially visible at the lower-right edge of the frame, delicately holding a ballpoint pen, mid-writing gesture — just the hand and forearm in a neutral-toned linen sleeve, no full body.
+- A pair of round tortoiseshell reading glasses placed softly beside the notebook.
+
+Setting and background: The desk surface fills the entire frame. Color is warm pale oak with visible natural grain. Soft directional morning window light from camera-left creates a gentle light gradient across the desk, with one diagonal band of warm light and delicate object shadows falling right-ward. The surface outside the objects is generously empty — deliberate negative space in the upper-right and center-right regions, reserved for overlaid text.
+
+Lighting: Golden-hour morning side light, warm 5000K, soft diffused through sheer curtains. Gentle highlights, airy shadows, zero harshness. Subtle tangible atmosphere — tiny dust motes faintly visible in the light beam.
+
+Camera: Leica Q3 equivalent top-down, 28mm equivalent at f/2.8, ISO 200. Tack-sharp on the notebook and hand, very subtle depth-of-field falloff to the far edges. Sixteen-bit color depth, Kodak Portra 400 color science, imperceptible fine grain.
+
+Color palette: Warm oatmeal, cream, pale sage green (eucalyptus), dusty pink (napkin accent), washed oak, charcoal ink blue. Ultra-low saturation. No saturated primaries.
+
+Style references: Kinfolk magazine, Cereal, Apartamento, Muji campaign, Japandi interior editorial.
+
+INTEGRATED TEXT OVERLAYS (perfect Japanese glyphs, Hiragino Kaku Gothic Pro W6, editorially typeset):
+
+1. HEADLINE — upper-right quadrant of the frame floating on the empty desk surface, LEFT-ALIGNED two lines, display weight, deep charcoal #2a2a2a, large commanding size:
+   こんな方に、
+   選ばれています。
+
+2. SUBCOPY — one line directly below headline, light weight, roughly one-third the headline size, warm gray #666666:
+   コミュニティ・サロンをお持ちの方へ
+
+3. CTA PILL — bottom-right corner, rounded pill, dusty sage #7a9b7e fill, white text two centered lines, medium weight, subtle drop shadow:
+   LINEで15分
+   無料面談
+
+HANDWRITTEN CHECKLIST — inside the notebook visible in the image (Japanese, small neat handwriting, blue ballpoint, with drawn checkmarks to the left of each item). Exactly three lines:
+ ☑ 人脈を活かしたい
+ ☑ 初期費用なしで始めたい
+ ☑ 勧誘や営業はしない
+
+CRITICAL RULES:
+- All Japanese text, including handwritten items in the notebook, must render with perfect glyph accuracy and readable cursive authenticity.
+- Overhead 90-degree flat-lay perspective only — no tilt.
+- Background must be ONE CONTINUOUS wooden desk surface, no seams, no edges.
+- No monetary imagery, no currency symbols, no MLM language, no additional graphics beyond the single CTA pill.
+- Subject limited to hand and forearm only — no face, no full body.
+- Zero additional logos, watermarks, icons, arrows, sparkles, or badges.
+
+Final goal: Magazine flat-lay cover feature elegance, 1080x1350 Meta Feed ad, stops the scroll with quiet editorial confidence.

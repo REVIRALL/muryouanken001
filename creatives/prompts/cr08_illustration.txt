@@ -1,0 +1,52 @@
+A contemporary Japanese editorial illustration spot for a premium lifestyle magazine feature and a national commercial advertising campaign. Hand-drawn aesthetic in the tradition of contemporary Japanese illustrators: Noritake's minimal line work, Yuko Shimizu's sophistication, Keita Morimoto's soft-light realism, with the warmth and quiet narrative of a Brutus magazine editorial spot illustration.
+
+Medium appearance: Looks like a hand-drawn original illustration — a combination of soft pencil under-drawing, clean confident ink lines, and watercolor-washed color fills. Visible paper texture and subtle hand-made imperfections: minor line weight variation, barely-there watercolor bleed edges, occasional light pencil guideline remnants. Authentically artisanal, not digital-flat.
+
+Scene composition: 4:5 vertical format, 1080x1350. A gentle intimate illustrated scene showing:
+- A young Japanese woman in her late 20s to early 30s, illustrated in simplified but elegant linework — simple clean facial features (small eyes, soft small nose, gentle mouth with a hint of smile), chestnut-brown hair in a loose low ponytail with face-framing wisps. She wears a cream oversized cardigan and a pale pink tee, warm watercolor-washed fill. She sits at a small round cafe table, holding a cup of coffee with both hands, gazing gently toward the side and slightly upward (thoughtful, not sad).
+- On the table: a sketched closed laptop, a small sprig of eucalyptus, an open linen-bound notebook with a few indistinct handwritten Japanese characters (as visual suggestion only, not readable text).
+- Background: a simplified window with soft pale-peach morning sky and soft-focus suggestion of leafy green houseplants, all rendered as washy watercolor shapes with confident ink outline details.
+
+Color palette (watercolor washes):
+- Soft warm cream background (#f5eee4)
+- Pale dusty pink (her top, cheeks)
+- Oatmeal cream (cardigan)
+- Dusty sage green (plants, CTA)
+- Soft terracotta (table, mug)
+- Warm charcoal ink (outline lines)
+- Washed brown (hair)
+Gentle, warm, optimistic, cohesive.
+
+Line work: Confident hand-drawn ink outlines in warm deep brown-charcoal (#3a2e28), variable line weight with subtle lift-off at stroke ends, not computer-perfect. Small visible imperfections enhance the artisanal authenticity.
+
+Composition rules (editorial illustration grid):
+- Subject occupies lower-center-left of the frame, about 40 percent of frame height
+- Upper-right 50 percent of frame is soft washy sky-background reserved for typography
+- Bottom 15 percent reserved for CTA and subcopy
+
+Integrated text overlays (perfect Japanese glyph rendering, precise typesetting, Hiragino Kaku Gothic Pro W6 — the typography is cleanly digital overlay on top of the illustrated scene, creating intentional tension between hand-drawn and type):
+
+1. HEADLINE — upper-right quadrant floating on the washy sky background, LEFT-ALIGNED two lines, display weight, deep warm charcoal #2a2a2a, large commanding size, generous line spacing:
+   今のコミュニティに、
+   新しい選択肢を。
+
+2. SUBCOPY — one line below the headline, light weight, one-third the headline size, warm gray #666666:
+   初期費用0・在庫0・声かけ不要
+
+3. CTA PILL — bottom-right corner, softly rounded pill, dusty sage green #7a9b7e fill, no stroke, subtle soft shadow, two centered white lines of medium-weight Japanese:
+   LINEで15分
+   無料面談
+
+Strict rules:
+- This is an ILLUSTRATION, not a photograph — must look hand-drawn with watercolor washes and ink lines.
+- Authentic artisanal imperfections — NOT computer-perfect vector illustration.
+- The woman character is Japanese in features and styling, drawn sensitively and respectfully.
+- Handwritten scribble in the notebook is visual suggestion only, not legible.
+- The printed typography (headline/subcopy/CTA) is CLEAN DIGITAL — deliberately rendered cleanly over the illustrated scene, creating contrast.
+- All Japanese display text overlays must render with absolute glyph accuracy.
+- No additional graphics, icons, logos, arrows, sparkles, stars, or badges beyond the CTA pill.
+- No monetary imagery, no currency symbols.
+- No MLM visual cues.
+- The word "勧誘" appears only in subcopy negating context and must render cleanly.
+
+Final deliverable: A contemporary Japanese editorial illustration that differentiates this creative from all other photographic Meta Feed ads in the viewer's feed. Warm, artisanal, gentle, intelligent — the kind of illustration a 25-34 Japanese woman would stop scrolling to appreciate.

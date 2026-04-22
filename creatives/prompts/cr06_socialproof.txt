@@ -1,0 +1,46 @@
+Premium editorial documentary-style photograph for a Japanese women's lifestyle magazine cover feature and national commercial advertising campaign. Cinematic, authentic, grounded-aspirational.
+
+Subject: Two Japanese women, ages 28-34, shown in candid conversation as if the viewer is a third friend joining the table. Both wear soft natural fabrics — one in an oatmeal oversized cardigan with a cream silk camisole, the other in a pale dusty-pink linen button-up shirt. Natural undone makeup, genuine warm expressions, one mid-laugh naturally (lips slightly parted, eyes crinkled), the other listening attentively with a soft knowing smile. They are seated at a small round marble cafe table facing each other in three-quarter view, neither looking directly at the camera — the viewer is a spectator to an authentic moment.
+
+Setting: Bright upscale minimalist Tokyo cafe or home dining area. Natural daylight from a large window behind them (gentle rim light creating silhouette glow on hair). Two small matte white ceramic cups on the marble table, a single sprig of dried flowers in a bud vase, an open linen-bound notebook. Background: softly defocused neutral interior, perhaps a blurred hint of shelves or architectural plaster.
+
+Composition: 4:5 vertical portrait, 1080x1350. Both subjects occupy the LOWER HALF of the frame, visible from chest up. Faces are in the lower-left and lower-center. The UPPER HALF of the frame is soft atmospheric defocused background (pale cream walls with gentle window-light gradient) — reserved for overlaid text. Rule of thirds composition. Intimate, conversational, editorial.
+
+Lighting: Natural window backlight from camera-right-rear, creating soft rim halos on both subjects, ambient bounce from cream walls filling the faces gently. Delicate catchlights in the eyes of both subjects. Warm 5100K, luminous.
+
+Camera: Leica SL3 with 85mm f/1.4 prime at f/2.2, ISO 200, 1/250s. Critical tack focus on the nearest subject's eye, creamy falloff to the second subject (slightly soft but still beautifully present). Sixteen-bit color depth, Kodak Portra 400 grade, imperceptible grain.
+
+Color palette: Oatmeal, cream, dusty pink, pale sage, washed oak, soft peachy highlights. Warm, cohesive, restrained.
+
+Style references: Kinfolk magazine cover, Cereal documentary portraiture, Aesop brand film stills, Japandi lifestyle editorial.
+
+INTEGRATED TEXT OVERLAYS (Japanese, Hiragino Kaku Gothic Pro, perfect glyphs):
+
+1. SMALL QUALIFIER — very top of frame, left-aligned, medium weight, warm gray #777777, roughly one-fifth the headline size:
+   コミュニティ運営者・サロン主宰者の方へ
+
+2. HEADLINE — upper portion of frame beneath the qualifier, LEFT-ALIGNED two lines, large display weight, deep charcoal #2a2a2a. The number is slightly larger and bolder for emphasis:
+   すでに 150名 を超える方が、
+   静かに選んでいます。
+
+3. SUBCOPY — one line below the headline, light weight, one-third the headline size, warm gray #666666:
+   初期費用0・在庫0・声かけ不要の、新しい選択肢
+
+4. CTA PILL — bottom-right corner, rounded pill, sage #7a9b7e fill, white two-line centered text, medium weight, subtle drop shadow:
+   LINEで15分
+   無料面談
+
+CRITICAL RULES:
+- Both subjects are Japanese women, ethnically unambiguous, of similar age range (28-34).
+- Neither subject looks directly at the camera — this is a candid document, not a posed ad.
+- One continuous seamless atmospheric background — no wall seams or corner lines disrupting the text area.
+- Japanese glyphs render with perfect accuracy.
+- Text does not overlap either subject's face, hair, or upper body.
+- Two subjects only — NOT a group. No third person, no crowd imagery.
+- No monetary imagery, no currency symbols, no yen/dollar signs.
+- No additional graphics, logos, watermarks, stars, arrows, sparkles, or badges beyond the single CTA pill.
+- No MLM visual cues (no raised hands, no celebration, no suits, no presentation postures).
+- The number "150" is a generic placeholder and must render as the Arabic numerals "150" (not 一五〇).
+- The exact word "勧誘" must NOT appear anywhere in the image.
+
+Final goal: A documentary-style social-proof Meta Feed ad that projects quiet belonging and authority through implied peer-group membership rather than loud claims. Stops the scroll through authentic conversational intimacy.

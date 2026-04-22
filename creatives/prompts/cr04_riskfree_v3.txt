@@ -1,0 +1,46 @@
+Editorial typography-forward cover composition for a Japanese quiet-luxury magazine and national commercial advertising campaign. Art-directed in the spirit of Hara Kenya's visual discipline, Josef Müller-Brockmann's Swiss typographic rigor, and the quiet poetry of Muji campaigns. Photographed in the style of contemporary still-life masters like Takashi Kumagai and Kenji Nakamura.
+
+Scene: A single beautifully composed still-life shot at camera-eye-level of a warm pale oak desk surface. Items arranged with deliberate editorial intent and space between them, each object "breathing":
+
+- A single matte-glazed off-white handmade ceramic mug (visible subtle asymmetry from hand-throwing, small kiln flecks), filled nearly to the brim with a warm oat-milk latte showing delicate foam micro-bubbles, delicate steam rising in natural soft tendrils, placed at the LEFT of the frame on a natural oak surface.
+- Beside the mug, one closed linen-bound journal in cream with a simple elastic band, stacked atop a single oversized hardcover design book (spine blank and textured in natural linen weave).
+- A delicate small sprig of fresh green eucalyptus lies gracefully diagonally across the journal.
+- A pair of round tortoiseshell horn-rimmed reading glasses placed softly askew on the journal's surface.
+- A woman's hand visible at the extreme LEFT frame edge — only the back of the hand and two fingers delicately curling near the mug handle, neutral linen sleeve, no ring, natural short nails with barely-there nude polish. Human presence without dominance.
+- The upper-right two-thirds of the frame is seamless uninterrupted off-white lime-washed plaster wall catching a single diagonal band of warm morning window light from camera-left.
+
+Setting: Minimalist Japandi cafe-home hybrid interior in Tokyo, mid-morning, weekday.
+
+Composition: 4:5 vertical, 1080x1350. Objects occupy the LOWER THIRD of the frame only. The UPPER TWO-THIRDS is uninterrupted clean plaster wall reserved for a dominant editorial typographic statement. Rule of thirds with objects anchored along the lower horizontal. Strong intentional negative space.
+
+Lighting: Golden-hour morning side light entering from camera-left through sheer linen curtains. Light creates a soft diagonal warm shaft across the upper-right wall, gentle wrap on the mug, soft shadows of objects falling gently to the right. Warm 5000K. Atmospheric but never hazy. Tiny airborne dust particles visible in the warm light beam.
+
+Camera: Hasselblad X2D 100C medium-format with XCD 90mm f/2.5 lens at f/4.0, ISO 100, 1/200s. Critical tack focus on the mug rim and the journal's texture. Silky shallow falloff on the far right. Medium-format color science, fifteen stops of dynamic range, developed in Capture One with a Kinfolk muted-warm grade. Imperceptible fine organic grain reminiscent of Kodak Portra 400.
+
+Color palette: Oatmeal, cream, pale sage (eucalyptus), warm oak, dusty charcoal (typography), soft ivory. Absolutely ultra-restrained, no saturated primaries.
+
+Integrated text overlays (display typography hero, flawless Japanese glyph rendering with precision kerning, Hiragino Kaku Gothic Pro W9 Bold for headline, Hiragino Kaku Gothic Pro W3 Light for subcopy, perfect baseline alignment):
+
+1. HEADLINE — upper-right wall area, LEFT-ALIGNED three stacked phrases each on their own line with deliberate generous line spacing, ultra-bold display weight, deep soft charcoal #2a2a2a. The three RIGHT-SIDE words ("0", "0", "不要") are rendered slightly larger and bolder for visual hierarchy and rhythmic emphasis. Exact characters:
+   初期費用、0。
+   在庫、0。
+   声かけ、不要。
+
+2. SUBCOPY — one line below the headline block with generous breathing space, light weight, one-third the headline size, warm gray #666666:
+   コミュニティを持つあなたへの、新しい選択肢
+
+3. CTA PILL — bottom-right corner, softly rounded pill with dusty sage green #7a9b7e fill, no stroke, subtle warm drop shadow, two centered white lines in medium weight Japanese:
+   LINEで15分
+   無料面談
+
+Strict rules:
+- ONE continuous seamless wooden desk surface and ONE continuous seamless wall — no visible corners, seams, or boundary divisions.
+- Japanese glyphs render with absolute accuracy — no ghosting, no duplicate strokes, no ornamental deformation.
+- Text must NOT overlap any of the physical objects.
+- The digit "0" is used stylistically as typographic element only, NOT as a monetary zero. No currency symbols, no yen signs.
+- No additional graphics, logos, watermarks, stars, arrows, icons, or badges beyond the single CTA pill.
+- Only a partial hand/forearm visible at the frame edge — no face, no full body.
+- The word "勧誘" must NEVER appear anywhere in the image.
+- Zero MLM visual cues.
+
+Final deliverable: A Japanese quiet-luxury magazine cover aesthetic where the typography is the emotional hero and the still-life is the supporting actor. Scroll-stopping through restrained typographic power.

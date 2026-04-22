@@ -1,0 +1,44 @@
+A minimalist graphic poster design in the tradition of Hara Kenya's Muji manifesto campaigns, Kazumasa Nagai's symbolic poster work, and Josef Müller-Brockmann's Swiss International Typographic Style. This is NOT a photograph — it is a graphic design composition created by a senior Japanese art director for an editorial magazine poster insert.
+
+Composition: 4:5 vertical format, 1080x1350. A single-color field background in warm off-white cream with the barest hint of paper texture (subtle fibers visible on close inspection, like hand-made washi paper). Absolute cleanliness. No photographic elements.
+
+Sole graphic element (center-left of frame): A single minimalist organic abstract shape, hand-drawn in soft dusty sage green #7a9b7e, resembling a gentle brushstroke, a stylized single leaf, or an abstract silhouette of a sprouting form — flowing and calming, not rigid. The shape occupies roughly the center-left third of the frame, placed with generous negative space around it. The brushstroke has authentic hand-made imperfections, subtle texture variation, and slight opacity falloff at the edges like real sumi-e ink work but in sage green pigment. Size: approximately 35 percent of the frame height.
+
+Layout logic (editorial poster grid):
+- Left-aligned typography dominant
+- Brushstroke element placed on the vertical center-left axis, above the headline
+- Strong negative space breathes around everything
+
+Integrated text (flawless Japanese typography, precise editorial typesetting, Hiragino Mincho Pro W6 for headline to give quiet-luxury refinement, Hiragino Kaku Gothic Pro W3 Light for supporting copy):
+
+1. SMALL EYEBROW LABEL — top of frame, left-aligned, small tracking-expanded letters, warm gray #777777, roughly one-eighth of frame width:
+   コミュニティ運営者の方へ
+
+2. HEADLINE — center-lower-left of frame below the brushstroke, LEFT-ALIGNED two lines, large quiet-elegant Mincho serif weight (not bold gothic, but refined serif), deep soft charcoal #2a2a2a, generous line spacing. The period at the end of the second line is a single large round dot (.) rendered bolder for visual punctuation:
+   静かに、
+   はじめる選択を。
+
+3. SUBCOPY BLOCK — a small block of three aligned lines below the headline, very light weight gothic, approximately one-third of headline size, warm gray #666666, left-aligned:
+   ・初期費用0円
+   ・在庫なし
+   ・声かけ・勧誘不要
+
+4. CTA PILL — bottom-right corner, softly rounded pill, dusty sage green #7a9b7e fill (same hue as the brushstroke for visual cohesion), no stroke, subtle drop shadow, two centered white lines of medium-weight Japanese gothic:
+   LINEで15分
+   無料面談
+
+Style palette: Cream off-white (#f5f1e8), dusty sage green (#7a9b7e), soft charcoal (#2a2a2a), warm gray (#666666). That is the ENTIRE palette. Nothing else.
+
+Texture: Subtle authentic washi paper fiber texture across the background — visible only on close inspection, completely silent at scroll distance.
+
+Strict rules:
+- This is a GRAPHIC DESIGN POSTER, not a photograph — zero photographic elements, zero 3D rendering, zero realistic imagery.
+- The single abstract shape must look AUTHENTICALLY hand-drawn with subtle imperfections, NOT computer-generated geometric.
+- All Japanese glyphs must render with absolute accuracy and clean editorial typesetting.
+- Generous breathing negative space — minimum 40 percent of the frame must be clean background.
+- No additional graphics, icons, logos, arrows, sparkles, stars, or badges beyond the brushstroke, the text, and the CTA pill.
+- Absolutely no currency symbols.
+- The word "勧誘" appears ONLY in the subcopy list with a clear negating context ("声かけ・勧誘不要") — and must render cleanly.
+- No MLM visual cues whatsoever.
+
+Final goal: A poster that looks like it could hang in a gallery or an architect's office, but functions as a Meta Feed ad. Stops the scroll through graphic sophistication and negative space — the exact opposite of the typical loud feed ad.

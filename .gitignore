@@ -61,3 +61,8 @@ temp/
 
 # Netlifyデプロイキャッシュ
 .netlify/
+
+# 中間base64ダンプ・生成結果JSON（元画像から再生成可能）
+_b64_*.txt
+upload_results.json
+generation_summary.json

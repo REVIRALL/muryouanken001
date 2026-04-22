@@ -1,0 +1,42 @@
+Premium editorial lifestyle photograph for Japanese women's magazine cover feature and commercial campaign. Cinematic, calm, aspirational.
+
+Subject: One Japanese woman, age 30-34, natural undone beauty — dewy bare-makeup skin, long chestnut brown hair loosely tied in a low bun with face-framing wisps, soft half-smile, relaxed confident posture. She wears a softly draped cream linen shirt over a nude camisole. She stands by a large south-facing floor-to-ceiling apartment window, holding a smartphone in her right hand at waist level, gazing out at soft morning Tokyo cityscape visible through sheer linen curtains — out of focus, gentle bokeh of urban buildings in dawn haze. Quiet, decisive presence.
+
+Setting: Modern minimalist Tokyo living space — Japandi interior. Linen curtains filter soft golden-hour light. Off-white plaster walls. A low pale oak console table partially visible at the lower-right frame edge, on which sits a small white ceramic mug, a single sprig of dried eucalyptus in a handmade bud vase, and an open linen notebook — all softly out of focus, creating environmental storytelling without competing with the subject.
+
+Composition: 4:5 vertical portrait, 1080x1350. Subject placed in the LEFT HALF of the frame, three-quarter body visible from mid-thigh up, facing slightly camera-right. The RIGHT HALF of the frame is the out-of-focus window with soft diffuse morning light — a single continuous soft atmospheric surface, no visible wall seams or corner lines, reserved for overlaid text and numbered step indicators. Rule of thirds: her eyes at upper-left intersection.
+
+Lighting: Golden-hour side light from camera-right through sheer linen, creating a gentle silhouette rim light on her profile, a warm halo through her hair, delicate catchlights in her far eye. Soft ambient fill from white walls on the shadow side. Warm 5100K, airy and luminous, never hazy.
+
+Camera: Leica SL3 with 50mm Summilux f/1.4 prime at f/2.0, ISO 160, 1/320s. Tack-sharp critical focus on her nearest eye, creamy silky bokeh in the background window and console. Sixteen-bit color, Kodak Portra 400 grade, imperceptible grain, zero digital noise.
+
+Color palette: Soft warm morning — cream, oatmeal, pale sage, dusty blush, washed oak, gentle lilac in the sky. Ultra-low saturation cohesive editorial palette.
+
+Style references: Kinfolk magazine, Casa Brutus, &Premium Japan, Aesop campaign, Muji lifestyle commercial.
+
+INTEGRATED TEXT OVERLAYS (Japanese, Hiragino Kaku Gothic Pro, perfect glyphs):
+
+1. HEADLINE — upper-right quadrant on the atmospheric window area, LEFT-ALIGNED three lines, display weight, deep charcoal #2a2a2a, large:
+   たった3ステップ。
+   リンクをシェアするだけで、
+   次の選択肢が始まる。
+
+2. THREE SMALL NUMBERED MARKERS — arranged vertically on the right side below the headline, each a small minimal circle with a number inside and a short one-line caption to the right. Use sage green #7a9b7e for the circle fills, white number inside, dark charcoal captions:
+   ① リンクを受け取る
+   ② 人脈にシェアする
+   ③ 収益が生まれる
+
+3. CTA PILL — bottom-right, rounded pill, sage #7a9b7e fill, white two-line centered text, medium weight, subtle drop shadow:
+   LINEで15分
+   無料面談
+
+CRITICAL RULES:
+- One continuous seamless atmospheric background, zero wall seams or corner lines.
+- All Japanese glyphs render correctly.
+- Text does not overlap the subject's body, hair, or hands.
+- Subject is Japanese, ethnically unambiguous.
+- No additional graphics, icons, arrows, sparkles, logos, or watermarks beyond the three small numbered circles and the single CTA pill.
+- No monetary imagery, no currency, no MLM cues (no group photos, no raised fists, no suits).
+- No looking at camera — subject gazes out of frame at the window.
+
+Final goal: A quiet, intelligent Meta Feed ad that reads as lifestyle editorial first, sales second. Stops the scroll through restrained beauty.
