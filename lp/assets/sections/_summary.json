@@ -1,0 +1,38 @@
+{
+  "voice_01.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 696879
+  },
+  "voice_02.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 658320
+  },
+  "voice_03.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 674203
+  },
+  "voice_04.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 683508
+  },
+  "empathy_scene.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 721002
+  },
+  "step_01_line.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 719490
+  },
+  "step_02_note.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 664875
+  },
+  "step_03_laptop.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 703497
+  },
+  "compare_before_after.png": {
+    "model": "gemini-3-pro-image-preview",
+    "bytes": 765148
+  }
+}
