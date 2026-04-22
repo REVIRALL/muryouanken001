@@ -1,0 +1,7 @@
+{
+  "_doc": "utm_code をキーに、遷移先URL を値としてマップする。デフォルトは空文字列キー。LINE直リンクが判明したら '' の値を lin.ee/xxxxx 形式に変更。",
+  "": "https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx",
+  "ad1": "https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx&source=ad1",
+  "ad2": "https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx&source=ad2",
+  "shosentaku_v3": "https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx&source=v3"
+}
