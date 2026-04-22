@@ -1,19 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>無料案件キャッシュバック｜代理店募集</title>
-<meta name="description" content="メンバー全員が手出しゼロで稼げる環境を。自社クローズドASP×インフラ一次代理店の非公開案件を、あなたの組織に。案件選定・サポート・報酬計算、全て当社が代行します。">
-<meta property="og:title" content="無料案件キャッシュバック｜代理店募集">
-<meta property="og:description" content="メンバー全員が手出しゼロで稼げる環境を。自社クローズドASP×インフラ一次代理店の非公開案件を、あなたの組織に。">
-<meta property="og:type" content="website">
-<meta property="og:image" content="./assets/lp01a_01.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="無料案件キャッシュバック｜代理店募集">
-<meta name="twitter:description" content="メンバー全員が手出しゼロで稼げる環境を。案件選定・サポート・報酬計算、全て当社が代行。">
+<title>コミュニティ運営者の、新しい選択肢｜JUN</title>
+<meta name="description" content="売り込まないコミュニティ運営の、新しい選択肢。インフラ見直しで人脈が自然に活きる。初期費用0・月額0・勧誘なし。LINEで15分、無料でご相談。">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex,follow">
+<meta property="og:title" content="コミュニティ運営者の、新しい選択肢">
+<meta property="og:description" content="初期費用0・月額0・勧誘なし。LINEで15分、無料でご相談。">
+<meta property="og:type" content="website">
+<meta property="og:image" content="./assets/og_v3.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" as="image" href="./assets/hero_v3.webp" type="image/webp" fetchpriority="high">
+<link rel="stylesheet" href="./assets/styles.css">
 
 <!-- Google Tag Manager -->
 <script async src="./assets/gtm.js"></script>
@@ -26,160 +26,341 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Facebook Pixel -->
 <script async src="./assets/fbevents.js"></script>
 <script>!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","2450922202046153");fbq("track","PageView");</script>
-<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2450922202046153&ev=PageView&noscript=1"></noscript>
-
-<style>
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html, body {
-  width: 100%;
-  overflow-x: hidden;
-  background: #fff;
-  -webkit-text-size-adjust: 100%;
-}
-.lp-wrap {
-  width: 100%;
-  max-width: 750px;
-  margin: 0 auto;
-}
-.lp-wrap img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.cta-btn {
-  display: block;
-  padding: 0 10%;
-  margin: 0 0 16px;
-  animation: poyopoyo 1.6s ease-in-out infinite;
-  transform-origin: center;
-}
-.cta-btn img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-@keyframes poyopoyo {
-  0%, 100% { transform: scale(1); }
-  20%      { transform: scale(1.08); }
-  40%      { transform: scale(0.92); }
-  60%      { transform: scale(1.06); }
-  80%      { transform: scale(0.95); }
-}
-</style>
-
-<script>
-document.addEventListener('DOMContentLoaded', async function() {
-  // Meta Pixel: CTAクリック時にLeadイベント発火（url-map取得と独立して必ず登録）
-  document.querySelectorAll('.cta-btn').forEach(function(el) {
-    el.addEventListener('click', function(e) {
-      if (typeof fbq === 'function') {
-        fbq('track', 'Lead');
-      }
-      // ページ遷移を少し遅らせてイベント送信を確実にする
-      var href = el.href;
-      if (href) {
-        e.preventDefault();
-        setTimeout(function() { window.location.href = href; }, 300);
-      }
-    });
-  });
-
-  // URL map による CTA リンク先の動的設定
-  var params = new URLSearchParams(window.location.search);
-  var utmCode = params.get('utm_code') || '';
-  if (utmCode) sessionStorage.setItem('utm_code', utmCode);
-  else utmCode = sessionStorage.getItem('utm_code') || '';
-  try {
-    var res = await fetch('./assets/url-map.json');
-    var urlMap = await res.json();
-    var liffUrl = urlMap[utmCode] || urlMap[''];
-    if (liffUrl) {
-      document.querySelectorAll('.cta-btn').forEach(function(el) {
-        el.href = liffUrl;
-      });
-    }
-  } catch(e) { /* url-map取得失敗してもLeadイベントには影響しない */ }
-});
-</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2450922202046153&ev=PageView&noscript=1" alt=""></noscript>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6PWGNDF" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P6PWGNDF" height="0" width="0" style="display:none;visibility:hidden" title="GTM"></iframe></noscript>
 
-<div class="lp-wrap">
-  <!-- FV -->
-  <img fetchpriority="high" src="./assets/lp01a_01.jpg" width="750" height="859" alt="無料案件キャッシュバック 代理店募集">
+<main class="lp-wrap">
 
-  <!-- CTA 0 (FV直下) -->
-  <a class="cta-btn" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx">
-    <img src="./assets/btn.jpg" width="691" height="166" alt="今すぐ申し込む">
-  </a>
+  <!-- ========== 1. HERO FV ========== -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="hero__bg">
+      <picture>
+        <source srcset="./assets/hero_v3.webp" type="image/webp">
+        <img src="./assets/hero_v3.jpg" alt="コミュニティ運営者のイメージ" width="1500" height="1200" fetchpriority="high">
+      </picture>
+    </div>
+    <div class="hero__inner">
+      <h1 id="hero-h1" class="hero__h1">
+        &ldquo;売り込まない&rdquo;コミュニティ運営の、<br>
+        新しい選択肢。
+      </h1>
+      <p class="hero__subhead">
+        紹介するのは&ldquo;商品&rdquo;じゃない。<br>
+        みんなが当たり前に払っている&ldquo;固定費&rdquo;の見直しです。
+      </p>
+      <ul class="hero__bullets">
+        <li>初期費用・月額費用 0 円（成果発生までの報酬もありません）</li>
+        <li>インフラ乗り換え提案だから、勧誘色が出にくい</li>
+        <li>平均面談実施日: 申込から最短 3 営業日</li>
+      </ul>
+      <p class="disclaimer">
+        ※ 成果・報酬額は活動量や紹介先の契約内容により個人差があります。特定の収入を保証するものではありません。
+      </p>
 
-  <!-- 悩み共感 -->
-  <img src="./assets/lp01a_04.jpg" width="750" height="933" alt="" loading="lazy">
-  <img src="./assets/lp01a_05.jpg" width="750" height="673" alt="" loading="lazy">
+      <div class="safety-bullets" aria-label="友だち追加前の安心ポイント">
+        <ul>
+          <li>追加しても、本名・電話番号は運営側に見えません</li>
+          <li>追加＝会員登録ではありません</li>
+          <li>合わなければ、いつでもブロックで終了できます</li>
+        </ul>
+      </div>
 
-  <!-- 解決策・仕組み -->
-  <img src="./assets/lp01a_06.jpg" width="750" height="811" alt="" loading="lazy">
-  <img src="./assets/lp01a_07.jpg" width="750" height="825" alt="" loading="lazy">
-  <img src="./assets/lp01a_08.jpg" width="750" height="1293" alt="" loading="lazy">
+      <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="hero">
+        <span class="cta-btn__label">LINEで友だち追加 → 15分だけ、話を聞きに行く</span>
+        <span class="cta-btn__sub">※ しつこい営業・無理な勧誘は一切ありません</span>
+      </a>
+    </div>
+  </section>
 
-  <!-- CTA 1 -->
-  <img src="./assets/cta_area.jpg" width="750" height="860" alt="" loading="lazy">
-  <a class="cta-btn" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx">
-    <img src="./assets/btn.jpg" width="691" height="166" alt="今すぐ申し込む" loading="lazy">
-  </a>
+  <!-- ========== 2. 運営者バッジ ========== -->
+  <section class="operator-badge" aria-label="運営者バッジ">
+    <img class="operator-badge__photo" src="./assets/operator_placeholder.svg" alt="運営者 JUN" width="72" height="72">
+    <div class="operator-badge__text">
+      <p class="operator-badge__name">運営: JUN</p>
+      <dl class="operator-badge__stats">
+        <div><dt>提携一次代理店</dt><dd><span class="stat-pending">準備中</span></dd></div>
+        <div><dt>累計紹介実績</dt><dd><span class="stat-pending">準備中</span></dd></div>
+        <div><dt>代理店運営歴</dt><dd><span class="stat-pending">準備中</span></dd></div>
+      </dl>
+    </div>
+  </section>
 
-  <!-- 3ステップ -->
-  <img src="./assets/lp01a_09.jpg" width="750" height="1404" alt="" loading="lazy">
-  <img src="./assets/sec03_01.jpg" width="750" height="2321" alt="" loading="lazy">
-  <img src="./assets/sec03_02.jpg" width="750" height="338" alt="" loading="lazy">
+  <!-- ========== 3. 共感ブロック ========== -->
+  <section class="empathy" aria-labelledby="empathy-h2">
+    <h2 id="empathy-h2">こんなお悩み、ありませんか？</h2>
+    <p class="section-intro">
+      オンラインサロン主宰、コミュニティオーナー、ネットワークビジネス経験者の方からよくいただくご相談です。
+    </p>
+    <ul class="empathy__checklist">
+      <li>コミュニティやサロンで「みんなが喜ぶ収益源」を探している</li>
+      <li>新しい商材を紹介するたび「また勧誘？」と距離を置かれる</li>
+      <li>会社やアップラインの都合に振り回されて、自分の色が出せない</li>
+      <li>取り組んでいる活動に、報酬が追いついていない</li>
+      <li>商品買取・初期費用・ノルマで、キャッシュが詰まりがち</li>
+    </ul>
+    <p class="empathy__close">
+      もし一つでも当てはまるなら、このページは 5 分だけ読む価値があります。
+    </p>
+  </section>
 
-  <!-- 代理店の声 -->
-  <img src="./assets/lp01a_11.jpg" width="750" height="1859" alt="" loading="lazy">
-  <img src="./assets/lp01a_12.jpg" width="750" height="1860" alt="" loading="lazy">
+  <!-- ========== 4. 解決策（3特徴） ========== -->
+  <section class="solution" aria-labelledby="solution-h2">
+    <h2 id="solution-h2">なぜ、今までの仕組みと違うのか。</h2>
+    <p class="section-intro">
+      私たちは、電力・通信などインフラ系サービスの「一次代理店」と提携し、法人契約向けの案件を、一定の基準を満たしたコミュニティオーナーだけにご案内しています。
+    </p>
+    <p class="disclaimer">※ 提携代理店名は、面談時に書面でご開示します。</p>
 
-  <!-- プロフィール -->
-  <img src="./assets/lp01a_14.jpg" width="750" height="1312" alt="" loading="lazy">
+    <div class="cards">
+      <article class="card">
+        <h3>商品販売ではなく、インフラ見直し</h3>
+        <p>すでに使っている電気・通信サービスの「乗り換えや見直し」のご提案です。節約効果が出るかどうかは、ご家庭のご契約状況によって異なります。</p>
+      </article>
+      <article class="card">
+        <h3>参加にあたっての金銭的負担なし</h3>
+        <p>初期費用・月額費用・在庫の買取・契約ノルマ、いずれも発生しません。特定商取引法 33 条の「特定負担」に当たるものがない、という意味です。<br>（※ 成果が発生するまでの報酬はありません）</p>
+      </article>
+      <article class="card">
+        <h3>契約手続き・サポートは運営で対応</h3>
+        <p>案件選定・申込書類のサポート・報酬計算・トラブル窓口は、すべて運営側で対応します。あなたは紹介・つなぎ役に専念していただけます。</p>
+      </article>
+    </div>
+  </section>
 
-  <!-- CTA 2 -->
-  <img src="./assets/cta_area.jpg" width="750" height="860" alt="" loading="lazy">
-  <a class="cta-btn" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx">
-    <img src="./assets/btn.jpg" width="691" height="166" alt="今すぐ申し込む" loading="lazy">
-  </a>
+  <!-- ========== 5. 3 ステップ ========== -->
+  <section class="steps" aria-labelledby="steps-h2">
+    <h2 id="steps-h2">始め方は、3 ステップ。</h2>
+    <ol class="steps__list">
+      <li>
+        <h3>Step 1 / LINE で友だち追加後、15 分の無料オンライン面談</h3>
+        <p>いまのコミュニティ・活動内容をヒアリング。無理な勧誘は一切行いません。</p>
+      </li>
+      <li>
+        <h3>Step 2 / あなたの活動に合う案件を 1〜3 本ご提案</h3>
+        <p>メンバー属性・規模・目的に合わせて、適切な案件を選定します。</p>
+      </li>
+      <li>
+        <h3>Step 3 / ご紹介 → ご成約で、成果報酬が発生</h3>
+        <p>契約書類のご案内・サポート・報酬計算はすべて運営側で対応。紹介・関係構築に集中いただけます。</p>
+      </li>
+    </ol>
+    <p class="disclaimer">
+      ※ 成果報酬の具体額は、案件・契約内容により個人差があります。面談時に報酬単価の実例をご提示します。
+    </p>
+  </section>
 
-  <!-- こんな組織にオススメ -->
-  <img src="./assets/lp01a_13.jpg" width="750" height="718" alt="" loading="lazy">
+  <!-- ========== 6. 比較テーブル ========== -->
+  <section class="compare" aria-labelledby="compare-h2">
+    <h2 id="compare-h2">よくある商品販売型プログラムとの違い</h2>
+    <p class="section-intro">（当社調べ・2026年4月時点）</p>
+    <div class="compare__table-wrap">
+      <table class="compare__table">
+        <thead>
+          <tr><th scope="col">項目</th><th scope="col">よくある商品販売型</th><th scope="col">当プログラム</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">参加費</th><td>必要な場合がある</td><td>なし</td></tr>
+          <tr><th scope="row">月額費用</th><td>必要な場合がある</td><td>なし</td></tr>
+          <tr><th scope="row">在庫・買取</th><td>必要な場合がある</td><td>なし</td></tr>
+          <tr><th scope="row">紹介の対象</th><td>商品の販売</td><td>インフラ見直し</td></tr>
+          <tr><th scope="row">運営サポート</th><td>任意</td><td>運営側で対応</td></tr>
+          <tr><th scope="row">報酬タイプ</th><td>プログラム次第</td><td>完全成果報酬</td></tr>
+          <tr><th scope="row">特商法表示</th><td>プログラム次第</td><td>本ページ下部に掲載</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaimer">
+      ※ 左列は広く流通している一般的な代理店プログラムの傾向を示すもので、特定のサービス・事業者を指すものではありません。
+    </p>
+  </section>
 
-  <!-- Q&A -->
-  <img src="./assets/lp01a_18.jpg" width="750" height="2110" alt="" loading="lazy">
+  <!-- ========== 7. 代理店の声 Voice 1-4 ========== -->
+  <section class="voices" aria-labelledby="voices-h2">
+    <h2 id="voices-h2">すでに始めている方の声</h2>
+    <p class="disclaimer">
+      個人の感想であり、成果を保証するものではありません。ご本人の許諾に基づき、一部のみ掲載しています。
+    </p>
+    <div class="voices__grid">
+      <article class="voice-card">
+        <img class="voice-card__avatar" src="./assets/voice_avatar_01.svg" alt="T さん" width="80" height="80">
+        <p class="voice-card__body">「紹介するだけではなく、契約サポートを運営がやってくれる点が助かりました。メンバーに『教えてくれてありがとう』と言われる関係性が作れています」</p>
+        <p class="voice-card__meta">T さん / 30 代女性 / オンラインサロン主宰（メンバー約 120 名）</p>
+      </article>
+      <article class="voice-card">
+        <img class="voice-card__avatar" src="./assets/voice_avatar_02.svg" alt="K さん" width="80" height="80">
+        <p class="voice-card__body">「物販中心の紹介モデルで疲れていました。相手のメリットが明確な案件なので、断られても関係が壊れないのが一番の違いです」</p>
+        <p class="voice-card__meta">K さん / 40 代男性 / コミュニティリーダー（メンバー約 300 名）</p>
+      </article>
+      <article class="voice-card">
+        <img class="voice-card__avatar" src="./assets/voice_avatar_03.svg" alt="M さん" width="80" height="80">
+        <p class="voice-card__body">「最初の 15 分の面談で、自分のコミュニティに合うかを具体的に相談できました。押し売りはなく『やるかどうかは自分で決めて』と任せてくれたのが信頼できました」</p>
+        <p class="voice-card__meta">M さん / 30 代女性 / LINE 公式運営（友だち約 800 名）</p>
+      </article>
+      <article class="voice-card voice-card--decline">
+        <img class="voice-card__avatar" src="./assets/voice_avatar_04.svg" alt="S さん" width="80" height="80">
+        <p class="voice-card__label">検討中止の声</p>
+        <p class="voice-card__body">「面談で詳しく話を聞いた結果、今の自分のコミュニティ属性には合わないと判断しました。無理に勧めてこないスタンスは好印象でした」</p>
+        <p class="voice-card__meta">S さん / 40 代男性 / コーチング業</p>
+      </article>
+    </div>
+    <p class="voices__note">
+      ※ 合わないと判断された方の声も、そのまま掲載しています。フラットにご判断いただくための参考情報です。
+    </p>
+  </section>
 
-  <!-- CTA 3 -->
-  <img src="./assets/cta_area.jpg" width="750" height="860" alt="" loading="lazy">
-  <a class="cta-btn" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx">
-    <img src="./assets/btn.jpg" width="691" height="166" alt="今すぐ申し込む" loading="lazy">
-  </a>
+  <!-- ========== 8. 運営者プロフィール ========== -->
+  <section class="operator" aria-labelledby="operator-h2">
+    <h2 id="operator-h2">運営者について</h2>
+    <div class="operator__head">
+      <img class="operator__photo" src="./assets/operator_placeholder.svg" alt="運営者 JUN" width="160" height="160">
+      <div class="operator__intro">
+        <p class="operator__name">運営: JUN</p>
+        <p>電力・通信をはじめとするインフラ系一次代理店との提携ネットワークを持ち、コミュニティオーナー・サロン主宰者向けの案件プラットフォームを運営。「押し売りのない、持続可能な収益モデル」を志向しています。</p>
+      </div>
+    </div>
+    <figure class="operator__video">
+      <img src="./assets/video_placeholder.svg" alt="運営者自己紹介動画（近日公開）" width="640" height="360">
+      <figcaption>運営者 自己紹介動画（30 秒） — 近日公開</figcaption>
+    </figure>
+    <dl class="operator__stats">
+      <div><dt>代理店運営歴</dt><dd><span class="stat-pending">準備中</span></dd></div>
+      <div><dt>提携一次代理店数</dt><dd><span class="stat-pending">準備中</span></dd></div>
+      <div><dt>累計紹介実績</dt><dd><span class="stat-pending">準備中</span></dd></div>
+      <div><dt>取引コミュニティ数</dt><dd><span class="stat-pending">準備中</span></dd></div>
+    </dl>
+    <p class="disclaimer">※ いずれも 2026 年 4 月時点の自社集計値です。</p>
+  </section>
 
-  <!-- フッター -->
-  <footer style="background:#f5f5f5; padding:24px 5%; margin-top:16px; font-size:12px; line-height:1.8; color:#555;">
-    <p style="font-weight:bold; margin-bottom:8px;">特定商取引法に基づく表記</p>
-    <table style="font-size:12px; border-collapse:collapse; width:100%; margin-bottom:16px;">
-      <tr><td style="padding:4px 8px; white-space:nowrap; vertical-align:top;">販売事業者</td><td style="padding:4px 8px;">JUN</td></tr>
-      <tr><td style="padding:4px 8px; white-space:nowrap; vertical-align:top;">サービス名</td><td style="padding:4px 8px;">無料案件キャッシュバック 代理店プログラム</td></tr>
-      <tr><td style="padding:4px 8px; white-space:nowrap; vertical-align:top;">お問い合わせ</td><td style="padding:4px 8px;">LINE公式アカウントよりお問い合わせください</td></tr>
-      <tr><td style="padding:4px 8px; white-space:nowrap; vertical-align:top;">販売価格</td><td style="padding:4px 8px;">無料（初期費用・月額費用なし）</td></tr>
-      <tr><td style="padding:4px 8px; white-space:nowrap; vertical-align:top;">報酬について</td><td style="padding:4px 8px;">成果報酬型です。報酬額は活動内容・案件により異なります。特定の収入を保証するものではありません。</td></tr>
-    </table>
+  <!-- ========== 9. こんな方におすすめ ========== -->
+  <section class="recommend" aria-labelledby="recommend-h2">
+    <h2 id="recommend-h2">特にフィットするのは、こんな方です。</h2>
+    <ul class="recommend__list">
+      <li>オンラインサロン・コミュニティを運営している</li>
+      <li>ネットワークビジネス経験があり、商品販売型の限界を感じている</li>
+      <li>LINE 公式・Instagram などで人を集めているが、収益化に悩んでいる</li>
+      <li>コーチ・コンサル業で、新しい収益の柱を探している</li>
+      <li>無理のない範囲で始めたいが、初期投資・在庫リスクは避けたい</li>
+    </ul>
+    <p class="disclaimer">
+      ※ お取り扱い案件により、コミュニティ規模・属性の目安が変わります。面談時に、最適な選択肢をご提案いたします。
+    </p>
+  </section>
 
-    <p style="font-weight:bold; margin-bottom:8px;">プライバシーポリシー</p>
-    <p style="margin-bottom:8px;">当サービスでは、お問い合わせ・面談予約の際にLINEを通じてお名前等の情報をお預かりする場合があります。取得した個人情報は、サービスのご案内・ご連絡の目的にのみ使用し、ご本人の同意なく第三者に提供することはありません。個人情報の開示・訂正・削除をご希望の場合は、LINE公式アカウントよりご連絡ください。</p>
+  <!-- ========== 10. FAQ ========== -->
+  <section class="faq" aria-labelledby="faq-h2">
+    <h2 id="faq-h2">よくある質問</h2>
+    <dl class="faq__list">
+      <div>
+        <dt>Q1. LINE 登録したら、すぐに勧誘されますか？</dt>
+        <dd>いいえ。友だち追加直後の自動メッセージで、15 分面談の日程候補をお送りするだけです。ご自身のペースで日程を選んでください。合わないと感じたら、そのままブロックしていただいて構いません。</dd>
+      </div>
+      <div>
+        <dt>Q2. 副業でも対応できますか？</dt>
+        <dd>本業・活動と並行して取り組まれている方もいらっしゃいます。平日夜・週末の数時間での進め方について、面談時にご案内します。</dd>
+      </div>
+      <div>
+        <dt>Q3. ノルマはありますか？</dt>
+        <dd>ありません。最低ライン・期限のノルマは設定していません。1 件のご紹介でも成果報酬が発生する設計です。</dd>
+      </div>
+      <div>
+        <dt>Q4. コミュニティの規模はどれくらい必要ですか？</dt>
+        <dd>案件により異なります。目安として 50 名以上の方が取り組みやすい傾向ですが、属性によってはそれ以下でも対応可能な案件があります。面談で最適なものをご提案します。</dd>
+      </div>
+      <div>
+        <dt>Q5. 報酬の支払いサイクルは？</dt>
+        <dd>月末締め・翌月末支払い（銀行振込）が基本です。詳細はお取引時に書面でご案内します。</dd>
+      </div>
+      <div>
+        <dt>Q6. 途中でやめることはできますか？</dt>
+        <dd>いつでも可能です。契約期間の縛りはありません。</dd>
+      </div>
+      <div>
+        <dt>Q7. これは連鎖販売取引（MLM）やマルチ商法ですか？</dt>
+        <dd>
+          該当しません。本プログラムの設計は、特定商取引法 33 条の連鎖販売取引の 3 要件 —
+          <ol class="faq__subnote">
+            <li>特定負担（参加費・商品購入義務など）</li>
+            <li>再販売・受託販売・販売あっせんの対象商品</li>
+            <li>ピラミッド型の報酬設計（ダウンライン構築による権利収入）</li>
+          </ol>
+          — のいずれも満たしていません。今後、報酬設計を変更する場合は事前に本ページで告知します。
+        </dd>
+      </div>
+      <div>
+        <dt>Q8. 提携先や案件の具体名を教えてもらえますか？</dt>
+        <dd>契約上、面談で秘密保持条項にご同意いただいた上でご提示しています。ご関心があれば、まず 15 分面談でお気軽にご確認ください。</dd>
+      </div>
+    </dl>
+  </section>
 
-    <p style="margin-top:12px; font-size:11px; color:#999;">&copy; 2026 JUN. All rights reserved.</p>
-  </footer>
-</div>
+  <!-- ========== 11. 希少性 ========== -->
+  <section class="scarcity" aria-labelledby="scarcity-h2">
+    <h2 id="scarcity-h2" class="scarcity__h2">2026 年春の募集は、月 20 名までに絞っています</h2>
+    <p class="scarcity__body">1 枠 = 1 コミュニティの原則で、個別対応の質を保つためです。</p>
+    <p class="scarcity__slots">
+      今月（2026 年 4 月）の残り枠: <span class="stat-pending">準備中</span>
+      <span class="scarcity__updated">／ 週次で更新</span>
+    </p>
+    <p class="disclaimer">
+      ※ 数字は自社基準による面談受入能力を示すもので、消化状況により締切日は前倒しされる場合があります。
+    </p>
+  </section>
+
+  <!-- ========== 12. 最終 CTA ========== -->
+  <section class="final-cta" aria-labelledby="final-h2">
+    <h2 id="final-h2">まずは、15 分だけ話を聞きに来てください。</h2>
+    <p>
+      LINE 登録後、ヒアリング面談の日程を自動でご案内します。<br>
+      面談はオンライン（Zoom）、完全無料です。<br>
+      合わなさそうと感じたら、そこで終わりにしていただいて大丈夫です。
+    </p>
+
+    <div class="safety-bullets" aria-label="友だち追加前の安心ポイント（再掲）">
+      <ul>
+        <li>追加しても、本名・電話番号は運営側に見えません</li>
+        <li>追加＝会員登録ではありません</li>
+        <li>合わなければ、いつでもブロックで終了できます</li>
+      </ul>
+    </div>
+
+    <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="final">
+      <span class="cta-btn__label">LINEで友だち追加 → 15分だけ、話を聞きに行く</span>
+      <span class="cta-btn__sub">※ しつこい営業・無理な勧誘は一切ありません</span>
+    </a>
+  </section>
+
+</main>
+
+<!-- ========== 特商法・プライバシー ========== -->
+<footer class="site-footer">
+  <section class="tokushoho" data-pending="true" aria-labelledby="tokushoho-h2">
+    <h2 id="tokushoho-h2">特定商取引法に基づく表記</h2>
+    <p class="tokushoho__note">本表示は特定商取引法第 11 条に基づくものです。</p>
+    <dl class="tokushoho__list">
+      <div><dt>販売事業者</dt><dd>JUN（代表者: [差し替え] 〇〇 〇〇）</dd></div>
+      <div><dt>所在地</dt><dd>〒XXX-XXXX [差し替え] 都道府県市区町村番地<br>（バーチャルオフィスを利用する場合、契約書原本を保管。ご請求受付後 5 営業日以内に現住所を書面またはメールで開示します）</dd></div>
+      <div><dt>電話番号</dt><dd>[差し替え] 03-XXXX-XXXX（受付 平日 10:00–18:00／土日祝除く）</dd></div>
+      <div><dt>メールアドレス</dt><dd>[差し替え] info@example.jp</dd></div>
+      <div><dt>サービス名</dt><dd>無料案件キャッシュバック 代理店プログラム</dd></div>
+      <div><dt>販売価格</dt><dd>無料（初期費用・月額費用なし、成果発生までの報酬なし）</dd></div>
+      <div><dt>報酬について</dt><dd>成果報酬型です。報酬単価は案件・契約内容により異なります。特定の収入を保証するものではありません。報酬単価の実例は、面談時に書面でご提示します。</dd></div>
+      <div><dt>役務提供方法</dt><dd>LINE 公式アカウントを通じた情報提供・案件紹介・契約サポート</dd></div>
+      <div><dt>提供開始時期</dt><dd>友だち追加後、最短 3 営業日で面談実施</dd></div>
+      <div><dt>契約中止方法</dt><dd>いつでも可能です。契約期間の縛りはありません。LINE 公式アカウントのブロック、または書面でご連絡ください。</dd></div>
+      <div><dt>返品・キャンセル</dt><dd>本プログラムはサービス提供型のため、返品・返金の概念はありません。参加中止はいつでも可能です。</dd></div>
+      <div><dt>支払方法</dt><dd>成果報酬の銀行振込（月末締め・翌月末支払い）</dd></div>
+    </dl>
+  </section>
+
+  <nav class="site-footer__nav">
+    <a href="./privacy/">プライバシーポリシー</a>
+  </nav>
+  <p class="site-footer__copyright">&copy; 2026 JUN. All rights reserved.</p>
+</footer>
+
+<script src="./assets/tracking.js"></script>
 </body>
 </html>

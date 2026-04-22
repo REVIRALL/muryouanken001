@@ -1,5 +1,7 @@
 [build]
   publish = "lp"
+  command = "node scripts/check_placeholders.mjs && node scripts/check_meta_policy.mjs && node scripts/check_evidence.mjs"
+  functions = "netlify/functions"
 
 [build.processing]
   skip_processing = false
@@ -10,6 +12,12 @@
 [[redirects]]
   from = "/privacy"
   to = "/privacy/index.html"
+  status = 200
+
+# CAPI エンドポイント
+[[redirects]]
+  from = "/api/capi"
+  to = "/.netlify/functions/capi"
   status = 200
 
 [[headers]]

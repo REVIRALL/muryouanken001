@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="運営者自己紹介動画（近日公開）">
+  <rect width="640" height="360" fill="#F5EFE4"/>
+  <rect x="1" y="1" width="638" height="358" fill="none" stroke="#D5C6AB" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="320" cy="170" r="44" fill="#9FB89A" opacity="0.85"/>
+  <polygon points="308,150 308,190 342,170" fill="#FFFFFF"/>
+  <text x="320" y="250" font-size="22" fill="#6B5E48" text-anchor="middle" font-family="'Yu Gothic UI', 'Hiragino Sans', sans-serif" font-weight="700">運営者 自己紹介（30秒）</text>
+  <text x="320" y="284" font-size="16" fill="#8B7F6A" text-anchor="middle" font-family="'Yu Gothic UI', 'Hiragino Sans', sans-serif">近日公開</text>
+</svg>

@@ -1,0 +1,50 @@
+{
+  "_doc": "LMES/LINE 公式アカウントの友だち追加直後の自動配信テンプレ。このファイルは本リポ同梱、実装は LMES 運用担当が行う。",
+  "schema_version": "1.0",
+  "program": "無料案件キャッシュバック 代理店プログラム",
+  "messages": [
+    {
+      "order": 1,
+      "delay_sec": 0,
+      "type": "mixed",
+      "text": [
+        "友だち追加ありがとうございます！",
+        "「無料案件キャッシュバック 代理店プログラム」運営の JUN です。",
+        "",
+        "いきなりのセールスや長文は送りませんのでご安心ください。",
+        "まずは運営者の自己紹介（30 秒動画）をご覧ください。"
+      ],
+      "attachments": [
+        {
+          "type": "video",
+          "url_placeholder": "TO_BE_FILLED_operator_intro_30s.mp4",
+          "duration_sec": 30,
+          "description": "運営者 JUN の自己紹介。顔出し＋実績数値を1行で紹介する30秒動画。"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "delay_sec": 30,
+      "type": "quick_reply",
+      "text": [
+        "面談は 15 分、完全無料のオンラインです。",
+        "ご都合の良い日時をお選びください。"
+      ],
+      "buttons": [
+        { "label": "日程A", "postback": "slot_a", "placeholder": true },
+        { "label": "日程B", "postback": "slot_b", "placeholder": true },
+        { "label": "日程C", "postback": "slot_c", "placeholder": true },
+        { "label": "日程D", "postback": "slot_d", "placeholder": true },
+        { "label": "日程E", "postback": "slot_e", "placeholder": true },
+        { "label": "候補が合わない → 返信で相談", "postback": "manual_contact" }
+      ],
+      "sla_note": "平均返信時間 3 時間以内（平日 9-21 時）"
+    }
+  ],
+  "notes": [
+    "ボタンのラベル（日程A〜E）は、LMESの予約機能で実際の日時文字列に差し替える。",
+    "6 番目のフォールバックボタンは必須。候補が埋まったときの離脱抑止。",
+    "動画は公開前にQA: 顔写真と声、運営実績1行、MLM連想フレーズを含まないこと。"
+  ]
+}
