@@ -29,24 +29,30 @@
   <div class="loading">遷移中…</div>
 </main>
 
+<!-- Meta Pixel (LIFF でも PageView + Lead を発火。event_id 一致で CAPI と dedup) -->
+<script>!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","2450922202046153");fbq("track","PageView");</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2450922202046153&ev=PageView&noscript=1" alt=""></noscript>
+
 <script>
 /**
- * LIFF 中間ページ
+ * LIFF 中間ページ (Stage 2 対応)
  * 役割:
- *   1. LP からの fbclid / utm を Cookie / sessionStorage に引き継ぐ
- *   2. CAPI 経由で Lead イベントを送信（Netlify Functions 経由）
+ *   1. LP から引き継いだ event_id を取り出す（無ければ新規生成）
+ *   2. fbq Pixel Lead + CAPI Lead の両方を同じ event_id で発火 → dedup 成立
  *   3. LINE 友だち追加 URL にリダイレクト
  *
- * 稼働中の Meta 学習を壊さないため、本ページでは fbq('track','Lead') は発火しない。
- * CAPI (server → Meta) のみで Lead を計上する。
- * 将来 Stage 2 で LP 側の fbq Lead を停止してからが本番運用。
+ * 設計意図:
+ *   - LP 側では fbq('Lead') が CTA クリックで発火している（Stage 3 前の暫定）
+ *   - LIFF 到達時点で「実際に LINE 追加に向かった」可能性が高い
+ *   - ここで Lead を再度発火させる理由は、LP 経由せず LIFF 直リンク時のキャッチ
+ *   - event_id が一致すれば Meta 側で dedup され二重計上は発生しない
  */
 (async function () {
   'use strict';
 
   var params = new URLSearchParams(location.search);
 
-  // ---- fbclid の引き継ぎ（LP から到達時に既に Cookie/sessionStorage に書かれている想定） ----
+  // ---- fbclid の引き継ぎ（LP から到達時、既に Cookie に書かれている想定） ----
   var fbclid = params.get('fbclid');
   if (fbclid) {
     var fbc = 'fb.1.' + Date.now() + '.' + fbclid;
@@ -54,40 +60,60 @@
     try { sessionStorage.setItem('_fbc', fbc); } catch (_) {}
   }
 
-  // ---- 計測メタデータ ----
   function getCookie(name) {
     var m = document.cookie.match(new RegExp('(?:^|; )' + name + '=([^;]+)'));
     return m ? decodeURIComponent(m[1]) : '';
   }
-  var fbc = getCookie('_fbc');
-  var fbp = getCookie('_fbp');
+  function genEventId() {
+    if (typeof crypto !== 'undefined' && crypto.randomUUID) return 'evt_' + crypto.randomUUID();
+    return 'evt_' + Date.now().toString(36) + '_' + Math.random().toString(36).slice(2, 10);
+  }
+
+  // ---- LP から引き継いだ event_id を取得、無ければ新規生成 ----
+  var eventId;
   try {
-    if (!fbc) fbc = sessionStorage.getItem('_fbc') || '';
+    eventId = sessionStorage.getItem('lead_event_id') || '';
+  } catch (_) { eventId = ''; }
+  if (!eventId) eventId = genEventId();
+
+  var fbc = getCookie('_fbc');
+  try { if (!fbc) fbc = sessionStorage.getItem('_fbc') || ''; } catch (_) {}
+  var fbp = getCookie('_fbp');
+
+  // ---- Pixel 側 Lead を発火（event_id で dedup 成立） ----
+  try {
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', {}, { eventID: eventId });
+    }
   } catch (_) {}
 
-  var eventId = 'lead_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
-
-  // ---- CAPI エンドポイントに送信（失敗してもリダイレクトは続行） ----
+  // ---- CAPI に Lead を送信（同一 event_id） ----
+  var payload = {
+    event_id: eventId,
+    event_name: 'Lead',
+    event_time: Math.floor(Date.now() / 1000),
+    event_source_url: location.href,
+    fbc: fbc || null,
+    fbp: fbp || null,
+    utm_code: (function () { try { return sessionStorage.getItem('utm_code') || ''; } catch (_) { return ''; } })(),
+    client_user_agent: navigator.userAgent
+  };
   try {
-    await fetch('/.netlify/functions/capi', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        event_id: eventId,
-        event_name: 'Lead',
-        event_time: Math.floor(Date.now() / 1000),
-        event_source_url: location.href,
-        fbc: fbc || null,
-        fbp: fbp || null,
-        utm_code: (function () { try { return sessionStorage.getItem('utm_code') || ''; } catch (_) { return ''; } })(),
-        client_user_agent: navigator.userAgent
-      }),
-      keepalive: true
-    });
-  } catch (_) { /* noop */ }
+    if (navigator.sendBeacon) {
+      var blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+      navigator.sendBeacon('/.netlify/functions/capi', blob);
+    } else {
+      await fetch('/.netlify/functions/capi', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      });
+    }
+  } catch (_) {}
 
   // ---- 遷移先 LINE URL を決定 ----
-  var nextUrl = 'https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx'; // fallback
+  var nextUrl = 'https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx';
   try {
     var res = await fetch('./assets/url-map.json', { cache: 'no-store' });
     if (res.ok) {
@@ -96,14 +122,13 @@
       try { utmCode = sessionStorage.getItem('utm_code') || ''; } catch (_) {}
       nextUrl = map[utmCode] || map[''] || nextUrl;
     }
-  } catch (_) { /* noop */ }
+  } catch (_) {}
 
-  // fallback link も差し替え
   var fb = document.getElementById('fallback-link');
   if (fb) fb.setAttribute('href', nextUrl);
 
-  // 500ms 余裕を持って遷移（計測送信完了を待つ）
-  setTimeout(function () { window.location.replace(nextUrl); }, 500);
+  // sendBeacon が非同期で送信完了するので、300ms だけ余裕を持って遷移
+  setTimeout(function () { window.location.replace(nextUrl); }, 300);
 })();
 </script>
 </body>
