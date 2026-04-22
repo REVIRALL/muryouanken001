@@ -30,6 +30,8 @@ const CLAIM_PATTERNS = [
 
 function hasEvidence() {
   if (!fs.existsSync(EVIDENCE_DIR)) return false;
+  // INDEX.md があれば「マッピング表で社内保管を明示している」と判定して OK
+  if (fs.existsSync(path.join(EVIDENCE_DIR, 'INDEX.md'))) return true;
   const items = fs.readdirSync(EVIDENCE_DIR)
     .filter((n) => n !== '.gitkeep' && n !== 'README.md');
   return items.length > 0;
