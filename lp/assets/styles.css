@@ -486,7 +486,7 @@ h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px;
 .final-cta h2 { text-align: left; }
 .final-cta p { margin-bottom: 14px; font-size: clamp(14px, 3.2vw, 16px); }
 
-/* ---------- footer / 特商法 ---------- */
+/* ---------- footer ---------- */
 .site-footer {
   margin-top: 40px;
   padding: 24px 20px 30px;
@@ -494,15 +494,84 @@ h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px;
   font-size: 13px;
   color: var(--color-muted);
 }
-.tokushoho h2 { text-align: left; font-size: 18px; margin-bottom: 14px; }
-.tokushoho__note { font-size: 12px; margin-bottom: 12px; }
-.tokushoho__list > div { display: grid; grid-template-columns: 120px 1fr; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--color-line); }
-.tokushoho__list dt { font-weight: 700; }
-.tokushoho__list dd { word-break: break-word; }
-
-.site-footer__nav { margin-top: 16px; text-align: center; }
-.site-footer__nav a { color: var(--color-muted); text-decoration: underline; margin: 0 8px; }
+.site-footer__nav { text-align: center; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+.site-footer__nav a,
+.site-footer__nav .footer-link {
+  color: var(--color-muted);
+  text-decoration: underline;
+  background: transparent;
+  border: 0;
+  padding: 4px 2px;
+  font: inherit;
+  cursor: pointer;
+}
+.site-footer__nav a:hover,
+.site-footer__nav .footer-link:hover { color: var(--color-ink); }
+.footer-sep { color: var(--color-line); }
 .site-footer__copyright { margin-top: 12px; text-align: center; font-size: 11px; color: #999; }
+
+/* ---------- 特商法モーダル ---------- */
+.tokushoho-dialog {
+  width: min(640px, 92vw);
+  max-height: 88vh;
+  padding: 0;
+  border: 0;
+  border-radius: 14px;
+  background: var(--color-bg);
+  color: var(--color-text);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  overflow: hidden;
+}
+.tokushoho-dialog::backdrop {
+  background: rgba(32, 24, 12, 0.55);
+  backdrop-filter: blur(2px);
+}
+.tokushoho-dialog[open] { display: flex; flex-direction: column; }
+.tokushoho-dialog__inner { display: flex; flex-direction: column; max-height: 88vh; }
+.tokushoho-dialog__header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; border-bottom: 1px solid var(--color-line);
+  background: #FBF8F2;
+}
+.tokushoho-dialog__header h2 { margin: 0; text-align: left; font-size: clamp(16px, 3.8vw, 18px); color: var(--color-ink); }
+.tokushoho-dialog__close {
+  width: 36px; height: 36px; border: 0; background: transparent;
+  font-size: 24px; line-height: 1; cursor: pointer;
+  color: var(--color-muted); border-radius: 50%;
+}
+.tokushoho-dialog__close:hover { background: rgba(0,0,0,0.06); color: var(--color-ink); }
+.tokushoho-dialog__body {
+  padding: 18px 20px 8px;
+  overflow-y: auto;
+  flex: 1 1 auto;
+  -webkit-overflow-scrolling: touch;
+}
+.tokushoho__note { font-size: 12px; margin-bottom: 12px; color: var(--color-muted); }
+.tokushoho__list > div { display: grid; grid-template-columns: 110px 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--color-line); font-size: 13px; }
+.tokushoho__list dt { font-weight: 700; color: var(--color-ink); }
+.tokushoho__list dd { word-break: break-word; }
+.tokushoho__list dd a { color: var(--color-accent); }
+.tokushoho-dialog__footer {
+  padding: 12px 20px 16px;
+  border-top: 1px solid var(--color-line);
+  text-align: right;
+  background: #FBF8F2;
+}
+.tokushoho-dialog__btn {
+  padding: 10px 22px;
+  background: var(--color-ink);
+  color: #FBF8F2;
+  border: 0;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+.tokushoho-dialog__btn:hover { background: #2A1F12; }
+
+@media (min-width: 768px) {
+  .tokushoho__list > div { grid-template-columns: 160px 1fr; }
+}
 
 /* ---------- tablet+ ---------- */
 @media (min-width: 768px) {
@@ -510,5 +579,4 @@ h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px;
   .cards { grid-template-columns: 1fr 1fr 1fr; }
   .voices__grid { grid-template-columns: 1fr 1fr; }
   .operator__stats { grid-template-columns: 1fr 1fr 1fr 1fr; }
-  .tokushoho__list > div { grid-template-columns: 180px 1fr; }
 }

@@ -391,33 +391,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- ========== 特商法・プライバシー ========== -->
 <footer class="site-footer">
-  <section class="tokushoho" aria-labelledby="tokushoho-h2">
-    <h2 id="tokushoho-h2">特定商取引法に基づく表記</h2>
-    <p class="tokushoho__note">本表示は特定商取引法第 11 条に基づくものです。</p>
-    <dl class="tokushoho__list">
-      <div><dt>販売事業者</dt><dd>合同会社リバイラル</dd></div>
-      <div><dt>代表者</dt><dd>代表社員 坂本 純一</dd></div>
-      <div><dt>法人番号</dt><dd>8011703003421</dd></div>
-      <div><dt>所在地</dt><dd>〒150-0002 東京都渋谷区渋谷2丁目19-15 宮益坂ビルディング609</dd></div>
-      <div><dt>電話番号</dt><dd>03-5708-5823（総務直通・平日 10:00–18:00／土日祝除く）<br>代表電話: 050-3593-7239</dd></div>
-      <div><dt>メールアドレス</dt><dd><a href="mailto:info@revirall.jp">info@revirall.jp</a></dd></div>
-      <div><dt>お問い合わせ</dt><dd>LINE 公式アカウント、または上記メール・電話よりご連絡ください。</dd></div>
-      <div><dt>サービス名</dt><dd>無料案件キャッシュバック 代理店プログラム</dd></div>
-      <div><dt>販売価格</dt><dd>無料（初期費用・月額費用なし、成果発生までの報酬なし）</dd></div>
-      <div><dt>報酬について</dt><dd>成果報酬型です。報酬単価は案件・契約内容により異なります。特定の収入を保証するものではありません。報酬単価の実例は、面談時に書面でご提示します。</dd></div>
-      <div><dt>役務提供方法</dt><dd>LINE 公式アカウントを通じた情報提供・案件紹介・契約サポート</dd></div>
-      <div><dt>提供開始時期</dt><dd>友だち追加後、最短 3 営業日で面談実施</dd></div>
-      <div><dt>契約中止方法</dt><dd>いつでも可能です。契約期間の縛りはありません。LINE 公式アカウントのブロック、または書面でご連絡ください。</dd></div>
-      <div><dt>返品・キャンセル</dt><dd>本プログラムはサービス提供型のため、返品・返金の概念はありません。参加中止はいつでも可能です。</dd></div>
-      <div><dt>支払方法</dt><dd>成果報酬の銀行振込（月末締め・翌月末支払い）</dd></div>
-    </dl>
-  </section>
-
   <nav class="site-footer__nav">
+    <button type="button" class="footer-link" data-open-tokushoho aria-haspopup="dialog">特定商取引法に基づく表記</button>
+    <span class="footer-sep" aria-hidden="true">/</span>
     <a href="./privacy/">プライバシーポリシー</a>
   </nav>
   <p class="site-footer__copyright">&copy; 2026 合同会社リバイラル. All rights reserved.</p>
 </footer>
+
+<!-- ========== 特商法モーダル ========== -->
+<dialog id="tokushoho-dialog" class="tokushoho-dialog" aria-labelledby="tokushoho-h2">
+  <div class="tokushoho-dialog__inner">
+    <header class="tokushoho-dialog__header">
+      <h2 id="tokushoho-h2">特定商取引法に基づく表記</h2>
+      <button type="button" class="tokushoho-dialog__close" data-close-tokushoho aria-label="閉じる">&times;</button>
+    </header>
+    <div class="tokushoho-dialog__body">
+      <p class="tokushoho__note">本表示は特定商取引法第 11 条に基づくものです。</p>
+      <dl class="tokushoho__list">
+        <div><dt>販売事業者</dt><dd>合同会社リバイラル</dd></div>
+        <div><dt>代表者</dt><dd>代表社員 坂本 純一</dd></div>
+        <div><dt>法人番号</dt><dd>8011703003421</dd></div>
+        <div><dt>所在地</dt><dd>〒150-0002 東京都渋谷区渋谷2丁目19-15 宮益坂ビルディング609</dd></div>
+        <div><dt>電話番号</dt><dd>03-5708-5823（総務直通・平日 10:00–18:00／土日祝除く）<br>代表電話: 050-3593-7239</dd></div>
+        <div><dt>メールアドレス</dt><dd><a href="mailto:info@revirall.jp">info@revirall.jp</a></dd></div>
+        <div><dt>お問い合わせ</dt><dd>LINE 公式アカウント、または上記メール・電話よりご連絡ください。</dd></div>
+        <div><dt>サービス名</dt><dd>無料案件キャッシュバック 代理店プログラム</dd></div>
+        <div><dt>販売価格</dt><dd>無料（初期費用・月額費用なし、成果発生までの報酬なし）</dd></div>
+        <div><dt>報酬について</dt><dd>成果報酬型です。報酬単価は案件・契約内容により異なります。特定の収入を保証するものではありません。報酬単価の実例は、面談時に書面でご提示します。</dd></div>
+        <div><dt>役務提供方法</dt><dd>LINE 公式アカウントを通じた情報提供・案件紹介・契約サポート、および Zoom 等ビデオ会議ツールによる無料オンライン面談</dd></div>
+        <div><dt>提供開始時期</dt><dd>友だち追加後、最短 3 営業日で面談実施</dd></div>
+        <div><dt>契約中止方法</dt><dd>いつでも可能です。契約期間の縛りはありません。LINE 公式アカウントのブロック、または書面でご連絡ください。</dd></div>
+        <div><dt>返品・キャンセル</dt><dd>本プログラムはサービス提供型のため、返品・返金の概念はありません。参加中止はいつでも可能です。</dd></div>
+        <div><dt>支払方法</dt><dd>成果報酬の銀行振込（月末締め・翌月末支払い、振込手数料は弊社負担）</dd></div>
+      </dl>
+    </div>
+    <footer class="tokushoho-dialog__footer">
+      <button type="button" class="tokushoho-dialog__btn" data-close-tokushoho>閉じる</button>
+    </footer>
+  </div>
+</dialog>
 
 <script src="./assets/tracking.js"></script>
 </body>

@@ -110,6 +110,29 @@
       });
     });
 
+    // ---- 特商法モーダル開閉 ----
+    try {
+      var dlg = document.getElementById('tokushoho-dialog');
+      if (dlg) {
+        var openBtns = document.querySelectorAll('[data-open-tokushoho]');
+        var closeBtns = dlg.querySelectorAll('[data-close-tokushoho]');
+        var openDialog = function () {
+          if (typeof dlg.showModal === 'function') dlg.showModal();
+          else dlg.setAttribute('open', '');
+        };
+        var closeDialog = function () {
+          if (typeof dlg.close === 'function') dlg.close();
+          else dlg.removeAttribute('open');
+        };
+        openBtns.forEach(function (b) { b.addEventListener('click', openDialog); });
+        closeBtns.forEach(function (b) { b.addEventListener('click', closeDialog); });
+        // backdrop クリックで閉じる（dialog 要素の外側クリック）
+        dlg.addEventListener('click', function (e) {
+          if (e.target === dlg) closeDialog();
+        });
+      }
+    } catch (_) {}
+
     // ---- url-map.json で CTA リンク先を動的差替 ----
     try {
       var utmCode2 = '';
