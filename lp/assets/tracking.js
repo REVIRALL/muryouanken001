@@ -1,16 +1,12 @@
-// ========== Stage 2 tracking (event_id dedup + sendBeacon) ==========
+// ========== Stage 3 tracking (Lead空砲撤去・ViewContent一本化) ==========
 // 設計:
-//   - LP 着地時に event_id (UUID) を1つ生成、sessionStorage に保存
+//   - LP 着地時に event_id (UUID) を1つ生成、sessionStorage + URL param で LIFF に引継
 //   - LP CTA クリック時:
-//       (a) fbq('track', 'Lead',        {}, { eventID })  ← 学習維持（既存運用保護）
-//       (b) fbq('track', 'ViewContent', {}, { eventID })  ← Stage 3 切替準備
-//       (c) sendBeacon で /api/capi へ ViewContent を送る（dedup 用に同じ eventID）
-//   - 遷移前に setTimeout で遅延する方式をやめ、sendBeacon で UX を改善
+//       (a) fbq('track', 'ViewContent', {}, { eventID })  ← LP側はViewContentのみ
+//       (b) sendBeacon で /api/capi へ ViewContent を送る（dedup 用に同じ eventID）
+//   - Lead 発火は LIFF 中間ページ経由 CAPI のみ（真の LINE 追加時）
+//   - sendBeacon で UX を改善（setTimeout 遅延廃止）
 //   - fbclid→_fbc cookie 保持は継続（Safari ITP 対応）
-// 空砲問題について:
-//   - 本番 Lead 発火は LIFF 中間ページ経由 CAPI のみ（真の LINE 追加時）
-//   - LP 側の fbq('Lead') は Stage 3（Meta Events Manager の最適化イベント変更後）に停止
-//   - それまでは dedup キー eventID 一致で LIFF CAPI Lead と重複排除
 // ========================================================================
 
 (function () {
@@ -69,7 +65,6 @@
     ctaNodes.forEach(function (el) {
       el.addEventListener('click', function (e) {
         if (typeof fbq === 'function') {
-          try { fbq('track', 'Lead',        {}, { eventID: eventId }); } catch (_) {}
           try {
             fbq('track', 'ViewContent', {
               content_name: 'CTA_to_LINE',
