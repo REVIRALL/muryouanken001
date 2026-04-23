@@ -23,6 +23,18 @@
   --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.06);
 
   --font-sans: -apple-system, BlinkMacSystemFont, "Yu Gothic UI", "Hiragino Sans", "Noto Sans JP", Meiryo, sans-serif;
+  --font-mincho: "Shippori Mincho", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-hand:   "Klee One", "Kaisei Decol", cursive;
+
+  /* section background rotation — 色相5-10度差で subtle に */
+  --bg-empathy:  #FFF5EC;
+  --bg-solution: #F4F7EC;
+  --bg-steps:    #FFFAE8;
+  --bg-compare:  #FFFFFF;
+  --bg-voices:   #FAF3E8;
+
+  --color-red:   #C0392B;
+  --color-yellow-marker: #FFF066;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -62,10 +74,56 @@ a { color: inherit; }
 
 /* ---------- sections ---------- */
 section { padding: 40px 0; }
-section + section { border-top: 1px solid var(--color-line); }
+section + section { border-top: 0; }
 h1, h2, h3 { color: var(--color-ink); font-weight: 900; letter-spacing: 0.01em; }
-h2 { font-size: clamp(22px, 4.8vw, 30px); line-height: 1.45; margin-bottom: 20px; text-align: center; }
+h2 { font-size: clamp(24px, 5.4vw, 34px); line-height: 1.4; margin-bottom: 20px; text-align: center; }
 h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px; }
+
+/* セクション固有の背景色で呼吸リズムを作る (page-wide ではなく内側の box で着色) */
+.empathy  { background: var(--bg-empathy); margin: 0 -20px; padding: 44px 20px; border-radius: 24px; }
+.solution { background: var(--bg-solution); margin: 32px -20px 0; padding: 44px 20px; border-radius: 24px; }
+.steps    { background: var(--bg-steps); margin: 32px -20px 0; padding: 44px 20px; border-radius: 24px; }
+.compare  { background: var(--bg-compare); margin: 32px -20px 0; padding: 44px 20px; border-radius: 24px; border: 1px solid var(--color-line); }
+.voices   { background: var(--bg-voices); margin: 32px -20px 0; padding: 44px 20px; border-radius: 24px; }
+
+/* セクション上部のキッカー（小さな英字ラベル）で情報密度を上げる */
+.section-kicker {
+  text-align: center;
+  font-family: "Shippori Mincho", serif;
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  color: var(--color-red);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* 蛍光ペン風マーカー — 40-50代に刺さる昭和雑誌技法 */
+.mark-yellow {
+  background: linear-gradient(transparent 58%, var(--color-yellow-marker) 58%);
+  padding: 0 2px;
+}
+
+/* 脇注 (手書き風) — 1ページに数カ所だけ */
+.hand-note,
+.hero__sidenote {
+  font-family: var(--font-hand);
+  color: var(--color-red);
+  font-size: 14px;
+  display: inline-block;
+  transform: rotate(-1.2deg);
+  margin: 8px 0 0 6px;
+  font-weight: 600;
+}
+
+/* 巨大数字 — operator badge 用 */
+.big-num {
+  font-family: "Shippori Mincho", serif;
+  font-weight: 800;
+  font-size: 1.6em;
+  color: var(--color-red);
+  display: inline-block;
+  line-height: 1;
+}
 
 .section-intro {
   text-align: center;
@@ -95,8 +153,10 @@ h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px;
 .hero__inner { padding-top: 24px; }
 
 .hero__h1 {
-  font-size: clamp(24px, 6.5vw, 36px);
-  line-height: 1.4;
+  font-family: var(--font-mincho);
+  font-size: clamp(28px, 8vw, 46px);
+  line-height: 1.35;
+  letter-spacing: 0.005em;
   color: var(--color-ink);
   margin-bottom: 14px;
   text-align: left;
@@ -203,9 +263,10 @@ h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px;
 }
 .operator-badge__photo { width: 64px; height: 64px; border-radius: 50%; flex-shrink: 0; }
 .operator-badge__name { font-weight: 700; font-size: clamp(14px, 3.2vw, 16px); margin-bottom: 6px; }
-.operator-badge__stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: clamp(11px, 2.4vw, 12px); }
+.operator-badge__stats { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: clamp(11px, 2.4vw, 12px); align-items: end; }
 .operator-badge__stats dt { color: var(--color-muted); }
-.operator-badge__stats dd { font-weight: 700; }
+.operator-badge__stats dd { font-weight: 700; line-height: 1; }
+.operator-badge__stats small { font-size: 0.75em; color: var(--color-muted); font-weight: 600; margin-left: 2px; }
 
 .stat-pending {
   display: inline-block;
@@ -240,53 +301,105 @@ h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px;
   font-weight: 700;
 }
 
-/* ---------- solution cards ---------- */
+/* ---------- solution cards (非対称に微調整) ---------- */
 .cards { display: grid; gap: 16px; }
 .card {
   background: #fff;
-  border-radius: var(--radius-md);
+  border-radius: 12px 18px 10px 16px; /* 四隅を微妙に不揃いに */
   padding: 18px 18px 20px;
   box-shadow: var(--shadow-card);
   border: 1px solid var(--color-line);
 }
+.card:nth-child(1) { transform: rotate(-0.3deg); }
+.card:nth-child(2) { transform: rotate(0.25deg); }
+.card:nth-child(3) { transform: rotate(-0.15deg); }
+.card h3 { font-family: var(--font-mincho); font-size: clamp(18px, 4.2vw, 22px); }
 
-/* ---------- steps ---------- */
+/* ---------- steps (付箋風見出し) ---------- */
 .steps__list { list-style: none; padding: 0; margin: 0; counter-reset: step; }
-.steps__list > li { position: relative; padding: 18px 18px 18px 68px; background: #fff; border-radius: var(--radius-md); border: 1px solid var(--color-line); box-shadow: var(--shadow-card); }
-.steps__list > li + li { margin-top: 14px; }
+.steps__list > li { position: relative; padding: 22px 18px 18px 68px; background: #fff; border-radius: 14px 18px 12px 16px; border: 1px solid var(--color-line); box-shadow: var(--shadow-card); }
+.steps__list > li + li { margin-top: 18px; }
 .steps__list > li::before {
   content: counter(step);
   counter-increment: step;
   position: absolute;
-  left: 18px;
-  top: 20px;
-  width: 38px;
-  height: 38px;
-  background: var(--color-accent);
+  left: 16px;
+  top: 18px;
+  width: 40px;
+  height: 40px;
+  background: var(--color-red);
   color: #fff;
   border-radius: 50%;
-  font-weight: 900;
-  font-size: 20px;
+  font-family: var(--font-mincho);
+  font-weight: 800;
+  font-size: 22px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: rotate(-4deg);
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.08);
+}
+.steps__list h3 {
+  font-family: var(--font-hand);
+  font-size: clamp(16px, 3.8vw, 19px);
+  font-weight: 600;
+  color: var(--color-ink);
 }
 
-/* ---------- 比較テーブル ---------- */
-.compare__table-wrap { overflow-x: auto; margin: 0 -20px; padding: 0 20px; }
+/* ---------- 比較テーブル (モバイルは縦積みカード) ---------- */
+.compare__table-wrap { margin: 0 -4px; }
 .compare__table {
   width: 100%;
   border-collapse: collapse;
-  background: #fff;
+  background: transparent;
   font-size: clamp(13px, 3vw, 15px);
+}
+.compare__table thead { display: none; }
+.compare__table tbody { display: grid; gap: 10px; }
+.compare__table tbody tr {
+  display: grid;
+  grid-template-columns: 32% 1fr;
+  background: #fff;
+  border-radius: 12px;
+  padding: 4px 0;
   box-shadow: var(--shadow-card);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--color-line);
   overflow: hidden;
 }
-.compare__table th, .compare__table td { padding: 10px 12px; text-align: left; border-bottom: 1px solid var(--color-line); }
-.compare__table thead th { background: var(--color-beige-l); font-weight: 700; }
-.compare__table tbody tr:nth-child(even) { background: #FAF6ED; }
-.compare__table tbody th { font-weight: 600; color: var(--color-muted); }
+.compare__table tbody tr th {
+  grid-column: 1 / -1;
+  padding: 10px 14px 4px;
+  background: #FFF5EC;
+  font-weight: 700;
+  color: var(--color-ink);
+  border-bottom: 1px dashed var(--color-line);
+}
+.compare__table tbody tr td {
+  padding: 10px 14px;
+  border-top: 1px solid var(--color-line);
+  position: relative;
+}
+.compare__table tbody tr td:first-of-type::before {
+  content: "他社の傾向";
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: var(--color-muted);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+.compare__table tbody tr td:last-of-type {
+  background: #F4F7EC;
+}
+.compare__table tbody tr td:last-of-type::before {
+  content: "当プログラム";
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  color: var(--color-red);
+  font-weight: 700;
+  margin-bottom: 2px;
+}
 
 /* ---------- voices ---------- */
 .voices__grid { display: grid; gap: 14px; }
@@ -315,7 +428,38 @@ h3 { font-size: clamp(17px, 3.6vw, 22px); line-height: 1.5; margin-bottom: 12px;
   margin-bottom: 6px;
 }
 .voice-card--decline { border: 1px dashed var(--color-warn-bd); }
+.voice-card--featured {
+  border: 2px solid var(--color-red);
+  box-shadow: 2px 3px 0 rgba(192,57,43,0.12), var(--shadow-card);
+  position: relative;
+}
+.voice-card--featured .voice-card__body { font-family: var(--font-mincho); font-weight: 600; }
+.sticky-tag {
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  background: #FFE066;
+  color: var(--color-ink);
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-hand);
+  transform: rotate(3deg);
+  box-shadow: 1px 2px 0 rgba(0,0,0,0.1);
+  border-radius: 3px;
+}
 .voices__note { margin-top: 14px; font-size: 12.5px; color: var(--color-muted); }
+
+/* ---------- mid-cta (中間CTA) ---------- */
+.mid-cta { margin: 28px 0 4px; text-align: center; }
+.mid-cta__label {
+  font-family: var(--font-hand);
+  color: var(--color-red);
+  font-size: 14px;
+  margin-bottom: 10px;
+  transform: rotate(-1deg);
+  display: inline-block;
+}
 
 .voice-card__avatar {
   width: 72px;

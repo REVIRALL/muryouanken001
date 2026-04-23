@@ -9,10 +9,14 @@
 <meta property="og:title" content="コミュニティ運営者の、新しい選択肢">
 <meta property="og:description" content="初期費用0・月額0・勧誘なし。LINEで15分、無料でご相談。">
 <meta property="og:type" content="website">
-<meta property="og:image" content="./assets/og_v3.jpg">
+<meta property="og:image" content="https://dairiten-muryoanken1.netlify.app/assets/og_v3.jpg">
+<meta property="og:url" content="https://dairiten-muryoanken1.netlify.app/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" as="image" href="./assets/hero_v3.webp" type="image/webp" fetchpriority="high">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Klee+One:wght@400;600&display=swap">
 <link rel="stylesheet" href="./assets/styles.css">
 
 <!-- Google Tag Manager (公式配信のみ。ローカルdumpは別Pixel混入事故のため廃止) -->
@@ -42,12 +46,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </div>
     <div class="hero__inner">
       <h1 id="hero-h1" class="hero__h1">
-        もう、商品を紹介しなくていい。
+        もう、<span class="mark-yellow">商品を紹介しなくていい</span>。
       </h1>
       <p class="hero__subhead">
         毎月みんなが払っている&ldquo;固定費&rdquo;を、<br>
         コミュニティ運営の収益に変える方法。
       </p>
+      <p class="hero__sidenote">← インフラの乗り換え相談、それだけです</p>
       <p class="hero__kicker">
         ※ 紹介するのは&ldquo;商品&rdquo;ではなく、電気・通信などインフラの見直しです。
       </p>
@@ -84,9 +89,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="operator-badge__text">
       <p class="operator-badge__name">運営: 合同会社リバイラル / 坂本 純一</p>
       <dl class="operator-badge__stats">
-        <div><dt>提携案件ジャンル</dt><dd>30<small>+</small></dd></div>
-        <div><dt>月平均成約</dt><dd>2,000<small>件+</small></dd></div>
-        <div><dt>代理店運営歴</dt><dd>3<small>年目</small></dd></div>
+        <div><dt>提携案件ジャンル</dt><dd><span class="big-num">30</span><small>+</small></dd></div>
+        <div><dt>月平均成約</dt><dd><span class="big-num">2,000</span><small>件+</small></dd></div>
+        <div><dt>代理店運営歴</dt><dd><span class="big-num">3</span><small>年目</small></dd></div>
       </dl>
     </div>
   </section>
@@ -99,6 +104,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <img src="./assets/empathy_scene.jpg" alt="スマホを見て考え込むコミュニティ運営者のイメージ" width="1200" height="960" loading="lazy" decoding="async">
       </picture>
     </div>
+    <p class="section-kicker">for Community Owners</p>
     <h2 id="empathy-h2">こんな選択肢があります</h2>
     <p class="section-intro">
       オンラインサロン主宰者・コミュニティオーナー向けに、商品販売を伴わない紹介モデルをご案内しています。
@@ -141,7 +147,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- ========== 5. 3 ステップ ========== -->
   <section class="steps" aria-labelledby="steps-h2">
-    <h2 id="steps-h2">始め方は、3 ステップ。</h2>
+    <p class="section-kicker">3 STEPS</p>
+    <h2 id="steps-h2">始め方は、<span class="mark-yellow">3 ステップだけ</span>。</h2>
     <ol class="steps__list">
       <li>
         <div>
@@ -208,6 +215,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p class="disclaimer">
       ※ 左列は広く流通している一般的な代理店プログラムの傾向を示すもので、特定のサービス・事業者を指すものではありません。
     </p>
+
+    <div class="mid-cta">
+      <p class="mid-cta__label">ここまで読んで気になったら</p>
+      <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="compare">
+        <span class="cta-btn__label">LINEで15分、話を聞いてみる</span>
+        <span class="cta-btn__sub">※ 無料・勧誘なし</span>
+      </a>
+    </div>
   </section>
 
   <!-- ========== 7. 代理店の声 Voice 1-4 ========== -->
@@ -217,7 +232,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       個人の感想であり、成果を保証するものではありません。ご本人の許諾に基づき、一部のみ掲載しています。
     </p>
     <div class="voices__grid">
-      <article class="voice-card">
+      <article class="voice-card voice-card--featured">
+        <span class="sticky-tag">よく聞く声</span>
         <picture>
           <source srcset="./assets/voice_01.webp" type="image/webp">
           <img class="voice-card__avatar" src="./assets/voice_01.jpg" alt="T さん（イメージ写真）" width="72" height="72" loading="lazy" decoding="async">
@@ -257,6 +273,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p class="voices__disclaimer">
       ※ 掲載写真はイメージです（実際の許諾を得た声をもとに、プライバシー保護のため写真は再構成しています）。
     </p>
+
+    <div class="mid-cta">
+      <p class="mid-cta__label">実際の話、気になりませんか？</p>
+      <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="voices">
+        <span class="cta-btn__label">LINEで15分、話を聞いてみる</span>
+        <span class="cta-btn__sub">※ 無料・勧誘なし</span>
+      </a>
+    </div>
   </section>
 
   <!-- ========== 8. 運営者プロフィール ========== -->
