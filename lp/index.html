@@ -36,94 +36,108 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <main class="lp-wrap">
 
-  <!-- ========== 1. HERO FV ========== -->
+  <!-- ========== 1. HERO FV (full-bleed + overlay) ========== -->
   <section class="hero" aria-labelledby="hero-h1">
     <div class="hero__bg">
       <picture>
         <source srcset="./assets/hero_v3.webp" type="image/webp">
-        <img src="./assets/hero_v3.jpg" alt="コミュニティ運営者のイメージ" width="1500" height="1200" fetchpriority="high">
+        <img src="./assets/hero_v3.jpg" alt="" width="1500" height="1200" fetchpriority="high">
       </picture>
     </div>
     <div class="hero__inner">
+      <p class="hero__kicker"><span class="mono">CHAPTER ONE</span> / 売り込まない収益設計</p>
       <h1 id="hero-h1" class="hero__h1">
-        もう、<span class="mark-yellow">商品を紹介しなくていい</span>。
+        <span class="hero__h1-line">もう、商品を</span>
+        <span class="hero__h1-line hero__h1-emph">紹介しなくていい。</span>
       </h1>
-      <p class="hero__subhead">
+      <p class="hero__lede">
         毎月みんなが払っている&ldquo;固定費&rdquo;を、<br>
         コミュニティ運営の収益に変える方法。
       </p>
-      <p class="hero__sidenote">← インフラの乗り換え相談、それだけです</p>
-      <p class="hero__kicker">
-        ※ 紹介するのは&ldquo;商品&rdquo;ではなく、電気・通信などインフラの見直しです。
-      </p>
-      <ul class="hero__bullets">
-        <li>初期費用・月額費用 0 円（成果発生までの報酬もありません）</li>
-        <li>インフラ乗り換え提案だから、勧誘色が出にくい</li>
-        <li>平均面談実施日: 申込から最短 3 営業日</li>
-      </ul>
-      <p class="disclaimer">
-        ※ 成果・報酬額は活動量や紹介先の契約内容により個人差があります。特定の収入を保証するものではありません。
-      </p>
 
-      <div class="safety-bullets" aria-label="友だち追加前の安心ポイント">
-        <ul>
-          <li>追加しても、本名・電話番号は運営側に見えません</li>
-          <li>追加＝会員登録ではありません</li>
-          <li>合わなければ、いつでもブロックで終了できます</li>
-        </ul>
-      </div>
-
-      <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="hero">
-        <span class="cta-btn__label">LINEで友だち追加 → 15分だけ、話を聞きに行く</span>
-        <span class="cta-btn__sub">※ しつこい営業・無理な勧誘は一切ありません</span>
+      <a class="cta-btn" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="hero">
+        <span>
+          <span class="cta-btn__label">LINE で、15 分だけ話を聞く</span>
+          <span class="cta-btn__sub">無料・勧誘なし・ブロック自由</span>
+        </span>
       </a>
+
+      <p class="hero__meta">
+        <span>INITIAL FEE · ¥0</span>
+        <span>MONTHLY · ¥0</span>
+        <span>MEETING · ONLINE 15min</span>
+      </p>
     </div>
   </section>
 
   <!-- ========== 2. 運営者バッジ ========== -->
-  <section class="operator-badge" aria-label="運営者バッジ">
-    <picture>
-      <source srcset="./assets/operator_badge.webp" type="image/webp">
-      <img class="operator-badge__photo" src="./assets/operator_badge.jpg" alt="運営者 坂本 純一" width="72" height="72">
-    </picture>
-    <div class="operator-badge__text">
-      <p class="operator-badge__name">運営: 合同会社リバイラル / 坂本 純一</p>
-      <dl class="operator-badge__stats">
-        <div><dt>提携案件ジャンル</dt><dd><span class="big-num">30</span><small>+</small></dd></div>
-        <div><dt>月平均成約</dt><dd><span class="big-num">2,000</span><small>件+</small></dd></div>
-        <div><dt>代理店運営歴</dt><dd><span class="big-num">3</span><small>年目</small></dd></div>
-      </dl>
+  <div class="rail-article">
+    <section class="operator-badge" aria-label="運営者バッジ">
+      <picture>
+        <source srcset="./assets/operator_badge.webp" type="image/webp">
+        <img class="operator-badge__photo" src="./assets/operator_badge.jpg" alt="運営者 坂本 純一" width="72" height="72">
+      </picture>
+      <div class="operator-badge__text">
+        <p class="operator-badge__name">運営 — 合同会社リバイラル / 坂本 純一</p>
+        <dl class="operator-badge__stats">
+          <div><dt>Categories</dt><dd>30<small>+</small></dd></div>
+          <div><dt>Monthly Deals</dt><dd>2,000<small>+</small></dd></div>
+          <div><dt>Years</dt><dd>3<small>rd</small></dd></div>
+        </dl>
+      </div>
+    </section>
+  </div>
+
+  <!-- ========== CHAPTER 02 扉 ========== -->
+  <aside class="chapter" aria-labelledby="ch02-title">
+    <div class="chapter__inner rail-wide">
+      <span class="chapter__num" aria-hidden="true">02</span>
+      <p class="chapter__kicker"><span class="mono">CHAPTER TWO</span> / 構造の違い</p>
+      <h2 class="chapter__title" id="ch02-title">
+        商品販売ではない、<br>ということ。
+      </h2>
+      <p class="chapter__lede">
+        インフラの見直しは、いま使っているものを別の窓口に替える提案です。<br>
+        新しく何かを買ってもらう話ではありません。
+      </p>
     </div>
-  </section>
+  </aside>
 
   <!-- ========== 3. 共感ブロック ========== -->
-  <section class="empathy" aria-labelledby="empathy-h2">
-    <div class="empathy__visual">
-      <picture>
-        <source srcset="./assets/empathy_scene.webp" type="image/webp">
-        <img src="./assets/empathy_scene.jpg" alt="スマホを見て考え込むコミュニティ運営者のイメージ" width="1200" height="960" loading="lazy" decoding="async">
-      </picture>
-    </div>
-    <p class="section-kicker">for Community Owners</p>
-    <h2 id="empathy-h2">こんな選択肢があります</h2>
-    <p class="section-intro">
-      オンラインサロン主宰者・コミュニティオーナー向けに、商品販売を伴わない紹介モデルをご案内しています。
-    </p>
-    <ul class="empathy__checklist">
-      <li>コミュニティ運営で、メンバーに喜ばれる収益源を探している方へ</li>
-      <li>商品販売を伴わない、関係性を壊さない紹介モデルを検討したい方へ</li>
-      <li>自分のペース・自分の色で取り組める活動を求めている方へ</li>
-      <li>成果に応じた報酬設計のプログラムを探している方へ</li>
-      <li>初期費用・在庫リスクのない仕組みを求めている方へ</li>
-    </ul>
-    <p class="empathy__close">
-      一つでも関心があれば、このページは 5 分だけ読む価値があります。
-    </p>
+  <div class="rail-article">
+    <section class="empathy" aria-labelledby="empathy-h2">
+      <p class="section-kicker">Who this is for</p>
+      <h2 id="empathy-h2">こんな選択肢があります</h2>
+      <p class="section-intro">
+        オンラインサロン主宰者・コミュニティオーナー向けに、商品販売を伴わない紹介モデルをご案内しています。
+      </p>
+      <ul class="empathy__checklist">
+        <li>コミュニティ運営で、メンバーに喜ばれる収益源を探している方へ</li>
+        <li>商品販売を伴わない、関係性を壊さない紹介モデルを検討したい方へ</li>
+        <li>自分のペース・自分の色で取り組める活動を求めている方へ</li>
+        <li>成果に応じた報酬設計のプログラムを探している方へ</li>
+        <li>初期費用・在庫リスクのない仕組みを求めている方へ</li>
+      </ul>
+      <p class="empathy__close">
+        一つでも関心があれば、このページは 5 分だけ読む価値があります。
+      </p>
+    </section>
+  </div>
+
+  <!-- ========== BREATHER 1 (写真のみ) ========== -->
+  <section class="breather" aria-hidden="true">
+    <picture class="breather__picture">
+      <source srcset="./assets/empathy_scene.webp" type="image/webp">
+      <img src="./assets/empathy_scene.jpg" alt="" loading="lazy" decoding="async" width="1200" height="960">
+    </picture>
+    <p class="breather__caption">— a quiet moment before we begin —</p>
   </section>
 
   <!-- ========== 4. 解決策（3特徴） ========== -->
-  <section class="solution" aria-labelledby="solution-h2">
-    <h2 id="solution-h2">なぜ、今までの仕組みと違うのか。</h2>
+  <div class="rail-article">
+    <section class="solution" aria-labelledby="solution-h2">
+      <p class="section-kicker">The Difference</p>
+      <h2 id="solution-h2">なぜ、今までの仕組みと違うのか。</h2>
     <p class="section-intro">
       私たちは、電力・通信などインフラ系サービスの「一次代理店」と提携し、法人契約向けの案件を、一定の基準を満たしたコミュニティオーナーだけにご案内しています。
     </p>
@@ -143,12 +157,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <p>案件選定・申込書類のサポート・報酬計算・トラブル窓口は、すべて運営側で対応します。あなたは紹介・つなぎ役に専念していただけます。</p>
       </article>
     </div>
-  </section>
+    </section>
+  </div>
 
   <!-- ========== 5. 3 ステップ ========== -->
-  <section class="steps" aria-labelledby="steps-h2">
-    <p class="section-kicker">3 STEPS</p>
-    <h2 id="steps-h2">始め方は、<span class="mark-yellow">3 ステップだけ</span>。</h2>
+  <div class="rail-article">
+    <section class="steps" aria-labelledby="steps-h2">
+      <p class="section-kicker">How it works</p>
+      <h2 id="steps-h2">始め方は、3 ステップ。</h2>
     <ol class="steps__list">
       <li>
         <div>
@@ -184,18 +200,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p class="disclaimer">
       ※ 成果報酬の具体額は、案件・契約内容により個人差があります。面談時に報酬単価の実例をご提示します。
     </p>
-  </section>
+    </section>
+  </div>
 
   <!-- ========== 6. 比較テーブル ========== -->
-  <section class="compare" aria-labelledby="compare-h2">
-    <div class="compare__visual">
-      <picture>
-        <source srcset="./assets/compare_before_after.webp" type="image/webp">
-        <img src="./assets/compare_before_after.jpg" alt="商品在庫を抱えて疲弊する姿と、スマホ一つで軽やかに紹介する姿の対比イラスト" width="1280" height="720" loading="lazy" decoding="async">
-      </picture>
-    </div>
-    <h2 id="compare-h2">よくある商品販売型プログラムとの違い</h2>
-    <p class="section-intro">（当社調べ・2026年4月時点）</p>
+  <div class="rail-article">
+    <section class="compare" aria-labelledby="compare-h2">
+      <p class="section-kicker">Comparison</p>
+      <h2 id="compare-h2">よくある商品販売型プログラムとの違い</h2>
+      <p class="section-intro">（当社調べ・2026年4月時点）</p>
     <div class="compare__table-wrap">
       <table class="compare__table">
         <thead>
@@ -217,21 +230,55 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </p>
 
     <div class="mid-cta">
-      <p class="mid-cta__label">ここまで読んで気になったら</p>
-      <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="compare">
-        <span class="cta-btn__label">LINEで15分、話を聞いてみる</span>
-        <span class="cta-btn__sub">※ 無料・勧誘なし</span>
+      <p class="mid-cta__label">Take the first step</p>
+      <a class="cta-btn" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="compare">
+        <span>
+          <span class="cta-btn__label">LINE で、15 分だけ話を聞く</span>
+          <span class="cta-btn__sub">無料・勧誘なし</span>
+        </span>
       </a>
     </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- ========== 7. 代理店の声 Voice 1-4 ========== -->
-  <section class="voices" aria-labelledby="voices-h2">
-    <h2 id="voices-h2">すでに始めている方の声</h2>
-    <p class="disclaimer">
-      個人の感想であり、成果を保証するものではありません。ご本人の許諾に基づき、一部のみ掲載しています。
-    </p>
-    <div class="voices__grid">
+  <!-- ========== PULL-QUOTE 1 (Voice を引用として抜き出し) ========== -->
+  <div class="rail-narrow">
+    <figure class="pullquote">
+      <span class="pullquote__mark" aria-hidden="true">&ldquo;</span>
+      <blockquote class="pullquote__body">
+        紹介するだけではなく、契約サポートを運営がやってくれる点が助かりました。
+        メンバーに&ldquo;教えてくれてありがとう&rdquo;と言われる関係性が作れています。
+      </blockquote>
+      <figcaption class="pullquote__attr">
+        <span class="pullquote__name">T さん</span>
+        <span>30 代女性 ／ オンラインサロン主宰</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <!-- ========== CHAPTER 03 扉 ========== -->
+  <aside class="chapter" aria-labelledby="ch03-title">
+    <div class="chapter__inner rail-wide">
+      <span class="chapter__num" aria-hidden="true">03</span>
+      <p class="chapter__kicker"><span class="mono">CHAPTER THREE</span> / 静かに始めた方々</p>
+      <h2 class="chapter__title" id="ch03-title">
+        すでに、<br>始めている声。
+      </h2>
+      <p class="chapter__lede">
+        一度だけの許諾のもと、プライバシーに配慮して再構成した声を掲載しています。
+      </p>
+    </div>
+  </aside>
+
+  <!-- ========== 7. 代理店の声 Voice 2-4 (featured=T さんは Pull-quote に昇格) ========== -->
+  <div class="rail-article">
+    <section class="voices" aria-labelledby="voices-h2">
+      <p class="section-kicker">Voices</p>
+      <h2 id="voices-h2">そのほかの声</h2>
+      <p class="disclaimer">
+        個人の感想であり、成果を保証するものではありません。ご本人の許諾に基づき、一部のみ掲載しています。
+      </p>
+      <div class="voices__grid">
       <article class="voice-card voice-card--featured">
         <span class="sticky-tag">よく聞く声</span>
         <picture>
@@ -270,22 +317,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p class="voices__note">
       ※ 合わないと判断された方の声も、そのまま掲載しています。フラットにご判断いただくための参考情報です。
     </p>
-    <p class="voices__disclaimer">
-      ※ 掲載写真はイメージです（実際の許諾を得た声をもとに、プライバシー保護のため写真は再構成しています）。
-    </p>
+      <p class="voices__disclaimer">
+        ※ 写真は撤去し、本人の許諾に基づく声のみを掲載しています。プライバシー保護のため具体的属性は一部編集しています。
+      </p>
+    </section>
+  </div>
 
-    <div class="mid-cta">
-      <p class="mid-cta__label">実際の話、気になりませんか？</p>
-      <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="voices">
-        <span class="cta-btn__label">LINEで15分、話を聞いてみる</span>
-        <span class="cta-btn__sub">※ 無料・勧誘なし</span>
-      </a>
-    </div>
+  <!-- ========== BREATHER 2 (写真のみ) ========== -->
+  <section class="breather" aria-hidden="true">
+    <picture class="breather__picture">
+      <source srcset="./assets/compare_before_after.webp" type="image/webp">
+      <img src="./assets/compare_before_after.jpg" alt="" loading="lazy" decoding="async" width="1280" height="720">
+    </picture>
+    <p class="breather__caption">— about the operator —</p>
   </section>
 
   <!-- ========== 8. 運営者プロフィール ========== -->
-  <section class="operator" aria-labelledby="operator-h2">
-    <h2 id="operator-h2">運営者について</h2>
+  <div class="rail-article">
+    <section class="operator" aria-labelledby="operator-h2">
+      <p class="section-kicker">Operator</p>
+      <h2 id="operator-h2">運営者について</h2>
     <div class="operator__head">
       <picture>
         <source srcset="./assets/operator_profile.webp" type="image/webp">
@@ -308,11 +359,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       （立証資料は事業者にて保管、景品表示法第 7 条 2 項に基づき
       ご請求受付後 15 営業日以内に開示可能）。
     </p>
-  </section>
+    </section>
+  </div>
 
   <!-- ========== 9. こんな方におすすめ ========== -->
-  <section class="recommend" aria-labelledby="recommend-h2">
-    <h2 id="recommend-h2">特にフィットするのは、こんな方です。</h2>
+  <div class="rail-article">
+    <section class="recommend" aria-labelledby="recommend-h2">
+      <p class="section-kicker">Best fit</p>
+      <h2 id="recommend-h2">特にフィットするのは、こんな方です。</h2>
     <ul class="recommend__list">
       <li>オンラインサロン・コミュニティを運営している方</li>
       <li>商品販売型プログラムからの移行を検討している方</li>
@@ -323,11 +377,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p class="disclaimer">
       ※ お取り扱い案件により、コミュニティ規模・属性の目安が変わります。面談時に、最適な選択肢をご提案いたします。
     </p>
-  </section>
+    </section>
+  </div>
 
   <!-- ========== 10. FAQ ========== -->
-  <section class="faq" aria-labelledby="faq-h2">
-    <h2 id="faq-h2">よくある質問</h2>
+  <div class="rail-article">
+    <section class="faq" aria-labelledby="faq-h2">
+      <p class="section-kicker">Questions</p>
+      <h2 id="faq-h2">よくある質問</h2>
     <dl class="faq__list">
       <div>
         <dt>Q1. LINE 登録したら、すぐに勧誘されますか？</dt>
@@ -374,11 +431,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <dd>契約上、面談で秘密保持条項にご同意いただいた上でご提示しています。ご関心があれば、まず 15 分面談でお気軽にご確認ください。</dd>
       </div>
     </dl>
-  </section>
+    </section>
+  </div>
 
   <!-- ========== 11. 希少性 ========== -->
-  <section class="scarcity" aria-labelledby="scarcity-h2">
-    <h2 id="scarcity-h2" class="scarcity__h2">個別対応のため、面談枠には上限があります</h2>
+  <div class="rail-article">
+    <section class="scarcity" aria-labelledby="scarcity-h2">
+      <h2 id="scarcity-h2" class="scarcity__h2">個別対応のため、面談枠には上限があります</h2>
     <p class="scarcity__body">1 枠 = 1 コミュニティの原則で、個別対応の質を保つためです。</p>
     <p class="scarcity__slots">
       当月の残り枠は、LINE 友だち追加後の自動案内でお知らせします。
@@ -386,29 +445,35 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <p class="disclaimer">
       ※ 枠数は自社基準による面談受入能力を示すもので、消化状況により締切日は前倒しされる場合があります。
     </p>
-  </section>
+    </section>
+  </div>
 
-  <!-- ========== 12. 最終 CTA ========== -->
+  <!-- ========== EPILOGUE / 最終 CTA (noir bleed) ========== -->
   <section class="final-cta" aria-labelledby="final-h2">
-    <h2 id="final-h2">まずは、15 分だけ話を聞きに来てください。</h2>
-    <p>
-      LINE 登録後、ヒアリング面談の日程を自動でご案内します。<br>
-      面談はオンライン（Zoom）、完全無料です。<br>
-      合わなさそうと感じたら、そこで終わりにしていただいて大丈夫です。
-    </p>
+    <div class="rail-article">
+      <p class="chapter__kicker"><span class="mono">EPILOGUE</span> / はじめの 15 分</p>
+      <h2 id="final-h2">まずは、15 分だけ話を聞きに来てください。</h2>
+      <p>
+        LINE 登録後、ヒアリング面談の日程を自動でご案内します。<br>
+        面談はオンライン（Zoom）、完全無料です。<br>
+        合わなさそうと感じたら、そこで終わりにしていただいて大丈夫です。
+      </p>
 
-    <div class="safety-bullets" aria-label="友だち追加前の安心ポイント（再掲）">
-      <ul>
-        <li>追加しても、本名・電話番号は運営側に見えません</li>
-        <li>追加＝会員登録ではありません</li>
-        <li>合わなければ、いつでもブロックで終了できます</li>
-      </ul>
+      <div class="safety-bullets" aria-label="友だち追加前の安心ポイント">
+        <ul>
+          <li>追加しても、本名・電話番号は運営側に見えません</li>
+          <li>追加＝会員登録ではありません</li>
+          <li>合わなければ、いつでもブロックで終了できます</li>
+        </ul>
+      </div>
+
+      <a class="cta-btn" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="final">
+        <span>
+          <span class="cta-btn__label">LINE で、15 分だけ話を聞く</span>
+          <span class="cta-btn__sub">無料・勧誘なし・ブロック自由</span>
+        </span>
+      </a>
     </div>
-
-    <a class="cta-btn cta-btn--primary" href="https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx" data-cta="final">
-      <span class="cta-btn__label">LINEで友だち追加 → 15分だけ、話を聞きに行く</span>
-      <span class="cta-btn__sub">※ しつこい営業・無理な勧誘は一切ありません</span>
-    </a>
   </section>
 
 </main>
