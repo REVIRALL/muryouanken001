@@ -1376,12 +1376,20 @@ a:not(.btn):not(.skip-link):hover { background-size: 100% 1px; }
   border-top: 1px solid var(--c-border);
   flex-wrap: wrap;
 }
-.footer__links a {
+.footer__links a,
+.footer__link-btn {
   color: var(--c-deepred);
   text-decoration: underline;
   font-weight: 600;
   font-size: 13px;
+  font-family: var(--font-sans);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
+.footer__link-btn:hover { opacity: .8; }
+.footer__link-btn:focus-visible { outline: 2px solid var(--c-highlight); outline-offset: 3px; }
 .footer__copy {
   margin-top: var(--space-5);
   font-size: 11px;
@@ -1504,6 +1512,70 @@ body.scroll-lock .cookie-consent { display: none; }
 .modal__close:focus-visible {
   outline: 3px solid var(--c-highlight);
   outline-offset: 2px;
+}
+
+/* Legal modal (特商法表記) */
+.modal__panel--legal {
+  padding: 56px 24px 24px;
+}
+@media (min-width: 720px) {
+  .modal__panel--legal { padding: 56px 40px 32px; }
+}
+.modal__title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(20px, 5.2vw, 26px);
+  letter-spacing: -.02em;
+  color: var(--c-primary);
+  margin-bottom: var(--space-5);
+  padding-bottom: var(--space-3);
+  border-bottom: 2px solid var(--c-text);
+  font-feature-settings: "palt", "kern" 1;
+}
+.modal__body { margin-bottom: var(--space-5); }
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.75;
+}
+.legal-table th,
+.legal-table td {
+  padding: 12px 8px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--c-bg-tint);
+}
+.legal-table th {
+  width: 9em;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--c-primary);
+  background: var(--c-bg-soft);
+  white-space: nowrap;
+  letter-spacing: .04em;
+}
+.legal-table td {
+  font-family: var(--font-serif);
+  color: var(--c-text);
+}
+@media (max-width: 540px) {
+  .legal-table, .legal-table tbody, .legal-table tr,
+  .legal-table th, .legal-table td { display: block; width: auto; }
+  .legal-table tr { padding: 10px 0; border-bottom: 1px solid var(--c-bg-tint); }
+  .legal-table tr:last-child { border-bottom: 0; }
+  .legal-table th {
+    background: transparent;
+    padding: 0 0 4px;
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: var(--c-text-muted);
+  }
+  .legal-table td { padding: 0; font-size: 14px; }
+}
+.modal__footer {
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--c-bg-tint);
 }
 
 /* Quiz */

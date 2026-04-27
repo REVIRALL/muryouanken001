@@ -399,6 +399,45 @@
       }
     });
 
+    // 特商法表記モーダル
+    var tokushohoModal = $('#tokushoho-modal');
+    function openTokushoho() {
+      if (!tokushohoModal) return;
+      tokushohoModal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('scroll-lock');
+      var closeBtn = tokushohoModal.querySelector('.modal__close');
+      if (closeBtn) setTimeout(function(){ closeBtn.focus(); }, 50);
+    }
+    function closeTokushoho() {
+      if (!tokushohoModal) return;
+      tokushohoModal.setAttribute('aria-hidden', 'true');
+      if (!modal || modal.getAttribute('aria-hidden') === 'true') {
+        document.body.classList.remove('scroll-lock');
+      }
+    }
+    $$('[data-action="open-tokushoho"]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        openTokushoho();
+      });
+    });
+    $$('[data-action="close-tokushoho"]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        closeTokushoho();
+      });
+    });
+    if (tokushohoModal) {
+      tokushohoModal.addEventListener('click', function (e) {
+        if (e.target === this) closeTokushoho();
+      });
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && tokushohoModal && tokushohoModal.getAttribute('aria-hidden') === 'false') {
+        closeTokushoho();
+      }
+    });
+
     // Quiz choice clicks (delegated)
     document.addEventListener('click', function (e) {
       var c = e.target.closest && e.target.closest('.quiz__choice');
