@@ -9,6 +9,19 @@
 [build.processing.html]
   pretty_urls = true
 
+# 旧LP (Lead 0件) を v2 LP に強制リダイレクト
+[[redirects]]
+  from = "/"
+  to = "/v2/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/index.html"
+  to = "/v2/"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/privacy"
   to = "/privacy/index.html"
