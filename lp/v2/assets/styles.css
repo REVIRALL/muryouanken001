@@ -216,6 +216,35 @@ a:not(.btn):not(.skip-link):hover { background-size: 100% 1px; }
   margin-top: var(--space-3);
   line-height: 1.7;
 }
+
+/* ---------- Locked-line headings (全デバイスで指定行数を死守) ---------- */
+/* 各 .ln を強制改行ブロック化＋nowrapで折返し禁止、文字サイズはコンテナ幅から自動縮小 */
+.section__title--lock,
+.reframe__big--lock,
+.final__title--lock {
+  word-break: keep-all;
+  overflow-wrap: normal;
+  white-space: normal;
+  container-type: inline-size;
+}
+.section__title--lock .ln,
+.reframe__big--lock .ln,
+.final__title--lock .ln {
+  display: block;
+  white-space: nowrap;
+  /* 親font-sizeか、コンテナ幅÷文字数(95%余裕)の小さい方 → 必ず1行に収まる */
+  font-size: min(1em, calc(95cqi / var(--ln-len, 14)));
+  line-height: 1.18;
+  margin: 0;
+}
+/* @container 非対応環境のフォールバック: vw で抑える */
+@supports not (container-type: inline-size) {
+  .section__title--lock .ln,
+  .reframe__big--lock .ln,
+  .final__title--lock .ln {
+    font-size: min(1em, calc(88vw / var(--ln-len, 14)));
+  }
+}
 .section__lead {
   font-family: var(--font-sans);
   font-size: 16px;
