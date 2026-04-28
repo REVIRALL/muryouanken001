@@ -351,6 +351,19 @@
     var origin = (opts && opts.origin) || 'cta';
     var eventId = uid();
 
+    // クイズ未経由のLINE直行クリックではLeadも併発
+    // (クイズ完了経由は showResult() で既にLead発火済み)
+    if (origin !== 'quiz_result') {
+      fireEvent('Lead', {
+        content_name: 'line_direct',
+        content_category: 'agency_program',
+        origin: origin,
+        value: QUIZ_LEAD_VALUE,
+        currency: LEAD_CURRENCY,
+        utm_code: utmCode
+      });
+    }
+
     fireEvent('CompleteRegistration', {
       content_name: 'line_cta',
       content_category: 'agency_program',
