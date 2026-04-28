@@ -27,21 +27,20 @@
 <link rel="stylesheet" href="./assets/styles.css?v=20260427">
 <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
-<!-- Meta Pixel — Consent Mode v2 対応: 同意取得まで完全保留 -->
+<!-- Meta Pixel — Implicit Consent (JP): デフォルトgrant、明示的にdeniedの場合のみ停止 -->
 <script>
 window.dataLayer = window.dataLayer || [];
 (function(){
-  // 同意状態を最初に確認
-  var initialConsent = 'revoke';
-  try {
-    if (localStorage.getItem('cookie_consent') === 'granted') initialConsent = 'grant';
-  } catch (e) {}
+  // JP法令準拠: 個情法・特商法はopt-out方式で適法。明示的にdeclineされた場合のみ停止
+  var stored = null;
+  try { stored = localStorage.getItem('cookie_consent'); } catch (e) {}
+  var initialConsent = (stored === 'denied') ? 'revoke' : 'grant';
   window.__consentGranted = (initialConsent === 'grant');
 
-  // Pixelスタブを準備（loadはまだ）
+  // Pixelスタブを準備
   !function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[]);}(window,document,"script");
 
-  // Pixelスクリプト読込関数（先に定義、後で呼ぶ）
+  // Pixelスクリプト読込関数
   window.__loadFbq = function(){
     if (window.__fbqLoaded) return;
     window.__fbqLoaded = true;
@@ -58,14 +57,14 @@ window.dataLayer = window.dataLayer || [];
     };
   };
 
-  // 既定で全Cookie保留 → 同意済みなら即時許可
+  // 明示的拒否でない限り即時ロード
   fbq('consent', initialConsent);
   if (initialConsent === 'grant') {
     window.__loadFbq();
   }
 })();
 </script>
-<noscript><!-- noscript Pixel は同意不可環境のため意図的に削除 --></noscript>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2450922202046153&ev=PageView&noscript=1" alt=""></noscript>
 
 <!-- JSON-LD: Service -->
 <script type="application/ld+json">
