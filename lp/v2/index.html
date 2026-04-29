@@ -40,7 +40,7 @@ window.dataLayer = window.dataLayer || [];
   // Pixelスタブを準備
   !function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[]);}(window,document,"script");
 
-  // Pixelスクリプト読込関数
+  // Pixelスクリプト読込関数（onload待ちせず init/PageView をスタブキューに即積む）
   window.__loadFbq = function(){
     if (window.__fbqLoaded) return;
     window.__fbqLoaded = true;
@@ -50,16 +50,14 @@ window.dataLayer = window.dataLayer || [];
     s.src = 'https://connect.facebook.net/en_US/fbevents.js';
     var f = document.getElementsByTagName('script')[0];
     f.parentNode.insertBefore(s, f);
-    s.onload = function(){
-      fbq('consent', 'grant');
-      fbq('init', '2450922202046153');
-      fbq('track', 'PageView');
-    };
   };
 
   // 明示的拒否でない限り即時ロード
   fbq('consent', initialConsent);
   if (initialConsent === 'grant') {
+    // fbevents.jsのロード完了を待たずキューに積む(ロード後にqueueから自動消化)
+    fbq('init', '2450922202046153');
+    fbq('track', 'PageView');
     window.__loadFbq();
   }
 })();
