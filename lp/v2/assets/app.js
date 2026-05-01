@@ -260,7 +260,7 @@
     var cEl = $('#result-cases'); if (cEl) cEl.textContent = rt.caseCount;
     $('#result-body').textContent = rt.body;
     var ctaEl = $('#result-cta-text');
-    if (ctaEl) ctaEl.textContent = rt.caseCount + 'の案件サンプルをLINEで受け取る';
+    if (ctaEl) ctaEl.textContent = rt.caseCount + 'の案件サンプルを今すぐLINEで受け取る';
 
     fireEvent('Lead', {
       content_name: 'quiz_complete',

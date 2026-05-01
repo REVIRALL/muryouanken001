@@ -1849,3 +1849,45 @@ body.scroll-lock .cookie-consent { display: none; }
   font-style: italic;
 }
 
+
+/* ============== Result Assurance (v2.1 — 2026-05-01) ============== */
+.result__assurance {
+  list-style: none;
+  margin: 0 0 14px 0;
+  padding: 14px 16px;
+  background: var(--c-accent-soft);
+  border-left: 3px solid var(--c-accent);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--c-text);
+}
+.result__assurance li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 500;
+}
+.result__assurance strong {
+  font-weight: 700;
+}
+.result__check {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--c-accent);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+}
+@media (max-width: 480px) {
+  .result__assurance { padding: 12px 14px; font-size: 13px; }
+}
