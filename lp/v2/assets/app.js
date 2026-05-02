@@ -12,8 +12,10 @@
 
   var PIXEL_ID = '2450922202046153';
   var LINE_URL_BASE = 'https://s.lmes.jp/landing-qr/2009804039-gtVVGAua?uLand=tas1Lx';
-  var QUIZ_LEAD_VALUE = 500;             // 診断完了 = 半熱
-  var LINE_REGISTRATION_VALUE = 3000;     // LINEクリック = 本熱
+  // 真の事業価値: 面談1件¥30,000 / 診断完了は半熱なので¥3,000 (1/10)
+  // Meta CV最適化が高価値Lead優先化されるよう、記録ROAS実態に合わせて引き上げ (2026-05-02)
+  var QUIZ_LEAD_VALUE = 3000;             // 診断完了 = 半熱 (旧¥500 → ¥3,000)
+  var LINE_REGISTRATION_VALUE = 30000;    // LINEクリック = 本熱・面談1件相当 (旧¥3,000 → ¥30,000)
   var LEAD_CURRENCY = 'JPY';
 
   // --- Utilities ---
@@ -384,8 +386,26 @@
     window.location.href = buildLineUrl(origin);
   }
 
+  // --- UTM動的キーワード挿入 (2026-05-02): utm_contentでh1切替 ---
+  // CV勝者(35-44女性)向けに見出しトーンを最適化、男性層は別フレーム
+  function applyDynamicHeadline() {
+    try {
+      var content = new URLSearchParams(window.location.search).get('utm_content') || '';
+      var h1 = $('.hero__title');
+      if (!h1 || !content) return;
+      if (content === 'female_3554' || content === 'female') {
+        h1.innerHTML = '集めた会員リストを、<br>信用を壊さずに、<br><em>月収に。</em>';
+      } else if (content === 'male_3544' || content === 'male') {
+        h1.innerHTML = '眠っている人脈を、<br>信用を壊さずに、<br><em>副収入に。</em>';
+      }
+      pushDataLayer({ event: 'dynamic_headline', utm_content: content });
+    } catch (e) { /* swallow */ }
+  }
+
   // --- Boot ---
   document.addEventListener('DOMContentLoaded', function () {
+    applyDynamicHeadline();
+
     // Quiz open buttons
     $$('[data-action="open-quiz"]').forEach(function (el) {
       el.addEventListener('click', function (e) {
