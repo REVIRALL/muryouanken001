@@ -1,0 +1,135 @@
+{
+  "schema_version": "1.0",
+  "share_pct_total_check": 100,
+  "weighted_avg_cpa_target_jpy": 96800,
+  "segments": [
+    {
+      "segment": "AAA",
+      "match_personas": ["P3"],
+      "share_pct": 8,
+      "share_pct_confidence": "medium",
+      "cpa_target_jpy": 300000,
+      "cpa_acceptable_max_jpy": 500000,
+      "ltv_estimate_jpy": 1500000,
+      "qualification_signals": [
+        "既にチーム15名以上",
+        "月商15万以上",
+        "自己投資累計100万以上",
+        "Zoom予約を即取る決断力"
+      ],
+      "disqualification_signals": [
+        "コミュニティ運営経験5年未満",
+        "決裁権なし"
+      ],
+      "messaging_angle": "あなたのチーム独自のブランドを次のステージに — メンバー還元の仕組みで",
+      "lp_block_emphasis": [
+        "Block 7: 主宰者ストーリー4幕",
+        "Block 6: 事例3-5名（同規模主宰者の声）",
+        "Block 10: FAQ価格透明性",
+        "Block 1: Hero CTA直行"
+      ],
+      "line_step_strategy": "immediate_zoom"
+    },
+    {
+      "segment": "AA",
+      "match_personas": ["P1"],
+      "share_pct": 22,
+      "share_pct_confidence": "high",
+      "cpa_target_jpy": 176000,
+      "cpa_acceptable_max_jpy": 293000,
+      "ltv_estimate_jpy": 880000,
+      "qualification_signals": [
+        "チーム5-50名運営中",
+        "月商3-30万",
+        "副業3年以上経験",
+        "自己投資累計30万以上"
+      ],
+      "disqualification_signals": [
+        "コミュニティ未保有",
+        "メンバー還元に興味なし",
+        "短期副業のみ目的"
+      ],
+      "messaging_angle": "もう紹介する友達がリストに残ってない、と感じたら — 勧誘ゼロでチームが広がる仕組み",
+      "lp_block_emphasis": [
+        "Block 2: 共感チェックリスト7項目（pain_internal_monologue原文転載）",
+        "Block 6: 事例3-5名",
+        "Block 4: 解決枠組3ステップ",
+        "Block 10: FAQ「これはMLMですか？」"
+      ],
+      "line_step_strategy": "7day_education"
+    },
+    {
+      "segment": "A",
+      "match_personas": ["P2"],
+      "share_pct": 28,
+      "share_pct_confidence": "medium",
+      "cpa_target_jpy": 86000,
+      "cpa_acceptable_max_jpy": 150000,
+      "ltv_estimate_jpy": 600000,
+      "qualification_signals": [
+        "チーム5-15名（駆け出し）",
+        "月商3-10万",
+        "副業1-3年",
+        "ライト¥30kなら検討可能"
+      ],
+      "disqualification_signals": [
+        "コミュニティ未保有",
+        "月予算¥30k困難"
+      ],
+      "messaging_angle": "ライトプランから始められる、メンバー還元の最初の一歩",
+      "lp_block_emphasis": [
+        "Block 3: 問題提起",
+        "Block 4: 解決枠組3ステップ",
+        "Block 5: メソッド説明",
+        "無料動画オファー"
+      ],
+      "line_step_strategy": "30day_nurture"
+    },
+    {
+      "segment": "B",
+      "match_personas": ["P4", "P5部分"],
+      "share_pct": 25,
+      "share_pct_confidence": "low",
+      "cpa_target_jpy": 40000,
+      "cpa_acceptable_max_jpy": 80000,
+      "ltv_estimate_jpy": 400000,
+      "qualification_signals": [
+        "コミュニティ運営の意思はある",
+        "現状予算は厳しいが将来検討"
+      ],
+      "disqualification_signals": [
+        "完全に副業初心者",
+        "メンバー還元の意図不明"
+      ],
+      "messaging_angle": "今すぐじゃなくていい。準備だけしておきませんか",
+      "lp_block_emphasis": [
+        "Block 2: 共感ブロック",
+        "無料コンテンツDL（メイン）",
+        "Block 8 価格は控えめ提示"
+      ],
+      "line_step_strategy": "30day_nurture"
+    },
+    {
+      "segment": "C",
+      "match_personas": [],
+      "share_pct": 17,
+      "share_pct_confidence": "medium",
+      "cpa_target_jpy": 0,
+      "cpa_acceptable_max_jpy": -1,
+      "ltv_estimate_jpy": 0,
+      "qualification_signals": [],
+      "disqualification_signals": [
+        "自分のコミュニティ・チームをまだ持っていない",
+        "メンバーへの還元・貢献に興味がない",
+        "短期的な小遣い稼ぎだけを探している",
+        "『楽して稼げる』『不労所得』を期待"
+      ],
+      "messaging_angle": "私たちのサービスは、すでにチームをお持ちの方に向けています — まずはコミュニティ作りから",
+      "lp_block_emphasis": [
+        "Block 9: 対象外宣言（必須・第3スクロール内）",
+        "Block 10: FAQ「対象は？」"
+      ],
+      "line_step_strategy": "exclude"
+    }
+  ]
+}

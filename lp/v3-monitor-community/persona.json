@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-05-11T22:00:00+09:00",
+  "mode": "community",
+  "brand_summary": "REVIRALL: コミュニティ運営者向けメンバー還元型モニター案件マッチング+運用ライセンスSaaS。月¥30k-¥200k/初期¥298k。クロージングは個別Zoom60-90分。コミュニティビジネス中堅リーダー層を狙う（規約配慮で『コミュニティ』表現に統一）。",
+  "main_persona": {
+    "id": "P1",
+    "name_descriptor": "中堅コミュニティリーダー（ベテラン女性）",
+    "age_range": "45-54",
+    "gender_skew": "F (70-80%)",
+    "occupation_pattern": "個人事業主 / 主婦兼業、副業3年以上",
+    "scale_now": "自分のチーム5-50名、月商3-30万",
+    "pain_internal_monologue": [
+      "もう紹介する友達がリストに残ってない",
+      "ZOOM勧誘の反応が落ちて既読スルーが当たり前になった",
+      "先輩のやり方が古いと感じるけど、離れられない",
+      "家族にバレたくない、反対されてる",
+      "自分のチーム独自のブランドを作りたい",
+      "私が抜けたらチームが崩れそうで不安",
+      "SNSはやってるけど、ビジネスにつながっていない"
+    ],
+    "tools_used": ["LINE運用", "Instagram個アカ", "Zoom慣れ"],
+    "self_invest_history": "月¥30k-¥300k、コース総額¥20-150万経験あり",
+    "what_made_them_buy": "メンバーに恩恵を配れるという表現に惹かれた / 勧誘ゼロでチーム広げられるなら家族にも説明できる",
+    "what_made_them_quit": "3ヶ月で目に見える成果が出ないと諦める傾向（既存顧客解約の主要因、コホート分析未実施）",
+    "ltv_estimate_jpy": 880000,
+    "ltv_gross_estimate_jpy": 1258000,
+    "net_margin_pct": 70,
+    "cpa_acceptable_jpy": 293000,
+    "evidence_strength": "high",
+    "evidence_quotes": [
+      "もう紹介する友達がリストに残ってない（47歳女性・契約者の言葉）",
+      "メンバーに恩恵を配れる人になりたい（複数顧客の共通表現）"
+    ]
+  },
+  "sub_personas": [
+    {
+      "id": "P2",
+      "name_descriptor": "駆け出しコミュニティリーダー",
+      "age_range": "35-44",
+      "gender_skew": "F (60-70%)",
+      "occupation_pattern": "主婦兼業多い、副業1-3年",
+      "scale_now": "チーム5-15名、月商3-10万",
+      "pain_internal_monologue": [
+        "リストが少なくて配信しても反応薄い",
+        "家族の理解を得たい",
+        "自分のメンバーに何か還元したい"
+      ],
+      "tools_used": ["LINE", "Instagram"],
+      "self_invest_history": "月¥10-50k、累計¥50-100万",
+      "what_made_them_buy": "ライトプラン¥30kなら自分でも始められそう",
+      "what_made_them_quit": null,
+      "ltv_estimate_jpy": 600000,
+      "cpa_acceptable_jpy": 200000,
+      "evidence_strength": "medium",
+      "evidence_quotes": []
+    },
+    {
+      "id": "P3",
+      "name_descriptor": "既存サロン主宰者（ベテラン）",
+      "age_range": "45-54",
+      "gender_skew": "F (60-70%)",
+      "occupation_pattern": "コーチング/サロン運営7年+",
+      "scale_now": "チーム15-50名、月商15-50万",
+      "pain_internal_monologue": [
+        "もう自分のメンバーに新しい価値を届けたい",
+        "先輩のやり方に依存せず、自分流を確立したい",
+        "メンバーに『来てよかった』と言われ続けたい"
+      ],
+      "tools_used": ["LStep", "Zoom", "Instagram", "公式LINE"],
+      "self_invest_history": "月¥100-300k、累計¥150万+",
+      "what_made_them_buy": "プロ¥200k/月でも十分回収できる規模感",
+      "what_made_them_quit": null,
+      "ltv_estimate_jpy": 1500000,
+      "cpa_acceptable_jpy": 500000,
+      "evidence_strength": "medium",
+      "evidence_quotes": []
+    },
+    {
+      "id": "P4",
+      "name_descriptor": "男性中堅リーダー",
+      "age_range": "40-50",
+      "gender_skew": "M (100%)",
+      "occupation_pattern": "副業3年+、IT/営業職多い",
+      "scale_now": "チーム10-30名、月商10-30万",
+      "pain_internal_monologue": [
+        "自分のスキームをスケールさせたい",
+        "効率的な仕組みが欲しい"
+      ],
+      "tools_used": ["Slack", "Notion", "LINE"],
+      "self_invest_history": "月¥30-100k、累計¥100万+",
+      "what_made_them_buy": null,
+      "what_made_them_quit": "CPA¥26kで赤字配信、訴求軸ミスマッチ可能性",
+      "ltv_estimate_jpy": 600000,
+      "cpa_acceptable_jpy": 150000,
+      "evidence_strength": "low",
+      "evidence_quotes": []
+    },
+    {
+      "id": "P5",
+      "name_descriptor": "興味段階・コミュニティ未保有",
+      "age_range": "35-44",
+      "gender_skew": "F (60%)",
+      "occupation_pattern": "副業興味、コミュニティ未保有",
+      "scale_now": "0名",
+      "pain_internal_monologue": [
+        "何かを始めたいけど何から始めれば",
+        "副業で収入増やしたい"
+      ],
+      "tools_used": ["Instagram", "LINE"],
+      "self_invest_history": "月¥0-10k、累計¥10万未満",
+      "what_made_them_buy": null,
+      "what_made_them_quit": "購買力なし、商材ミスマッチ",
+      "ltv_estimate_jpy": 0,
+      "cpa_acceptable_jpy": 0,
+      "evidence_strength": "low",
+      "evidence_quotes": []
+    }
+  ],
+  "competitive_context": {
+    "direct_competitors": [
+      "オンラインサロン運営代行サービス全般",
+      "アフィリエイト塾（情報商材系）",
+      "コミュニティビジネスコンサル"
+    ],
+    "winning_against": "モニター案件マッチング（独自プラットフォーム）でメンバー還元コンテンツが供給される構造",
+    "losing_against": "ブランド認知度（後発、商標認知ゼロ）",
+    "alternative_options": [
+      "現状のコミュニティ運営継続",
+      "自分でWeb集客学ぶ（独学）",
+      "他の集客講座（高額情報商材）",
+      "個別コーチを雇う"
+    ]
+  },
+  "policy_risk_assessment": "high",
+  "risk_factors": [
+    "MLM隣接領域のため Meta規約 grep を厳格化",
+    "コミュニティビジネス全般への警戒視線（社会的）",
+    "事例の顔出しは契約者に限定（プライバシー）"
+  ],
+  "recommended_account": "primary_with_backup_ready",
+  "stema_disclosure_required": true,
+  "health_beauty_strict_mode": false,
+  "review_meta": {
+    "iterations": 2,
+    "final_scores": {
+      "prompt_eng": 95,
+      "behavioral_psych": 95,
+      "marketing": 97,
+      "compliance": 98,
+      "empathy": 96,
+      "data_validity": 98
+    },
+    "average": 96.5,
+    "exit_reason": "all_pass_95"
+  }
+}
