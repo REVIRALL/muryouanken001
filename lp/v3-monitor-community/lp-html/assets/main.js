@@ -1,312 +1,335 @@
 /* ==============================================
-   REVIRALL community-monitor LP v3 - main.js
-   - CTA tracking (Pixel + CAPI hook placeholders)
-   - IntersectionObserver: ViewContent + scroll depth
-   - Exit Intent (PC only, 1回限り via sessionStorage)
-   - FAQ Q1 open tracking
-   - Year stamp
+   REVIRALL community-monitor LP v3.0.0 (福利厚生軸)
+   - Cookie consent gate (改正個情法27条 + Meta Consent API)
+   - Pixel events: PageView / Lead×6+位置 / CompleteRegistration /
+                   ViewContent×2 / ScrollDepth 25/50/75/100 / FAQ_Q1_open
+   - IntersectionObserver scroll depth + ViewContent
+   - Sticky CTA show/hide (after Hero, hide on Final)
+   - Exit Intent overlay (PC, 1x per session, focus trap, idle fallback 75s)
+   - data-reveal scroll animations (cards / sections)
+   - Smooth anchor offset + Year auto fill
    ============================================== */
-
 (function () {
   'use strict';
 
-  // ---------------------------------------------
-  // Util: safe Pixel call
-  // ---------------------------------------------
-  function pixelTrack(eventName, params, eventId) {
-    try {
-      if (typeof window.fbq === 'function') {
-        const opts = eventId ? { eventID: eventId } : undefined;
-        if (params && opts) {
-          window.fbq('trackCustom', eventName, params, opts);
-        } else if (params) {
-          window.fbq('track', eventName, params);
-        } else {
-          window.fbq('track', eventName);
-        }
-      }
-    } catch (e) {
-      // Pixel failures must never break user experience
-      console && console.warn && console.warn('[pixel] track failed', e);
+  // ---------- Year ----------
+  var y = document.getElementById('footer-year');
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  // ---------- Helpers ----------
+  function fbqSafe() {
+    if (typeof window.fbq === 'function') {
+      try { window.fbq.apply(window, arguments); } catch (e) { /* noop */ }
     }
   }
 
-  function pixelTrackStandard(eventName, params, eventId) {
-    try {
-      if (typeof window.fbq === 'function') {
-        const opts = eventId ? { eventID: eventId } : undefined;
-        if (opts) {
-          window.fbq('track', eventName, params || {}, opts);
-        } else {
-          window.fbq('track', eventName, params || {});
-        }
-      }
-    } catch (e) {
-      console && console.warn && console.warn('[pixel] track failed', e);
+  // ---------- Cookie Consent (R4 CRIT-3 / Fix-13) ----------
+  var CONSENT_KEY = 'revirall_cookie_consent_v1';
+  var consent = (function () {
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  })();
+  var consentAccepted = consent === 'accepted_marketing';
+
+  function pixelGated(fn) {
+    // run only if user accepted marketing/measurement cookies
+    if (consentAccepted) fn();
+  }
+
+  function applyConsent(accepted) {
+    consentAccepted = !!accepted;
+    try { localStorage.setItem(CONSENT_KEY, accepted ? 'accepted_marketing' : 'denied'); } catch (e) {}
+    if (accepted) {
+      fbqSafe('consent', 'grant');
+      fbqSafe('track', 'PageView');
+      // CAPI: send PageView with action_source=website (server-side mirror)
+      // POST /api/capi { event_name:'PageView', event_source_url, action_source:'website', user_data:{...hashed} }
+    } else {
+      fbqSafe('consent', 'revoke');
     }
   }
 
-  // Generate a stable-ish event_id (for Pixel-CAPI dedup)
-  function genEventId(prefix) {
-    const rand = Math.random().toString(36).slice(2, 10);
-    const ts = Date.now();
-    return `${prefix}_${ts}_${rand}`;
-  }
-
-  // ---------------------------------------------
-  // Year stamp in footer
-  // ---------------------------------------------
-  const yearEl = document.getElementById('copyright-year');
-  if (yearEl) {
-    yearEl.textContent = String(new Date().getFullYear());
-  }
-
-  // ---------------------------------------------
-  // CTA click tracking (all elements with [data-cta])
-  // Each click fires Pixel "Lead" with cta_position
-  // ---------------------------------------------
-  const ctas = document.querySelectorAll('[data-cta]');
-  ctas.forEach((el) => {
-    el.addEventListener('click', function () {
-      const ctaPosition = el.getAttribute('data-cta') || 'unknown';
-      const eventId = genEventId(`lead_${ctaPosition}`);
-
-      pixelTrackStandard(
-        'Lead',
-        {
-          cta_position: ctaPosition,
-          content_name: 'community-monitor LP v3',
-          content_category: 'booking_intent',
-        },
-        eventId
-      );
-
-      // CAPI: send Lead with custom_data.cta_position=hero / mid / final / sticky / exit
-      // Server hook should consume the same eventId for Pixel-CAPI dedup.
-      // Example payload to forward server-side:
-      //   {
-      //     event_name: 'Lead',
-      //     event_id: eventId,
-      //     event_source_url: location.href,
-      //     action_source: 'website',
-      //     custom_data: { cta_position: ctaPosition }
-      //   }
-
-      // GA4 (optional)
-      try {
-        if (typeof window.gtag === 'function') {
-          window.gtag('event', `${ctaPosition}_cta_click`, {
-            cta_position: ctaPosition,
-          });
-        }
-      } catch (e) { /* noop */ }
+  var banner = document.getElementById('cookieBanner');
+  var btnAccept = document.getElementById('cookieAccept');
+  var btnDeny = document.getElementById('cookieDeny');
+  // Fix-B (R2 CRIT-2): Hero被り回避。初回表示は scrollY>100 or 3秒経過後に出す。
+  if (consent === null && banner) {
+    var bannerShown = false;
+    function showBanner() {
+      if (bannerShown) return;
+      bannerShown = true;
+      banner.hidden = false;
+    }
+    // 3秒遅延フォールバック
+    setTimeout(showBanner, 3000);
+    // スクロール開始でも出す
+    window.addEventListener('scroll', function onScrollOnce() {
+      if (window.scrollY > 100) {
+        showBanner();
+        window.removeEventListener('scroll', onScrollOnce);
+      }
     }, { passive: true });
+  } else if (consentAccepted) {
+    // Already opted in earlier — fire PageView immediately
+    fbqSafe('consent', 'grant');
+    fbqSafe('track', 'PageView');
+  }
+  if (btnAccept) btnAccept.addEventListener('click', function () {
+    applyConsent(true);
+    if (banner) banner.hidden = true;
+  });
+  if (btnDeny) btnDeny.addEventListener('click', function () {
+    applyConsent(false);
+    if (banner) banner.hidden = true;
   });
 
-  // ---------------------------------------------
-  // IntersectionObserver: ViewContent (per block)
-  // Fires once per block when ≥50% visible
-  // ---------------------------------------------
-  const blocks = document.querySelectorAll('[data-block]');
-  if ('IntersectionObserver' in window && blocks.length > 0) {
-    const seenBlocks = new Set();
-    const blockObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const blockId = entry.target.getAttribute('data-block');
-            if (blockId && !seenBlocks.has(blockId)) {
-              seenBlocks.add(blockId);
-              pixelTrackStandard(
-                'ViewContent',
-                {
-                  content_name: `block_${blockId}`,
-                  content_category: 'lp_section',
-                },
-                genEventId(`viewcontent_b${blockId}`)
-              );
-              // CAPI: send ViewContent with custom_data.block=<blockId>
-            }
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    blocks.forEach((b) => blockObserver.observe(b));
+  /**
+   * Send a Lead event with CTA position metadata.
+   * Mirrors to CAPI server-side via the deferred hook below.
+   */
+  function trackLead(ctaPosition) {
+    var payload = {
+      content_name: 'community-monitor LP v3 - Benefit Menu Diagnosis',
+      content_category: 'lead',
+      cta_position: ctaPosition || 'unknown',
+      messaging_version: 'v2_benefit'
+    };
+    pixelGated(function () { fbqSafe('track', 'Lead', payload); });
+    // CAPI: POST /api/capi { event_name:'Lead', event_source_url, action_source:'website',
+    //                        user_data:{...hashed}, custom_data: payload }
+    if (window.console && console.debug) console.debug('[Lead]', payload);
   }
 
-  // ---------------------------------------------
-  // Scroll depth: 25 / 50 / 75 / 100
-  // ---------------------------------------------
-  (function setupScrollDepth() {
-    const milestones = [25, 50, 75, 100];
-    const fired = new Set();
+  // ---------- CTA click tracking (Lead × 4 positions) ----------
+  document.addEventListener('click', function (ev) {
+    var el = ev.target.closest('[data-cta]');
+    if (!el) return;
+    var pos = el.getAttribute('data-cta') || 'unknown';
+    trackLead(pos);
+  }, { passive: true });
 
-    function calcDepthPct() {
-      const docHeight = Math.max(
-        document.body.scrollHeight,
-        document.documentElement.scrollHeight,
-        document.body.offsetHeight,
-        document.documentElement.offsetHeight
-      );
-      const winHeight = window.innerHeight || document.documentElement.clientHeight;
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      const scrollable = Math.max(docHeight - winHeight, 1);
-      return Math.min(100, Math.round((scrollTop / scrollable) * 100));
-    }
-
-    let ticking = false;
-    function onScroll() {
-      if (ticking) return;
+  // ---------- Scroll depth (25/50/75/100) - Pixel + dataLayer ----------
+  var depthMarks = [25, 50, 75, 100];
+  var fired = {};
+  function checkScrollDepth() {
+    var doc = document.documentElement;
+    var scrolled = (window.scrollY + window.innerHeight) / doc.scrollHeight * 100;
+    depthMarks.forEach(function (d) {
+      if (!fired[d] && scrolled >= d) {
+        fired[d] = true;
+        pixelGated(function () {
+          fbqSafe('trackCustom', 'ScrollDepth', { depth: d });
+        });
+        if (window.console && console.debug) console.debug('[Scroll]', d + '%');
+        if (window.dataLayer) {
+          window.dataLayer.push({ event: 'scroll_depth', percent: d });
+        }
+      }
+    });
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(function () {
+        checkScrollDepth();
+        ticking = false;
+      });
       ticking = true;
-      window.requestAnimationFrame(() => {
-        const pct = calcDepthPct();
-        milestones.forEach((m) => {
-          if (pct >= m && !fired.has(m)) {
-            fired.add(m);
-            pixelTrack(
-              'ScrollDepth',
-              { depth: m, content_name: 'community-monitor LP v3' },
-              genEventId(`scroll_${m}`)
-            );
-            // CAPI: send ScrollDepth (custom event) with custom_data.depth=<m>
-            try {
-              if (typeof window.gtag === 'function') {
-                window.gtag('event', `scroll_${m}`, { depth: m });
-              }
-            } catch (e) { /* noop */ }
+    }
+  }, { passive: true });
+
+  // ---------- ViewContent (pricing block 8 + final CTA block 11) ----------
+  var viewContentTargets = [
+    { sel: '[data-block="8"]', name: 'pricing_view' },
+    { sel: '[data-block="11"]', name: 'final_cta_view' }
+  ];
+  if ('IntersectionObserver' in window) {
+    viewContentTargets.forEach(function (t) {
+      var el = document.querySelector(t.sel);
+      if (!el) return;
+      var seen = false;
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting && !seen) {
+            seen = true;
+            pixelGated(function () {
+              fbqSafe('track', 'ViewContent', {
+                content_name: t.name,
+                content_category: 'lp_section'
+              });
+            });
+            if (window.console && console.debug) console.debug('[ViewContent]', t.name);
+            io.unobserve(el);
           }
         });
-      });
-      // Reset ticking after the rAF callback
-      setTimeout(() => { ticking = false; }, 100);
+      }, { rootMargin: '0px 0px -25% 0px', threshold: 0.15 });
+      io.observe(el);
+    });
+  }
+
+  // ---------- Sticky CTA show on scroll (Fix-C R2 CRIT-3) ----------
+  // Hero scroll途中(scrollY>240)から表示、Final近接で非表示
+  var sticky = document.getElementById('stickyCta');
+  var finalBlock = document.querySelector('[data-block="11"]');
+  var finalInView = false;
+  if (sticky) {
+    function updateSticky() {
+      var shouldShow = (window.scrollY > 240) && !finalInView;
+      if (shouldShow) sticky.classList.add('visible');
+      else sticky.classList.remove('visible');
     }
+    var stickyTicking = false;
+    window.addEventListener('scroll', function () {
+      if (!stickyTicking) {
+        requestAnimationFrame(function () {
+          updateSticky();
+          stickyTicking = false;
+        });
+        stickyTicking = true;
+      }
+    }, { passive: true });
+    if ('IntersectionObserver' in window && finalBlock) {
+      var finalIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          finalInView = e.isIntersecting;
+          updateSticky();
+        });
+      }, { rootMargin: '0px 0px -20% 0px', threshold: 0 });
+      finalIO.observe(finalBlock);
+    }
+    updateSticky();
+  }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  })();
+  // ---------- Reveal on scroll ----------
+  var revealTargets = document.querySelectorAll(
+    '[data-block] header, .empathy-card, .step-card, .testimonial-card, .plan-card, .method-block, .story-act, .faq-item, .shift-card, .oos-row'
+  );
+  revealTargets.forEach(function (el) { el.setAttribute('data-reveal', ''); });
 
-  // ---------------------------------------------
-  // FAQ Q1 open tracking
-  // ---------------------------------------------
-  const q1 = document.querySelector('[data-faq="q1"]');
+  if ('IntersectionObserver' in window) {
+    var revealIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-visible');
+          revealIO.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    revealTargets.forEach(function (el) { revealIO.observe(el); });
+  } else {
+    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // ---------- FAQ Q1 open tracking ----------
+  var q1 = document.querySelector('.faq-item[data-q="q1"]');
   if (q1) {
     q1.addEventListener('toggle', function () {
       if (q1.open) {
-        pixelTrack(
-          'FAQ_Q1_Open',
-          { question: 'is_this_mlm' },
-          genEventId('faq_q1_open')
-        );
-        // CAPI: optionally forward — most accounts skip FAQ events server-side
-        try {
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'faq_q1_open');
-          }
-        } catch (e) { /* noop */ }
+        if (window.console && console.debug) console.debug('[FAQ_Q1_Open]');
+        if (window.dataLayer) window.dataLayer.push({ event: 'faq_q1_open' });
       }
     });
   }
 
-  // ---------------------------------------------
-  // Exit Intent popup (PC only, 1回限り)
-  // ---------------------------------------------
-  (function setupExitIntent() {
-    const modal = document.getElementById('exit-modal');
-    if (!modal) return;
-
-    const isTouch =
-      'ontouchstart' in window ||
-      (navigator.maxTouchPoints && navigator.maxTouchPoints > 0);
-    const isWidePC = window.matchMedia && window.matchMedia('(min-width: 768px)').matches;
-    if (isTouch || !isWidePC) return; // mobile/tablet — skip
-
-    const SS_KEY = 'revirall_v3_exit_shown';
-    if (sessionStorage.getItem(SS_KEY) === '1') return;
-
-    function showModal() {
-      if (sessionStorage.getItem(SS_KEY) === '1') return;
-      sessionStorage.setItem(SS_KEY, '1');
-      modal.classList.remove('hidden');
-      modal.removeAttribute('hidden');
-
-      pixelTrack(
-        'ExitIntent_Shown',
-        { content_name: 'community-monitor LP v3' },
-        genEventId('exit_intent_shown')
-      );
-      // CAPI: ExitIntent_Shown (optional — usually not server-tracked)
-
-      // Focus management — accessibility
-      const focusTarget = modal.querySelector('a[data-cta], button[data-exit-close]');
-      if (focusTarget) {
-        focusTarget.focus();
+  // ---------- Exit intent (PC, 1x per session) + focus trap + idle fallback ----------
+  var overlay = document.getElementById('exitOverlay');
+  var closer = document.getElementById('exitClose');
+  var EXIT_KEY = 'revirall_v3_exit_shown';
+  var lastFocusBeforeExit = null;
+  function isPc() { return window.matchMedia('(min-width: 1024px) and (pointer: fine)').matches; }
+  function focusableInOverlay() {
+    if (!overlay) return [];
+    return Array.prototype.slice.call(overlay.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    ));
+  }
+  function trapTab(ev) {
+    if (!overlay || overlay.hidden) return;
+    if (ev.key !== 'Tab') return;
+    var f = focusableInOverlay();
+    if (!f.length) return;
+    var first = f[0], last = f[f.length - 1];
+    if (ev.shiftKey && document.activeElement === first) {
+      ev.preventDefault(); last.focus();
+    } else if (!ev.shiftKey && document.activeElement === last) {
+      ev.preventDefault(); first.focus();
+    }
+  }
+  function showExit() {
+    if (!overlay) return;
+    if (sessionStorage.getItem(EXIT_KEY)) return;
+    sessionStorage.setItem(EXIT_KEY, '1');
+    overlay.hidden = false;
+    document.body.style.overflow = 'hidden';
+    lastFocusBeforeExit = document.activeElement;
+    var f = focusableInOverlay();
+    if (f.length) f[0].focus();
+  }
+  function hideExit() {
+    if (!overlay) return;
+    overlay.hidden = true;
+    document.body.style.overflow = '';
+    if (lastFocusBeforeExit && lastFocusBeforeExit.focus) lastFocusBeforeExit.focus();
+  }
+  if (overlay) {
+    document.addEventListener('mouseout', function (ev) {
+      if (!isPc()) return;
+      if (ev.clientY <= 0 && (!ev.relatedTarget && !ev.toElement)) {
+        showExit();
       }
+    }, { passive: true });
 
-      // Cleanup global listeners
-      document.removeEventListener('mouseout', onMouseOut);
-      document.removeEventListener('keydown', onEscPre);
-    }
-
-    function hideModal() {
-      modal.classList.add('hidden');
-      modal.setAttribute('hidden', '');
-    }
-
-    function onMouseOut(e) {
-      // Trigger when cursor leaves toward the top of the viewport
-      if (!e.relatedTarget && e.clientY <= 0) {
-        showModal();
+    // Idle-timer fallback: 75s on pricing block triggers exit on PC
+    if (isPc() && 'IntersectionObserver' in window) {
+      var pricingEl = document.querySelector('[data-block="8"]');
+      if (pricingEl) {
+        var idleTimer = null;
+        var pricingIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting && !idleTimer) {
+              idleTimer = setTimeout(function () { showExit(); }, 75000);
+            } else if (!e.isIntersecting && idleTimer) {
+              clearTimeout(idleTimer); idleTimer = null;
+            }
+          });
+        }, { threshold: 0.4 });
+        pricingIO.observe(pricingEl);
       }
     }
 
-    function onEscPre(e) {
-      // No-op; reserved
-    }
-
-    function onEscClose(e) {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        hideModal();
-      }
-    }
-
-    document.addEventListener('mouseout', onMouseOut);
-    document.addEventListener('keydown', onEscClose);
-
-    // Close handlers
-    const closers = modal.querySelectorAll('[data-exit-close]');
-    closers.forEach((btn) => {
-      btn.addEventListener('click', hideModal);
+    if (closer) closer.addEventListener('click', hideExit);
+    overlay.addEventListener('click', function (ev) {
+      if (ev.target === overlay) hideExit();
     });
-  })();
-
-  // ---------------------------------------------
-  // Smooth-scroll anchor handling for internal hash links
-  // (covers cases where a CTA links to #booking)
-  // ---------------------------------------------
-  document.querySelectorAll('a[href^="#"]').forEach((a) => {
-    a.addEventListener('click', function (e) {
-      const href = a.getAttribute('href');
-      if (!href || href === '#' || href.length < 2) return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // Move keyboard focus to the target (a11y)
-        if (target instanceof HTMLElement) {
-          const prevTabindex = target.getAttribute('tabindex');
-          target.setAttribute('tabindex', '-1');
-          target.focus({ preventScroll: true });
-          if (prevTabindex === null) {
-            // Restore after blur
-            target.addEventListener(
-              'blur',
-              () => target.removeAttribute('tabindex'),
-              { once: true }
-            );
-          }
-        }
-      }
+    document.addEventListener('keydown', function (ev) {
+      if (ev.key === 'Escape' && !overlay.hidden) hideExit();
+      trapTab(ev);
     });
+  }
+
+  // ---------- Smooth offset for sticky-anchor jump (delegation) ----------
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href');
+    if (!id || id === '#') return;
+    var target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    var top = target.getBoundingClientRect().top + window.scrollY - 12;
+    window.scrollTo({ top: top, behavior: 'smooth' });
   });
+
+  // ---------- CompleteRegistration (thanks page hook) ----------
+  // thanks.html should call: window.__revirallCompleteRegistration()
+  // This LP exposes the function so thanks.html can mirror to Pixel + CAPI consistently.
+  window.__revirallCompleteRegistration = function (extra) {
+    pixelGated(function () {
+      fbqSafe('track', 'CompleteRegistration', Object.assign({
+        content_name: 'consultation_booked',
+        content_category: 'booking_completed'
+      }, extra || {}));
+    });
+    if (window.console && console.debug) console.debug('[CompleteRegistration]', extra || {});
+  };
+
 })();

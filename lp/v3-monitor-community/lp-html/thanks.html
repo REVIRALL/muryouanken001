@@ -4,140 +4,153 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="robots" content="noindex,nofollow" />
-
 <title>ご登録ありがとうございます ｜ REVIRALL</title>
-<meta name="description" content="公式LINEのご登録ありがとうございます。続けて30分の無料相談の日時をお選びください。" />
-<link rel="canonical" href="https://revirall.example.com/v3-monitor-community/thanks.html" />
+<meta name="description" content="REVIRALL 公式LINEへのご登録ありがとうございます。あなたのコミュニティに合う『福利厚生メニュー』の30分診断、次のステップをご案内します。" />
+<link rel="canonical" href="https://example.com/lp/v3-monitor-community/thanks.html" />
 
-<!-- Tailwind CDN -->
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
   tailwind.config = {
     theme: {
       extend: {
         colors: {
-          'brand-primary': '#2D7A8C',
-          'brand-primary-dark': '#1F5867',
-          'brand-accent': '#E89B65',
-          'brand-beige': '#F5E6D3',
-          'brand-ink': '#1F2937',
-          'brand-muted': '#6B7280',
+          brand: { primary: '#2D7A8C', deep: '#265F70', accent: '#E89B65', warm: '#FAF7F2', paper: '#F5E6D3', ink: '#1F2937', muted: '#595F6A', dark: '#1A2332' }
         },
         fontFamily: {
-          sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
-        },
-      },
-    },
+          jp:    ['"Noto Sans JP"','system-ui','sans-serif'],
+          serif: ['"Cormorant Garamond"','Georgia','serif']
+        }
+      }
+    }
   };
 </script>
-
-<!-- Google Fonts: Noto Sans JP -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
-
 <link rel="stylesheet" href="./assets/styles.css" />
 
-<!-- Meta Pixel base -->
+<!-- Meta Pixel - 同意ベース発火 (改正個情法27条 + Meta Consent API) -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '{PIXEL_ID}');
-fbq('track', 'PageView');
-// Generate event_id for Pixel-CAPI dedup
-var __evtId = 'completereg_' + Date.now() + '_' + Math.random().toString(36).slice(2, 10);
-fbq('track', 'CompleteRegistration', {
-  content_name: 'community-monitor LP v3 thanks',
-  content_category: 'line_friend_add'
-}, { eventID: __evtId });
-// CAPI: send CompleteRegistration with the same event_id (server-side) for Pixel-CAPI dedup
-//   {
-//     event_name: 'CompleteRegistration',
-//     event_id: __evtId,
-//     event_source_url: location.href,
-//     action_source: 'website',
-//     custom_data: {
-//       content_name: 'community-monitor LP v3 thanks',
-//       content_category: 'line_friend_add'
-//     }
-//   }
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2450922202046153');
+fbq('consent', 'revoke');
+(function () {
+  var accepted = false;
+  try { accepted = localStorage.getItem('revirall_cookie_consent_v1') === 'accepted_marketing'; } catch (e) {}
+  if (accepted) {
+    fbq('consent', 'grant');
+    fbq('track', 'PageView');
+    fbq('track', 'CompleteRegistration', {
+      content_name: 'community-monitor LP - LINE friend add',
+      content_category: 'line_friend_add'
+    });
+    // CAPI: send CompleteRegistration with action_source=website
+    // POST /api/capi { event_name:'CompleteRegistration', event_source_url, action_source:'website',
+    //                  user_data:{...hashed (line_user_id if available)},
+    //                  custom_data:{ content_name:'LINE friend add' } }
+  }
+})();
 </script>
-<noscript>
-  <img height="1" width="1" style="display:none" alt=""
-       src="https://www.facebook.com/tr?id={PIXEL_ID}&ev=CompleteRegistration&noscript=1" />
-</noscript>
 </head>
 
-<body class="font-sans text-brand-ink bg-brand-beige antialiased min-h-screen flex flex-col">
+<body class="font-jp text-brand-ink bg-brand-warm antialiased min-h-screen flex flex-col">
 
-<main class="flex-grow flex items-center justify-center px-5 py-16 md:py-24">
-  <div class="w-full max-w-xl bg-white rounded-3xl shadow-lg p-8 md:p-12 text-center">
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-white focus:text-brand-primary focus:px-3 focus:py-2 focus:rounded">本文へスキップ</a>
 
-    <div class="mx-auto mb-6 w-20 h-20 rounded-full bg-brand-primary/10 flex items-center justify-center" aria-hidden="true">
-      <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2D7A8C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="20 6 9 17 4 12" />
-      </svg>
-    </div>
+<main id="main" class="flex-1 flex items-center justify-center px-5 py-16 md:py-24">
+  <section class="relative max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-brand-primary/10 p-8 md:p-14 text-center overflow-hidden">
 
-    <h1 class="text-2xl md:text-3xl font-black text-brand-primary leading-tight">
-      ご登録ありがとうございます
-    </h1>
+    <!-- decorative paper texture -->
+    <img src="./assets/images/decor/bg-paper.png" alt="" aria-hidden="true" width="1920" height="1200" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply pointer-events-none" />
 
-    <p class="mt-5 text-base md:text-lg text-brand-ink/80 leading-relaxed">
-      公式LINEのご登録が完了いたしました。<br />
-      続けて、30分の無料相談の日時をお選びください。
-    </p>
+    <div class="relative">
+      <p class="font-serif italic text-brand-primary text-sm tracking-[0.25em] uppercase">Thank you</p>
 
-    <div class="mt-8 bg-brand-beige/50 rounded-xl p-5 text-left">
-      <h2 class="text-sm font-bold text-brand-primary mb-2">次のステップ</h2>
-      <ol class="text-sm text-brand-ink/80 leading-relaxed space-y-2 list-decimal list-inside">
-        <li>下のボタンから予約カレンダーを開きます</li>
-        <li>ご都合の良い日時をお選びください</li>
-        <li>当日、Zoomでお話ししましょう（30分）</li>
+      <!-- Big check -->
+      <div class="mt-8 inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-primary text-white shadow-lg">
+        <svg viewBox="0 0 24 24" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+          <path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h1 class="mt-8 text-3xl md:text-4xl font-black leading-tight text-brand-ink">
+        ご登録、<br class="md:hidden" />ありがとうございます
+      </h1>
+      <p class="mt-5 text-brand-muted text-base md:text-lg leading-relaxed">
+        公式LINEへの友だち追加が完了しました。<br />
+        24 時間以内に、JUN より直接ご連絡いたします。<br />
+        <span class="text-xs text-brand-mutedlight">あなたのコミュニティに合う「福利厚生メニュー」を、一緒に整理させてください。</span>
+      </p>
+
+      <!-- Steps -->
+      <ol class="mt-10 text-left max-w-md mx-auto space-y-4">
+        <li class="flex items-start gap-4">
+          <span class="thanks-step-num">1</span>
+          <div>
+            <p class="font-bold text-brand-ink">LINE で簡単アンケート</p>
+            <p class="text-sm text-brand-muted mt-1">コミュニティ規模・属性など 3 問。1 分で完了します。</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="thanks-step-num">2</span>
+          <div>
+            <p class="font-bold text-brand-ink">日程候補をご返信</p>
+            <p class="text-sm text-brand-muted mt-1">候補日から 30 分の枠をお選びください。</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="thanks-step-num">3</span>
+          <div>
+            <p class="font-bold text-brand-ink">Zoom で 30 分の福利厚生メニュー診断</p>
+            <p class="text-sm text-brand-muted mt-1">営業電話/強引な提案は一切ありません。診断メモは無料でお渡しします。</p>
+          </div>
+        </li>
       </ol>
-    </div>
 
-    <div class="mt-8">
-      <a href="#"
-         class="cta-primary"
-         aria-label="予約カレンダーを開く">
-        予約カレンダーを開く
+      <!-- LINE return CTA -->
+      <a href="https://line.me/R/" class="btn-primary mt-10 inline-flex">
+        <span>LINE を開く</span>
+        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <p class="mt-3 text-xs text-brand-muted">
-        ※ TODO: 予約カレンダーのURL（Calendly / TimeRex / Tカレ）に差し替え
+
+      <p class="mt-8 font-serif italic text-brand-deep">&mdash; REVIRALL 主宰 / JUN</p>
+
+      <p class="mt-10 text-xs text-brand-muted leading-relaxed">
+        ※ メッセージが届かない場合、LINE のブロック設定または受信制限をご確認ください。<br />
+        ※ ご登録情報は <a href="/privacy" class="underline">プライバシーポリシー</a> に基づき管理いたします。
       </p>
     </div>
-
-    <hr class="my-10 border-brand-muted/20" />
-
-    <p class="text-xs text-brand-muted leading-relaxed">
-      ご質問がある場合は、公式LINEから直接メッセージをお送りください。<br />
-      平日10:00-18:00、原則1営業日以内に返信いたします。
-    </p>
-
-    <div class="mt-6">
-      <a href="./index.html" class="text-sm text-brand-primary underline hover:no-underline">
-        トップページに戻る
-      </a>
-    </div>
-  </div>
+  </section>
 </main>
 
-<footer class="bg-brand-ink text-white/70 py-6 text-center text-xs">
-  © <span id="copyright-year">2026</span> REVIRALL. All rights reserved.
+<footer class="bg-[#0F1822] text-white/70 py-8 text-center text-xs">
+  <p>&copy; <span id="footer-year">2026</span> REVIRALL. All rights reserved.</p>
 </footer>
 
+<style>
+  .thanks-step-num {
+    flex: none;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--c-paper, #F5E6D3);
+    color: var(--c-primary-deep, #1F5D6D);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: italic;
+  }
+</style>
+
 <script>
-  // Year stamp
-  var y = document.getElementById('copyright-year');
+  var y = document.getElementById('footer-year');
   if (y) y.textContent = String(new Date().getFullYear());
 </script>
-
 </body>
 </html>
