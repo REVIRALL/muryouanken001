@@ -432,23 +432,28 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
   position: relative;
   background: white;
   border-radius: var(--radius-md);
-  padding: 22px 22px 22px 24px;
+  /* Fix-1 (iter5 wrap-fix): 右側に矢印用余白56px確保、テキスト見切れ防止 */
+  padding: 22px 56px 22px 24px;
   display: grid;
-  grid-template-columns: 56px 1fr 28px;
+  grid-template-columns: 56px 1fr;
   gap: 18px;
   align-items: center;
   box-shadow: var(--shadow-card);
   border: 1px solid var(--c-line);
   /* Fix-1: 左border accent 削除。多層shadow + 角丸のみで構築 */
   transition: transform .3s ease, box-shadow .3s ease;
-  overflow: hidden;
+  /* overflow:hidden 削除 — Fix-1 v2 (iter5 wrap-fix v2): テキスト末尾「る」「た」等の見切れ原因を完全除去 */
 }
 .empathy-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-card-hover);
 }
 .empathy-card:hover .empathy-num { background: var(--c-primary); color: white; }
-.empathy-card:hover .empathy-arrow { transform: translateX(4px); color: var(--c-accent); }
+.empathy-card:hover .empathy-arrow {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
+  color: var(--c-accent);
+}
 
 .empathy-num {
   font-family: var(--font-serif);
@@ -475,9 +480,19 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
   background: linear-gradient(180deg, transparent 62%, rgba(232,155,101,0.22) 62%);
 }
 .empathy-arrow {
+  /* Fix-1 (iter5 wrap-fix): 絶対配置でテキスト幅を圧迫しない */
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
   color: var(--c-mutedlight);
-  transition: all .25s;
+  transition: opacity .25s ease, transform .25s ease, color .25s ease;
   flex: none;
+}
+.empathy-card:hover .empathy-arrow {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
 }
 
 .empathy-tagline {
@@ -1602,7 +1617,9 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
   .final-message, .a-body, .problem-body { font-size: 1rem; line-height: 1.85; }
 
   /* カード内パディング 20-24px、間隔 16-24px */
-  .empathy-card { padding: 20px 18px; gap: 14px; grid-template-columns: 44px 1fr 22px; }
+  /* Fix-1 (iter5 wrap-fix): モバイルは矢印を非表示、テキスト幅を最大化 */
+  .empathy-card { padding: 20px 18px; gap: 14px; grid-template-columns: 44px 1fr; }
+  .empathy-card .empathy-arrow { display: none; }
   .empathy-num { width: 40px; height: 40px; font-size: 1.2rem; border-radius: 10px; }
   .step-card { padding: 28px 22px 24px; }
   .testimonial-card { padding: 24px 20px 22px; transform: none !important; }
@@ -1707,4 +1724,77 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
 .empathy-card, .step-card, .testimonial-card, .plan-card, .faq-item,
 .oos-row, .method-iconrow .ic, .empathy-tagline, .problem-callout {
   border-left-width: 1px;
+}
+
+/* =====================================================
+   iter5 wrap-fix : 日本語テキスト改行・約物・justify 完全統制
+   ===================================================== */
+
+/* 約物詰め有効化 (palt) */
+body, h1, h2, h3, h4, h5, h6, p, li, dd, span, blockquote, summary, em, strong {
+  font-feature-settings: "palt" 1;
+}
+
+/* 見出し系: text-wrap balance + 禁則 */
+h1, h2, h3, h4, h5, h6,
+.section-heading, .h-display, .h-section, .h-block,
+.hero-headline, .final-heading, .story-head, .story-act-title,
+.problem-heading, .method-h, .plan-name {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+  hanging-punctuation: allow-end;
+}
+
+/* 本文系: text-wrap pretty + 約物末尾はみ出し */
+p, li, dd, blockquote,
+.empathy-text, .method-body, .step-body, .step-summary,
+.testimonial-quote, .story-act-body, .final-message,
+.a-body, .oos-text, .faq-item .q-text, .faq-item .a-body,
+.empathy-tagline, .problem-callout, .problem-callout p,
+.empathy-tagline p, .problem-body, .problem-body p,
+.hero-sub, .method-summary {
+  text-wrap: pretty;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+  hanging-punctuation: allow-end;
+}
+
+/* Fix-2: justify 禁止 (引用ブロック・コールアウト・カード) */
+.empathy-tagline,
+.empathy-tagline p,
+.problem-callout,
+.problem-callout p,
+.empathy-card,
+.empathy-card p,
+.empathy-text {
+  text-align: left !important;
+  text-align-last: left !important;
+}
+
+/* Fix-5: nowrap helper (連接約物・短句の泣き別れ防止) */
+.nowrap {
+  white-space: nowrap;
+  word-break: keep-all;
+  display: inline-block;
+}
+
+/* Fix-4: Block 6 testimonial H2 モバイル時の見切れ防止 */
+@media (max-width: 767px) {
+  #testi-h.section-heading {
+    font-size: clamp(1.25rem, 5.2vw, 1.55rem);
+    line-height: 1.45;
+    padding: 0 4px;
+  }
+  #testi-h.section-heading em {
+    /* italic gradient強調帯がはみ出さないよう */
+    display: inline;
+  }
+  /* FAQ q-text モバイル時の見切れ防止 */
+  .faq-item .q-text {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
 }
