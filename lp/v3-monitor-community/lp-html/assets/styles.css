@@ -1,5 +1,5 @@
 /* ==============================================
-   REVIRALL community-monitor LP v3.0.0 (福利厚生軸)
+   クローズドASP運営事務局 (合同会社リバイラル) community-monitor LP v3.0.1 (福利厚生軸)
    Stripe/Linear/Notion 級カード装飾 / 多層shadow / ジグザグ / ornament
    ============================================== */
 
@@ -22,6 +22,9 @@
   --c-darker:         #0F1822;
   --c-line:           rgba(45, 122, 140, 0.12);
   --c-line-warm:      rgba(232, 155, 101, 0.18);
+
+  /* Japanese text wrapping (Fix-2: 形態素単位での自然改行) */
+  --jp-text-wrap: balance;
 
   /* Shadows (teal+orange混色多層) */
   --shadow-soft:
@@ -74,6 +77,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.01em;
   text-rendering: optimizeLegibility;
+  overflow-x: hidden; /* Fix-3: モバイル横スクロール完全禁止 */
 }
 @media (max-width: 1023px) {
   body { padding-bottom: 88px; }
@@ -83,6 +87,33 @@ img { max-width: 100%; height: auto; }
 
 .font-serif { font-family: var(--font-serif); }
 .font-jp    { font-family: var(--font-jp); }
+
+/* ----- Japanese text wrap optimization (Fix-2) -----
+   見出しは balance、本文は pretty。
+   keep-all: 漢字/かなが英字の途中で改行されない
+   line-break: strict: 約物(、。「)が行頭/行末で孤立しない
+*/
+h1, h2, h3, h4, .h-display, .h-section, .h-block, .hero-eyebrow,
+.section-heading, .problem-heading, .method-h, .story-head, .final-heading,
+.story-act-title, .plan-name {
+  text-wrap: balance;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+}
+p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
+.testimonial-quote, .story-act-body, .final-message, .a-body, .oos-text {
+  text-wrap: pretty;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-break: strict;
+  hanging-punctuation: allow-end;
+}
+/* PCで横並び・モバイルで改行を出すヘルパー */
+.md\:hidden-pc { display: inline; }
+@media (min-width: 768px) {
+  .md\:hidden-pc { display: none; }
+}
 
 /* ----- Eyebrow / Section labels ----- */
 .eyebrow {
@@ -400,32 +431,22 @@ img { max-width: 100%; height: auto; }
 .empathy-card {
   position: relative;
   background: white;
-  border-radius: 12px;
-  padding: 22px 22px 22px 26px;
+  border-radius: var(--radius-md);
+  padding: 22px 22px 22px 24px;
   display: grid;
   grid-template-columns: 56px 1fr 28px;
   gap: 18px;
   align-items: center;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-card);
   border: 1px solid var(--c-line);
-  border-left: 3px solid var(--c-primary);
-  transition: all .3s ease;
+  /* Fix-1: 左border accent 削除。多層shadow + 角丸のみで構築 */
+  transition: transform .3s ease, box-shadow .3s ease;
   overflow: hidden;
-}
-.empathy-card::before {
-  content: '';
-  position: absolute; left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, var(--c-primary) 0%, var(--c-accent) 100%);
-  transform: scaleY(0); transform-origin: top;
-  transition: transform .35s ease;
 }
 .empathy-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-card-hover);
-  border-left-color: transparent;
 }
-.empathy-card:hover::before { transform: scaleY(1); }
 .empathy-card:hover .empathy-num { background: var(--c-primary); color: white; }
 .empathy-card:hover .empathy-arrow { transform: translateX(4px); color: var(--c-accent); }
 
@@ -463,14 +484,17 @@ img { max-width: 100%; height: auto; }
   position: relative;
   margin-top: 56px;
   padding: 28px 32px;
-  border-left: 3px solid var(--c-accent);
-  background: linear-gradient(90deg, rgba(232,155,101,0.06), transparent);
-  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  /* Fix-1: 左border accent 削除 → 中央寄せの上品な引用ブロックへ */
+  background: linear-gradient(135deg, rgba(232,155,101,0.07), rgba(45,122,140,0.04));
+  border: 1px solid var(--c-line-warm);
+  border-radius: var(--radius-md);
   font-family: var(--font-serif);
   font-style: italic;
   font-size: clamp(1.05rem, 1.6vw, 1.25rem);
-  line-height: 1.7;
+  line-height: 1.85;
   color: var(--c-primary-deep);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
 }
 
 /* =================================================
@@ -529,13 +553,13 @@ img { max-width: 100%; height: auto; }
 
 .problem-callout {
   margin-top: 48px;
-  padding: 32px 36px;
+  padding: 36px 40px;
   background: linear-gradient(135deg, var(--c-cream), white);
   border-radius: var(--radius-lg);
-  border: 1px solid var(--c-line);
-  border-left: 4px solid var(--c-accent);
+  border: 1px solid var(--c-line-warm);
+  /* Fix-1: 左border accent 削除。多層shadow + cream gradient で表現 */
   position: relative;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-card);
 }
 .problem-callout::before {
   content: '"';
@@ -1528,13 +1552,15 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
 .text-accent-deep { color: var(--c-accent-deep); }
 .border-line { border-color: var(--c-line); }
 
-/* Hero annotation (Fix-I: 専門用語注釈) */
+/* Hero annotation (Fix-I: 専門用語注釈) - Fix-1: 左border削除し、控えめなcream背景に */
 .hero-annotation {
-  border-left: 2px solid var(--c-accent-light);
-  padding-left: 12px;
+  background: rgba(232, 155, 101, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
   font-size: 0.84rem;
   color: var(--c-muted);
   font-style: normal;
+  border: 1px solid var(--c-line-warm);
 }
 .hero-annotation em {
   font-style: normal;
@@ -1555,4 +1581,130 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
   }
   html { scroll-behavior: auto; }
   [data-reveal] { opacity: 1 !important; transform: none !important; }
+}
+
+/* =================================================
+   Fix-3: モバイルレスポンシブ完璧化 (390px / 768px / 1024px / 1440px)
+   ================================================= */
+@media (max-width: 767px) {
+  /* 見出しサイズの最適化 */
+  .hero h1 { font-size: clamp(1.75rem, 7vw, 2rem); line-height: 1.32; }
+  .section-heading { font-size: clamp(1.45rem, 5.6vw, 1.7rem); line-height: 1.4; }
+  .problem-heading { font-size: clamp(1.5rem, 5.8vw, 1.75rem); line-height: 1.4; }
+  .method-h, .story-act-title, .final-heading {
+    font-size: clamp(1.35rem, 5.4vw, 1.55rem); line-height: 1.4;
+  }
+  .story-head { font-size: clamp(1.55rem, 6vw, 1.85rem); line-height: 1.35; }
+
+  /* 本文 16-17px */
+  .hero-sub { font-size: 1rem; line-height: 1.85; }
+  .empathy-text, .method-body, .testimonial-quote, .story-act-body,
+  .final-message, .a-body, .problem-body { font-size: 1rem; line-height: 1.85; }
+
+  /* カード内パディング 20-24px、間隔 16-24px */
+  .empathy-card { padding: 20px 18px; gap: 14px; grid-template-columns: 44px 1fr 22px; }
+  .empathy-num { width: 40px; height: 40px; font-size: 1.2rem; border-radius: 10px; }
+  .step-card { padding: 28px 22px 24px; }
+  .testimonial-card { padding: 24px 20px 22px; transform: none !important; }
+  .testimonial-card.t1, .testimonial-card.t2, .testimonial-card.t3 { transform: none; }
+  .plan-card { padding: 28px 22px 24px; }
+  .plan-card.featured { padding: 32px 24px 26px; }
+  .faq-item summary { padding: 18px 18px; gap: 14px; }
+  .faq-item .a-body { padding: 0 18px 20px 50px; font-size: 0.95rem; }
+  .faq-item .q-mark { font-size: 2rem; }
+  .oos-row { padding: 18px 18px; gap: 14px; }
+
+  /* Hero: copy → CTA → portrait の縦並び (fold内に主CTA) */
+  .hero { padding: 64px 0 48px; }
+  .hero-portrait { aspect-ratio: 4/5; max-height: 60vh; }
+  .hero-floating-card { font-size: 0.72rem; padding: 10px 12px; }
+  .hero-floating-card .ico { width: 30px; height: 30px; }
+  .hero-floating-card .val { font-size: 0.88rem; }
+  .hero-floating-card.fc-top { top: 10px; right: -6px; }
+  .hero-floating-card.fc-bottom { bottom: 16px; left: -6px; }
+
+  /* CTA: モバイルでフル幅 */
+  .btn-primary { padding: 16px 22px; font-size: 0.96rem; width: 100%; }
+  .btn-primary.lg { padding: 18px 24px; font-size: 1rem; }
+
+  /* 大型 outlined Cormorant 数字 縮小 (PC 180px → モバイル 100px) */
+  .step-num { font-size: 100px; right: 8px; opacity: 0.18; }
+  .method-numlabel .num { font-size: 56px; }
+  .story-num { font-size: 96px; }
+  .display-num-bg { font-size: 140px !important; }
+  .hero-watermark { font-size: 110px; top: -1rem; left: -1.2rem; }
+  .problem-watermark { font-size: 100px; }
+  .testimonial-quote-mark { font-size: 80px; top: -4px; right: 14px; }
+
+  /* 装飾画像 opacity 70-80% */
+  .hero-wave { opacity: 0.22; }
+  .hero-circle-accent { opacity: 0.12; width: 240px; height: 240px; }
+  .empathy-section::before { opacity: 0.18; }
+  .testimonials-section::before { opacity: 0.14; }
+  .faq-section::before { opacity: 0.06; }
+
+  /* 余白の調整 (section padding を圧縮) */
+  .empathy-section, .steps-section, .method-section, .testimonials-section,
+  .pricing-section, .faq-section, .oos-section { padding: 64px 0; }
+  .story-section, .final-section { padding: 72px 0; }
+  .problem-section { padding: 64px 0; }
+  .method-block { padding: 36px 0; }
+  .story-act { padding: 28px 0; }
+
+  /* ornament-divider 縮小 */
+  .ornament-divider { max-width: 140px !important; }
+
+  /* method-image / final-photo / story-photo CLS防止 (aspect-ratio保持) */
+  .method-image, .final-photo, .story-photo, .hero-portrait { aspect-ratio: 4/5; }
+  .method-image { aspect-ratio: 5/4; }
+
+  /* Sticky CTA がフッターに被らないように main 内に padding */
+  .footer { padding-bottom: 96px; }
+
+  /* Cookie banner: max-height 90px相当 / コンパクト化 */
+  .cookie-banner { padding: 12px 14px; left: 8px; right: 8px; bottom: 92px; }
+  .cookie-banner h5 { font-size: 0.84rem; margin-bottom: 3px; }
+  .cookie-banner p { font-size: 0.72rem; line-height: 1.55; }
+  .cookie-banner-btns { margin-top: 10px; gap: 8px; }
+  .cookie-banner-btns button { padding: 8px 14px; font-size: 0.76rem; }
+
+  /* Sticky CTA テキスト調整 */
+  .sticky-cta { padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); }
+  .sticky-cta-text { font-size: 0.72rem; line-height: 1.4; }
+  .sticky-cta .btn-primary { padding: 12px 16px; font-size: 0.82rem; width: auto; flex: none; }
+
+  /* Plan card featured: モバイルで突出させない */
+  .plan-card.featured { transform: none; }
+
+  /* Final CTA: signoff sizing */
+  .final-signoff { font-size: 0.96rem; }
+}
+
+/* タブレット (768-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero h1 { font-size: clamp(2rem, 4.6vw, 2.4rem); }
+  .section-heading { font-size: clamp(1.75rem, 4vw, 2.1rem); }
+  .method-image { aspect-ratio: 5/4; }
+  .testimonial-card { transform: none !important; }
+  .testimonial-card.t2 { transform: translateY(-6px) !important; }
+}
+
+/* PC小 (1024-1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+  .max-w-container { max-width: 1080px; }
+}
+
+/* PC大 (1440px+) - 余白拡張 */
+@media (min-width: 1440px) {
+  .hero { padding: 140px 0 110px; }
+  .empathy-section, .steps-section, .method-section, .testimonials-section,
+  .pricing-section, .faq-section { padding: 130px 0; }
+}
+
+/* =================================================
+   Fix-1 残補強: 他カードの「左accentライン」を念のため打ち消し
+   ================================================= */
+.empathy-card, .step-card, .testimonial-card, .plan-card, .faq-item,
+.oos-row, .method-iconrow .ic, .empathy-tagline, .problem-callout {
+  border-left-width: 1px;
 }

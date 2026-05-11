@@ -1,5 +1,5 @@
 /* ==============================================
-   REVIRALL community-monitor LP v3.0.0 (福利厚生軸)
+   クローズドASP運営事務局 (合同会社リバイラル) community-monitor LP v3.0.1 (福利厚生軸)
    - Cookie consent gate (改正個情法27条 + Meta Consent API)
    - Pixel events: PageView / Lead×6+位置 / CompleteRegistration /
                    ViewContent×2 / ScrollDepth 25/50/75/100 / FAQ_Q1_open

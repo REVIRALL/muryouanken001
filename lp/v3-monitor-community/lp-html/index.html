@@ -6,17 +6,21 @@
 <meta name="theme-color" content="#FAF7F2" />
 <meta name="robots" content="index,follow" />
 
-<title>あなたのコミュニティに、福利厚生はありますか？｜REVIRALL</title>
-<meta name="description" content="月¥30,000〜、メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム REVIRALL。30分の無料診断受付中。" />
-<link rel="canonical" href="https://example.com/lp/v3-monitor-community/" />
+<title>あなたのコミュニティに、福利厚生はありますか？｜クローズドASP運営事務局</title>
+<meta name="description" content="月¥30,000〜、メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム「クローズドASP運営事務局」（合同会社リバイラル運営）。30分の無料診断受付中。" />
+<link rel="canonical" href="https://revirall.jp/lp/v3-monitor-community/" />
 
 <!-- OGP -->
-<meta property="og:title" content="あなたのコミュニティに、福利厚生はありますか？" />
+<meta property="og:title" content="あなたのコミュニティに、福利厚生はありますか？｜クローズドASP運営事務局" />
 <meta property="og:description" content="月¥30,000〜、メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム。" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://example.com/lp/v3-monitor-community/assets/images/owner-portrait.jpg" />
+<meta property="og:url" content="https://revirall.jp/lp/v3-monitor-community/" />
+<meta property="og:site_name" content="クローズドASP運営事務局" />
+<meta property="og:image" content="https://revirall.jp/lp/v3-monitor-community/assets/images/owner-portrait.jpg" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="あなたのコミュニティに、福利厚生はありますか？｜クローズドASP運営事務局" />
+<meta name="twitter:description" content="月¥30,000〜、メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム。" />
 
 <!-- Preconnect Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -70,17 +74,45 @@ fbq('consent', 'revoke');
        src="https://www.facebook.com/tr?id=2450922202046153&ev=PageView&noscript=1" />
 </noscript>
 
-<!-- JSON-LD: FAQPage + Organization -->
+<!-- JSON-LD: Organization + Service + FAQPage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "name": "REVIRALL",
-      "url": "https://example.com/",
-      "logo": "https://example.com/lp/v3-monitor-community/assets/images/decor/circle-accent.png",
-      "description": "コミュニティ向け『お金の福利厚生』プラットフォーム"
+      "@id": "https://revirall.jp/#organization",
+      "name": "合同会社リバイラル",
+      "alternateName": "クローズドASP運営事務局",
+      "url": "https://revirall.jp/",
+      "email": "info@revirall.jp",
+      "telephone": "+81-50-3593-7239",
+      "logo": "https://revirall.jp/lp/v3-monitor-community/assets/images/decor/circle-accent.png",
+      "description": "コミュニティ向け『お金の福利厚生』プラットフォーム「クローズドASP運営事務局」を運営。",
+      "founder": {
+        "@type": "Person",
+        "name": "坂本純一"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "postalCode": "150-0002",
+        "addressRegion": "東京都",
+        "addressLocality": "渋谷区",
+        "streetAddress": "渋谷2-19-15 宮益坂ビルディング609",
+        "addressCountry": "JP"
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "クローズドASP運営事務局",
+      "provider": { "@id": "https://revirall.jp/#organization" },
+      "description": "コミュニティ向け『お金の福利厚生』プラットフォーム。提携先と事前交渉済みの体験案件をメンバーへ配布できる仕組み。",
+      "areaServed": "JP",
+      "offers": [
+        { "@type": "Offer", "name": "ライト", "price": "30000", "priceCurrency": "JPY", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "30000", "priceCurrency": "JPY", "unitCode": "MON" } },
+        { "@type": "Offer", "name": "スタンダード", "price": "80000", "priceCurrency": "JPY", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "80000", "priceCurrency": "JPY", "unitCode": "MON" } },
+        { "@type": "Offer", "name": "プロ", "price": "200000", "priceCurrency": "JPY", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "200000", "priceCurrency": "JPY", "unitCode": "MON" } }
+      ]
     },
     {
       "@type": "FAQPage",
@@ -197,11 +229,11 @@ fbq('consent', 'revoke');
         <span class="eyebrow">For Community Leaders</span>
 
         <h1 id="hero-h1" class="mt-6">
-          あなたのコミュニティに、<br class="hidden md:block" /><span class="focus">福利厚生</span>は<span class="quietq">ありますか？</span>
+          あなたのコミュニティに、<wbr /><br class="hidden md:block" /><span class="focus">福利厚生</span>は<wbr /><span class="quietq">ありますか？</span>
         </h1>
 
         <p class="hero-sub mt-7 max-w-xl">
-          月<strong>¥30,000〜</strong>、メンバーに<br class="md:hidden" />「<strong>無料の体験案件</strong>」を配れる仕組み。
+          月<strong>¥30,000〜</strong>、<wbr />メンバーに<wbr /><br class="md:hidden" />「<strong>無料の体験案件</strong>」を<wbr />配れる仕組み。
         </p>
         <p class="hero-annotation mt-3 max-w-xl text-sm text-brand-muted leading-relaxed">
           <em>※ 体験案件（モニター案件）＝ 提携先と事前交渉済みで、メンバーが無料または特別価格で体験できる案件のこと。</em>
@@ -239,10 +271,10 @@ fbq('consent', 'revoke');
       <!-- Right: portrait + floating cards -->
       <div class="lg:col-span-5 order-2 lg:order-2 relative">
         <div class="hero-portrait">
-          <img src="./assets/images/owner-portrait.jpg" alt="REVIRALL 主宰 JUN氏のポートレート" width="800" height="1000" fetchpriority="high" />
+          <img src="./assets/images/owner-portrait.jpg" alt="クローズドASP運営事務局 代表 坂本純一のポートレート" width="800" height="1000" fetchpriority="high" />
           <div class="hero-portrait-name">
-            <strong>JUN</strong>
-            <span>REVIRALL 主宰</span>
+            <strong>坂本 純一</strong>
+            <span>クローズドASP運営事務局 代表</span>
           </div>
         </div>
 
@@ -278,7 +310,7 @@ fbq('consent', 'revoke');
     <header class="text-center max-w-reading mx-auto">
       <span class="eyebrow">For You</span>
       <h2 id="empathy-h" class="section-heading mt-5">
-        こんなことに、<em>心当たり</em>はありませんか？
+        こんなことに、<wbr /><em>心当たり</em>はありませんか？
       </h2>
       <div class="ornament-divider mt-7 max-w-[200px]">
         <span class="line"></span>
@@ -290,45 +322,45 @@ fbq('consent', 'revoke');
     <ul class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto" role="list">
       <li class="empathy-card">
         <span class="empathy-num">01</span>
-        <p class="empathy-text">メンバーが楽しそうにしているのに、<strong>「何かを還せているか」</strong>と聞かれると言葉に詰まる</p>
+        <p class="empathy-text">メンバーが楽しそうにしているのに、<wbr /><strong>「何かを還せているか」</strong>と聞かれると<wbr />言葉に詰まる</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
       <li class="empathy-card">
         <span class="empathy-num">02</span>
-        <p class="empathy-text">他のコミュニティに<strong>「あちらの方が得だから」</strong>と移っていったメンバーがいる</p>
+        <p class="empathy-text">他のコミュニティに<wbr /><strong>「あちらの方が得だから」</strong>と<wbr />移っていったメンバーがいる</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
       <li class="empathy-card">
         <span class="empathy-num">03</span>
-        <p class="empathy-text">紹介や勧誘で<strong>メンバーに負担をかけている自覚</strong>はあるが、代わりの方法が見つからない</p>
+        <p class="empathy-text">紹介や勧誘で<wbr /><strong>メンバーに負担をかけている自覚</strong>はあるが、<wbr />代わりの方法が見つからない</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
       <li class="empathy-card">
         <span class="empathy-num">04</span>
-        <p class="empathy-text">メンバーが家族や友人に<strong>「このコミュニティに入っててよかった」</strong>と話せる仕組みがない</p>
+        <p class="empathy-text">メンバーが家族や友人に<wbr /><strong>「このコミュニティに入っててよかった」</strong>と<wbr />話せる仕組みがない</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
       <li class="empathy-card">
         <span class="empathy-num">05</span>
-        <p class="empathy-text">会社員時代の<strong>「福利厚生」</strong>のような、誰が見ても正当な還元の形が欲しい</p>
+        <p class="empathy-text">会社員時代の<wbr /><strong>「福利厚生」</strong>のような、<wbr />誰が見ても正当な還元の形が欲しい</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
       <li class="empathy-card">
         <span class="empathy-num">06</span>
-        <p class="empathy-text">私が抜けたら、このチームはメンバーに<strong>何も残せないまま終わってしまう気がする</strong></p>
+        <p class="empathy-text">私が抜けたら、<wbr />このチームはメンバーに<wbr /><strong>何も残せないまま終わってしまう気がする</strong></p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
       <li class="empathy-card md:col-span-2">
         <span class="empathy-num">07</span>
-        <p class="empathy-text">メンバーへの<strong>「感謝」だけでは、もう伸びない時代</strong>になっていると感じている</p>
+        <p class="empathy-text">メンバーへの<wbr /><strong>「感謝」だけでは、もう伸びない時代</strong>に<wbr />なっていると感じている</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
     </ul>
 
     <div class="max-w-3xl mx-auto">
       <blockquote class="empathy-tagline">
-        どれか一つでも当てはまったら、続きを読んでみてください。<br />
-        これは「あなたが悪い」話ではなく、「仕組みが、まだなかった」話です。
+        どれか一つでも当てはまったら、<wbr />続きを読んでみてください。<br />
+        これは「あなたが悪い」話ではなく、<wbr />「仕組みが、まだなかった」話です。
       </blockquote>
     </div>
 
@@ -347,8 +379,8 @@ fbq('consent', 'revoke');
     <header class="max-w-reading">
       <span class="eyebrow">The Real Reason</span>
       <h2 id="problem-h" class="problem-heading mt-5">
-        取るだけのコミュニティは、<br />
-        もう伸びない時代になりました。
+        取るだけのコミュニティは、<wbr /><br />
+        もう伸びない時代に<wbr />なりました。
       </h2>
     </header>
 
@@ -400,11 +432,11 @@ fbq('consent', 'revoke');
     <header class="text-center max-w-reading mx-auto">
       <span class="eyebrow">Three Steps</span>
       <h2 id="steps-h" class="section-heading mt-5">
-        「想い」だけでは、<br class="md:hidden" />
-        コミュニティは<em>伸びない時代</em>へ
+        「想い」だけでは、<wbr /><br class="md:hidden" />
+        コミュニティは<wbr /><em>伸びない時代</em>へ
       </h2>
       <p class="mt-5 text-brand-muted text-base md:text-lg leading-relaxed">
-        REVIRALLが提案する、<span class="font-semibold text-brand-ink">配る → 喜ばれる → 広がる</span> の循環。
+        クローズドASP運営事務局が提案する、<wbr /><span class="font-semibold text-brand-ink">配る → 喜ばれる → 広がる</span> の循環。
       </p>
       <div class="ornament-divider mt-7 max-w-[180px]"><span class="line"></span><svg width="18" height="18" aria-hidden="true"><use href="#i-sparkle-s"/></svg><span class="line"></span></div>
     </header>
@@ -472,11 +504,11 @@ fbq('consent', 'revoke');
     <header class="text-center max-w-3xl mx-auto">
       <span class="eyebrow">Our Platform</span>
       <h2 id="method-h" class="section-heading mt-5 leading-tight">
-        REVIRALLは、<br class="md:hidden" />コミュニティ向け<br />
+        クローズドASP運営事務局は、<wbr /><br class="md:hidden" />コミュニティ向け<br />
         <span class="accent">『お金の福利厚生』プラットフォーム</span>です。
       </h2>
       <p class="mt-5 text-brand-muted leading-relaxed">
-        会社が社員に整えるのと同じように、コミュニティにも還元の仕組みを。
+        会社が社員に整えるのと同じように、<wbr />コミュニティにも還元の仕組みを。
       </p>
       <div class="ornament-divider mt-7 max-w-[200px]"><span class="line"></span><svg width="20" height="20" aria-hidden="true"><use href="#i-sparkle-s"/></svg><span class="line"></span></div>
     </header>
@@ -610,7 +642,7 @@ fbq('consent', 'revoke');
     <header class="text-center max-w-reading mx-auto">
       <span class="eyebrow">Real Voices</span>
       <h2 id="testi-h" class="section-heading mt-5">
-        メンバーが「<em>このコミュニティでよかった</em>」と<br class="hidden md:block" />話せるようになる
+        メンバーが「<em>このコミュニティでよかった</em>」と<wbr /><br class="hidden md:block" />話せるようになる
       </h2>
       <div class="ornament-divider mt-7 max-w-[180px]"><span class="line"></span><svg width="18" height="18" aria-hidden="true"><use href="#i-sparkle-s"/></svg><span class="line"></span></div>
     </header>
@@ -696,8 +728,8 @@ fbq('consent', 'revoke');
     <header class="max-w-3xl">
       <span class="eyebrow story-eyebrow">Our Story</span>
       <h2 id="story-h" class="story-head mt-5">
-        私自身が、3年間勧誘で疲れ切っていました。<br />
-        <span class="accent">そこから見つけた、たった一つの答え。</span>
+        私自身が、<wbr />3年間勧誘で疲れ切っていました。<br />
+        <span class="accent">そこから見つけた、<wbr />たった一つの答え。</span>
       </h2>
     </header>
 
@@ -711,7 +743,7 @@ fbq('consent', 'revoke');
         </div>
         <div class="story-content">
           <div class="story-photo">
-            <img src="./assets/images/owner-3quarter.png" alt="JUN 葛藤の時期" width="600" height="750" loading="lazy" />
+            <img src="./assets/images/owner-3quarter.png" alt="坂本純一 葛藤の時期" width="600" height="750" loading="lazy" />
           </div>
           <div>
             <h3 class="story-act-title">「私自身も、3年間勧誘で疲れ切っていました」</h3>
@@ -735,7 +767,7 @@ fbq('consent', 'revoke');
         </div>
         <div class="story-content">
           <div class="story-photo">
-            <img src="./assets/images/owner-working.png" alt="JUN 気づきの瞬間" width="600" height="750" loading="lazy" />
+            <img src="./assets/images/owner-working.png" alt="坂本純一 気づきの瞬間" width="600" height="750" loading="lazy" />
           </div>
           <div>
             <h3 class="story-act-title">メンバーから「もう紹介ばかり」と言われた瞬間</h3>
@@ -760,7 +792,7 @@ fbq('consent', 'revoke');
         </div>
         <div class="story-content">
           <div class="story-photo">
-            <img src="./assets/images/owner-closeup.png" alt="JUN 検証の8ヶ月" width="600" height="750" loading="lazy" />
+            <img src="./assets/images/owner-closeup.png" alt="坂本純一 検証の8ヶ月" width="600" height="750" loading="lazy" />
           </div>
           <div>
             <h3 class="story-act-title">モニター案件モデルを、8ヶ月試した結果</h3>
@@ -785,7 +817,7 @@ fbq('consent', 'revoke');
         </div>
         <div class="story-content">
           <div class="story-photo">
-            <img src="./assets/images/owner-smile.png" alt="JUN 同じ悩みの仲間へ" width="600" height="750" loading="lazy" />
+            <img src="./assets/images/owner-smile.png" alt="坂本純一 同じ悩みの仲間へ" width="600" height="750" loading="lazy" />
           </div>
           <div>
             <h3 class="story-act-title">同じ悩みのリーダーへ、届けたい</h3>
@@ -793,7 +825,7 @@ fbq('consent', 'revoke');
               <p>
                 そして気づきました。<br />
                 これは、<strong>私個人ではなく、仕組みとして残せるもの</strong>だと。<br />
-                REVIRALL は、私が3年かけて取り戻した「胸を張れる感覚」を、<br />
+                「クローズドASP運営事務局」は、<wbr />私が3年かけて取り戻した「胸を張れる感覚」を、<br />
                 同じ悩みを抱えるリーダーへ届けるためのプラットフォームです。<br />
                 判断は今日でなくて構いません。あなたのコミュニティに合う「福利厚生メニュー」が、<br />
                 どんな形になるのか、まず<strong>30分だけ見てみてください</strong>。
@@ -826,11 +858,11 @@ fbq('consent', 'revoke');
     <header class="text-center max-w-reading mx-auto">
       <span class="eyebrow">Pricing</span>
       <h2 id="pricing-h" class="section-heading mt-5">
-        あなたのコミュニティに、<br class="md:hidden" />
+        あなたのコミュニティに、<wbr /><br class="md:hidden" />
         <em>福利厚生</em>を整えるためのプラン
       </h2>
       <p class="mt-5 text-brand-muted leading-relaxed">
-        コミュニティの規模に合わせて、3つのプランをご用意しています。
+        コミュニティの規模に合わせて、<wbr />3つのプランをご用意しています。
       </p>
       <div class="ornament-divider mt-7 max-w-[180px]"><span class="line"></span><svg width="18" height="18" aria-hidden="true"><use href="#i-sparkle-s"/></svg><span class="line"></span></div>
     </header>
@@ -942,10 +974,10 @@ fbq('consent', 'revoke');
     <header class="text-center max-w-reading mx-auto">
       <span class="eyebrow">Honest Note</span>
       <h2 id="oos-h" class="section-heading mt-5">
-        逆に、こんな方には<em>向きません</em>
+        逆に、こんな方には<wbr /><em>向きません</em>
       </h2>
       <p class="mt-4 text-brand-muted leading-relaxed">
-        REVIRALLは「コミュニティへの還元」が前提のサービスです。<br />合わない方には、無理にご案内しません。
+        「クローズドASP運営事務局」は<wbr />「コミュニティへの還元」が前提のサービスです。<br />合わない方には、<wbr />無理にご案内しません。
       </p>
     </header>
 
@@ -1076,7 +1108,7 @@ fbq('consent', 'revoke');
      BLOCK 11 — Final CTA
      ==================================================== -->
 <section class="final-section" data-block="11" id="booking" aria-labelledby="final-h">
-  <div aria-hidden="true" class="display-num-bg">JUN</div>
+  <div aria-hidden="true" class="display-num-bg">Letter</div>
   <div class="relative max-w-container mx-auto px-5 lg:px-8">
 
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -1084,49 +1116,50 @@ fbq('consent', 'revoke');
       <!-- Left photo -->
       <div class="lg:col-span-5">
         <div class="final-photo">
-          <img src="./assets/images/owner-smile.png" alt="REVIRALL代表 JUN" width="800" height="1000" loading="lazy" />
+          <img src="./assets/images/owner-smile.png" alt="クローズドASP運営事務局 代表 坂本純一" width="800" height="1000" loading="lazy" />
           <div class="final-photo-cap">
-            <strong>JUN</strong>
-            <span>REVIRALL 代表</span>
+            <strong>坂本 純一</strong>
+            <span>クローズドASP運営事務局 代表</span>
           </div>
         </div>
       </div>
 
       <!-- Right message -->
       <div class="lg:col-span-7">
-        <span class="eyebrow story-eyebrow">A Letter from JUN</span>
+        <span class="eyebrow story-eyebrow">A Letter from Junichi Sakamoto</span>
         <h2 id="final-h" class="final-heading mt-5">
-          コミュニティを伸ばす本質は、<br />
+          コミュニティを伸ばす本質は、<wbr /><br />
           <span class="accent">たった一つだけ。</span>
         </h2>
 
         <div class="final-message mt-7">
           <p>
-            私が3年で気づいたのは、コミュニティを伸ばす本質は、<br />
+            私が3年で気づいたのは、<wbr />コミュニティを伸ばす本質は、<br />
             たった一つだけだということでした。
           </p>
           <p>
-            それは、<strong>「メンバーに、形のあるものを還し続けている」</strong>かどうか。
+            それは、<wbr /><strong>「メンバーに、<wbr />形のあるものを還し続けている」</strong>かどうか。
           </p>
           <p>
             想いだけでは、もう伸びません。<br />
-            熱意だけでは、メンバーは家族にあなたのことを話せません。<br />
-            リーダーであるあなたが、福利厚生のような「形」を整えてあげる ——<br />
+            熱意だけでは、<wbr />メンバーは家族にあなたのことを話せません。<br />
+            リーダーであるあなたが、<wbr />福利厚生のような「形」を整えてあげる ——<br />
             それだけで、コミュニティの空気が変わります。<br />
             紹介も勧誘も、もう要りません。
           </p>
           <p>
             判断は今日でなくて構いません。<br />
-            ただ、あなたのコミュニティに合う「福利厚生メニュー」が<br />
-            どんな形になるのか、<strong>30分だけ一緒に見てみませんか。</strong>
+            ただ、あなたのコミュニティに合う<wbr />「福利厚生メニュー」が<br />
+            どんな形になるのか、<wbr /><strong>30分だけ一緒に見てみませんか。</strong>
           </p>
         </div>
 
-        <p class="final-signoff">— REVIRALL代表 <strong>JUN</strong></p>
+        <p class="final-signoff">— クローズドASP運営事務局 代表 <strong>坂本 純一</strong></p>
 
+        <!-- TODO: 予約URLは https://line.me/R/ → 公式LINE経由で日程調整。実URLは確定後差し替え。 -->
         <div class="mt-8 flex flex-col sm:flex-row gap-3">
           <a href="https://line.me/R/" data-cta="final" class="btn-primary lg">
-            <span>JUNと30分、あなたのコミュニティについて話す</span>
+            <span>坂本と30分、<wbr />あなたのコミュニティについて話す</span>
             <svg class="w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
           </a>
         </div>
@@ -1147,32 +1180,41 @@ fbq('consent', 'revoke');
   <div class="max-w-container mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
 
     <div class="lg:col-span-5">
-      <p class="font-serif italic text-white text-lg tracking-[0.16em] uppercase">REVIRALL</p>
+      <p class="font-serif italic text-white text-lg tracking-[0.16em] uppercase">Closed ASP Office</p>
+      <p class="mt-1 text-white/70 text-sm tracking-wider">クローズドASP運営事務局</p>
       <p class="mt-3 leading-relaxed">
-        コミュニティ向け『お金の福利厚生』プラットフォーム。<br />
-        会社が社員に整えるのと同じように、<br />
+        コミュニティ向け<wbr />『お金の福利厚生』プラットフォーム。<br />
+        会社が社員に整えるのと同じように、<wbr />
         コミュニティにも還元の仕組みを。
       </p>
 
       <div class="ftbox mt-7 text-xs leading-relaxed">
+        <strong class="text-white block mb-2">運営事業者</strong>
+        合同会社リバイラル（代表：坂本 純一）<br />
+        〒150-0002 東京都渋谷区渋谷2-19-15<wbr /> 宮益坂ビルディング609<br />
+        TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a> ／ Email: <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a><br />
+        公式サイト: <a href="https://revirall.jp/" class="underline">https://revirall.jp/</a>
+      </div>
+
+      <div class="ftbox mt-4 text-xs leading-relaxed">
         <strong class="text-white block mb-2">ステマ規制対応開示</strong>
-        本サイトに掲載している体験者の声は、いずれも<strong class="text-white">体験者本人の感想</strong>であり、効果を保証するものではありません。一部の体験案件においては、<strong class="text-white">体験者にモニター費用を支給</strong>している場合があります。
+        本サイトに掲載している体験者の声は、いずれも<strong class="text-white">体験者本人の感想</strong>であり、<wbr />効果を保証するものではありません。一部の体験案件においては、<wbr /><strong class="text-white">体験者にモニター費用を支給</strong>している場合があります。
       </div>
     </div>
 
     <div class="lg:col-span-4">
-      <!-- TODO before deploy: 事業者名(正式)・所在地・連絡先・代表者を本番値に差し替え (特商法11条) -->
       <h4>特定商取引法に基づく表記</h4>
       <dl class="space-y-1.5 text-xs">
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">事業者</dt><dd>REVIRALL（運営会社情報）</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">代表者</dt><dd>JUN</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">所在地</dt><dd>※掲載予定</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">連絡先</dt><dd>support@revirall.jp</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">提供価格</dt><dd>各プラン記載の通り（税別）</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">事業者名</dt><dd>合同会社リバイラル</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">運営責任者</dt><dd>坂本 純一</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">所在地</dt><dd>〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング609</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">連絡先</dt><dd>TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a><br />Email: <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a></dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">サービス名</dt><dd>クローズドASP運営事務局<br />（コミュニティ向け福利厚生プラットフォーム）</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">販売価格</dt><dd>月額 ¥30,000〜¥200,000／初期費 ¥298,000（いずれも税別）</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">支払方法</dt><dd>クレジットカード／銀行振込（お申し込み時にご案内）</dd></div>
         <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">支払時期</dt><dd>契約時 初期費／毎月1日 月額</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">役務提供時期</dt><dd>契約締結後3営業日以内に開始</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">解約条件</dt><dd>初回6ヶ月継続後、月単位解約可</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">返品</dt><dd>役務性質上、原則不可</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">引渡時期</dt><dd>契約完了後3営業日以内にアカウント発行</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">返品・解約</dt><dd>初回6ヶ月の継続契約。詳細は契約書にて明示。役務性質上、原則返品不可。</dd></div>
       </dl>
     </div>
 
@@ -1187,14 +1229,14 @@ fbq('consent', 'revoke');
 
       <div class="ftbox mt-6 text-xs leading-relaxed">
         <strong class="text-white block mb-2">個人情報の海外移転について</strong>
-        本サイトでは Meta Pixel / 変換 API（CAPI）を利用し、計測・最適化目的で Meta（米国）に情報を提供しています。改正個人情報保護法 第27条に基づき、ご同意いただいた方のみ計測を実施します（同意は<a href="/privacy" class="underline">こちら</a>からいつでも撤回可能）。
+        本サイトでは Meta Pixel / 変換 API（CAPI）を利用し、<wbr />計測・最適化目的で Meta（米国）に情報を提供しています。<wbr />改正個人情報保護法 第27条に基づき、<wbr />ご同意いただいた方のみ計測を実施します（同意は<a href="/privacy" class="underline">こちら</a>から<wbr />いつでも撤回可能）。
       </div>
     </div>
   </div>
 
   <div class="max-w-container mx-auto px-5 lg:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/50">
-    <p>&copy; <span id="footer-year">2026</span> REVIRALL. All rights reserved.</p>
-    <p>v3.0.0 / community-monitor / messaging-v2 (福利厚生軸)</p>
+    <p>&copy; <span id="footer-year">2026</span> 合同会社リバイラル ／ クローズドASP運営事務局. All rights reserved.</p>
+    <p>v3.0.1 / community-monitor / messaging-v2 (福利厚生軸)</p>
   </div>
 </footer>
 <!-- BLOCK_12_END -->
@@ -1245,7 +1287,7 @@ fbq('consent', 'revoke');
       <span>30分の無料診断を予約する</span>
       <svg class="w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
     </a>
-    <p class="mt-4 text-xs text-brand-mutedlight">— REVIRALL代表 JUN</p>
+    <p class="mt-4 text-xs text-brand-mutedlight">— クローズドASP運営事務局 代表 坂本 純一</p>
   </div>
 </div>
 
