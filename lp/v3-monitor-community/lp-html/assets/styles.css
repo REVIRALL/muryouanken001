@@ -130,6 +130,7 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
 }
 .eyebrow::before, .eyebrow::after {
   content: '';
+  flex: none;
   width: 28px; height: 1px;
   background: linear-gradient(90deg, transparent, var(--c-primary), transparent);
   display: inline-block;
@@ -137,6 +138,15 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
 .eyebrow.dark { color: var(--c-accent); }
 .eyebrow.dark::before, .eyebrow.dark::after {
   background: linear-gradient(90deg, transparent, var(--c-accent), transparent);
+}
+/* Narrow viewport: shrink lines so long eyebrows like "For Community Leaders" fit */
+@media (max-width: 640px) {
+  .eyebrow { gap: 10px; font-size: 0.72rem; letter-spacing: 0.22em; max-width: 100%; }
+  .eyebrow::before, .eyebrow::after { width: 18px; }
+}
+@media (max-width: 380px) {
+  .eyebrow::before, .eyebrow::after { width: 12px; }
+  .eyebrow { gap: 8px; letter-spacing: 0.18em; }
 }
 
 /* ----- CTA buttons ----- */
@@ -357,25 +367,9 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
   transform: scaleX(1);
 }
 
-/* Eyebrow accent draw (subtle slide-in underline) */
-.eyebrow {
-  position: relative;
-  display: inline-block;
-}
-.eyebrow::after {
-  content: '';
-  position: absolute;
-  left: 0; right: auto; bottom: -6px;
-  width: 0; height: 1px;
-  background: currentColor;
-  opacity: 0.4;
-  transition: width .7s cubic-bezier(.22,.61,.36,1) .15s;
-}
-[data-reveal].is-visible .eyebrow::after,
-.is-visible .eyebrow::after,
-header.is-visible .eyebrow::after {
-  width: 32px;
-}
+/* (Eyebrow accent draw 削除: 元の .eyebrow { display: inline-flex } で
+   ::before/::after が text 左右に flex 並びする「── text ──」パターン
+   を維持するため、自前の position:absolute underline 上書きは撤去) */
 
 /* CTA shimmer on hover (button-primary / btn-line) */
 .btn-primary,
@@ -452,7 +446,6 @@ header.is-visible .eyebrow::after {
     transition: none !important;
   }
   .ornament-divider .line { transform: scaleX(1) !important; }
-  .eyebrow::after { width: 32px !important; transition: none !important; }
   .btn-primary::after, .btn-line::after { display: none !important; }
   .method-image img, .story-photo img,
   .problem-image-frame img, .final-photo img {
@@ -2163,8 +2156,11 @@ header.is-visible .eyebrow::after {
   display: inline-flex; align-items: center; justify-content: center;
 }
 .oos-text {
+  flex: 1 1 0;
+  min-width: 0;
   font-size: 0.98rem;
   line-height: 1.7;
+  overflow-wrap: anywhere;
   color: var(--c-ink);
   font-weight: 600;
 }
