@@ -213,9 +213,9 @@
   revealTargets.forEach(function (el) {
     if (!el.hasAttribute('data-reveal')) el.setAttribute('data-reveal', '');
   });
-  // Auto stagger parents — apply to grids that contain cards
+  // Auto stagger parents — only above-fold + tight rows (not full-card grids; let those reveal individually)
   var staggerParents = document.querySelectorAll(
-    '.peek-grid, .method-iconrow, ul[aria-label="信頼情報"]'
+    '.method-iconrow, ul[aria-label="信頼情報"]'
   );
   staggerParents.forEach(function (p) {
     if (!p.hasAttribute('data-reveal-stagger')) p.setAttribute('data-reveal-stagger', '');
@@ -248,8 +248,8 @@
       var doc = document.documentElement;
       var scrollTop = window.scrollY || doc.scrollTop;
       var max = (doc.scrollHeight - doc.clientHeight) || 1;
-      var pct = Math.min(100, Math.max(0, (scrollTop / max) * 100));
-      bar.style.width = pct + '%';
+      var ratio = Math.min(1, Math.max(0, scrollTop / max));
+      bar.style.transform = 'scaleX(' + ratio + ')';
     };
     window.addEventListener('scroll', function () {
       if (raf === null) raf = window.requestAnimationFrame(updateBar);
