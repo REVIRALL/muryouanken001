@@ -964,7 +964,7 @@ fbq('consent', 'revoke');
 
     <div class="mt-12 max-w-3xl mx-auto space-y-4">
 
-      <details class="faq-item featured" data-q="q1" open>
+      <details class="faq-item featured" data-q="q1">
         <summary>
           <span class="q-mark" aria-hidden="true">Q</span>
           <span class="q-text">これはネットワーク<wbr />ビジネス<span class="nowrap">ですか？</span></span>
@@ -1120,66 +1120,97 @@ fbq('consent', 'revoke');
      BLOCK 12 — Footer
      ==================================================== -->
 <footer class="footer" data-block="12">
-  <div class="max-w-container mx-auto px-5 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-10">
+  <div class="max-w-container mx-auto px-5 lg:px-8">
 
-    <div class="lg:col-span-5">
+    <!-- Brand intro (always visible) -->
+    <div class="footer-brand">
       <p class="font-serif italic text-white text-lg tracking-[0.16em] uppercase">Closed ASP Office</p>
       <p class="mt-1 text-white/70 text-sm tracking-wider">クローズドASP運営事務局</p>
-      <p class="mt-3 leading-relaxed">
+      <p class="mt-3 leading-relaxed max-w-2xl">
         コミュニティ向け<wbr />『お金の福利厚生』プラットフォーム。<br />
         会社が社員に整えるのと同じように、<wbr />
         コミュニティにも還元の仕組みを。
       </p>
-
-      <div class="ftbox mt-7 text-xs leading-relaxed">
-        <strong class="text-white block mb-2">運営事業者</strong>
-        合同会社リバイラル（代表：坂本 純一）<br />
-        〒150-0002 東京都渋谷区渋谷2-19-15<wbr /> 宮益坂ビルディング609<br />
-        TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a> ／ Email: <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a><br />
-        公式サイト: <a href="https://revirall.jp/" class="underline">https://revirall.jp/</a>
-      </div>
-
-      <div class="ftbox mt-4 text-xs leading-relaxed">
-        <strong class="text-white block mb-2">ステマ規制対応開示</strong>
-        本サイトに掲載している体験者の声は、いずれも<strong class="text-white">体験者本人の感想</strong>であり、<wbr />効果を保証するものではありません。一部の体験案件においては、<wbr /><strong class="text-white">体験者にモニター費用を支給</strong>している場合があります。
-      </div>
     </div>
 
-    <div class="lg:col-span-4">
-      <h4>特定商取引法に基づく表記</h4>
-      <dl class="space-y-1.5 text-xs">
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">事業者名</dt><dd>合同会社リバイラル</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">運営責任者</dt><dd>坂本 純一</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">所在地</dt><dd>〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング609</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">連絡先</dt><dd>TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a><br />Email: <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a></dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">サービス名</dt><dd>クローズドASP運営事務局<br />（コミュニティ向け福利厚生プラットフォーム）</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">販売価格</dt><dd>個別お見積もり（無料相談時にご案内 / いずれも税別）</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">支払方法</dt><dd>クレジットカード／銀行振込（お申し込み時にご案内）</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">支払時期</dt><dd>契約時 初期費／毎月1日 月額</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">引渡時期</dt><dd>契約完了後3営業日以内にアカウント発行</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">返品・解約</dt><dd>初回6ヶ月の継続契約。詳細は契約書にて明示。役務性質上、原則返品不可。</dd></div>
-      </dl>
-    </div>
+    <!-- Accordion sections -->
+    <div class="footer-accordion mt-10">
 
-    <div class="lg:col-span-3">
-      <h4>その他</h4>
-      <ul class="space-y-2 text-xs">
-        <li><a href="/privacy">プライバシーポリシー</a></li>
-        <li><a href="/terms">利用規約</a></li>
-        <li><a href="/tokushoho">特定商取引法表記</a></li>
-        <li><a href="/contact">お問い合わせ</a></li>
-      </ul>
+      <details class="ft-acc-item" data-ft="company">
+        <summary class="ft-acc-summary">
+          <span class="ft-acc-label">運営事業者情報</span>
+          <svg class="ft-acc-chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ft-acc-body text-xs leading-relaxed">
+          合同会社リバイラル（代表：坂本 純一）<br />
+          〒150-0002 東京都渋谷区渋谷2-19-15<wbr /> 宮益坂ビルディング609<br />
+          TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a> ／ Email: <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a><br />
+          公式サイト: <a href="https://revirall.jp/" class="underline">https://revirall.jp/</a>
+        </div>
+      </details>
 
-      <div class="ftbox mt-6 text-xs leading-relaxed">
-        <strong class="text-white block mb-2">個人情報の海外移転について</strong>
-        本サイトでは Meta Pixel / 変換 API（CAPI）を利用し、<wbr />計測・最適化目的で Meta（米国）に情報を提供しています。<wbr />改正個人情報保護法 第27条に基づき、<wbr />ご同意いただいた方のみ計測を実施します（同意は<a href="/privacy" class="underline">こちら</a>から<wbr />いつでも撤回可能）。
-      </div>
+      <details class="ft-acc-item" data-ft="tokushoho">
+        <summary class="ft-acc-summary">
+          <span class="ft-acc-label">特定商取引法に基づく表記</span>
+          <svg class="ft-acc-chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ft-acc-body">
+          <dl class="ft-dl text-xs">
+            <div><dt>事業者名</dt><dd>合同会社リバイラル</dd></div>
+            <div><dt>運営責任者</dt><dd>坂本 純一</dd></div>
+            <div><dt>所在地</dt><dd>〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング609</dd></div>
+            <div><dt>連絡先</dt><dd>TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a><br />Email: <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a></dd></div>
+            <div><dt>サービス名</dt><dd>クローズドASP運営事務局<br />（コミュニティ向け福利厚生プラットフォーム）</dd></div>
+            <div><dt>販売価格</dt><dd>個別お見積もり（無料相談時にご案内 / いずれも税別）</dd></div>
+            <div><dt>支払方法</dt><dd>クレジットカード／銀行振込（お申し込み時にご案内）</dd></div>
+            <div><dt>支払時期</dt><dd>契約時 初期費／毎月1日 月額</dd></div>
+            <div><dt>引渡時期</dt><dd>契約完了後3営業日以内にアカウント発行</dd></div>
+            <div><dt>返品・解約</dt><dd>初回6ヶ月の継続契約。詳細は契約書にて明示。役務性質上、原則返品不可。</dd></div>
+          </dl>
+        </div>
+      </details>
+
+      <details class="ft-acc-item" data-ft="stema">
+        <summary class="ft-acc-summary">
+          <span class="ft-acc-label">ステマ規制対応開示</span>
+          <svg class="ft-acc-chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ft-acc-body text-xs leading-relaxed">
+          本サイトに掲載している体験者の声は、いずれも<strong class="text-white">体験者本人の感想</strong>であり、<wbr />効果を保証するものではありません。一部の体験案件においては、<wbr /><strong class="text-white">体験者にモニター費用（モニター報酬）を支給</strong>している場合があります。報酬額・支給条件は案件ごとに異なります。
+        </div>
+      </details>
+
+      <details class="ft-acc-item" data-ft="privacy">
+        <summary class="ft-acc-summary">
+          <span class="ft-acc-label">個人情報の海外移転について</span>
+          <svg class="ft-acc-chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ft-acc-body text-xs leading-relaxed">
+          本サイトでは Meta Pixel / 変換 API（CAPI）を利用し、<wbr />計測・最適化目的で Meta（米国）に情報を提供しています。<wbr />改正個人情報保護法 第27条に基づき、<wbr />ご同意いただいた方のみ計測を実施します（同意は<a href="/privacy" class="underline">こちら</a>から<wbr />いつでも撤回可能）。
+        </div>
+      </details>
+
+      <details class="ft-acc-item" data-ft="links">
+        <summary class="ft-acc-summary">
+          <span class="ft-acc-label">その他のリンク</span>
+          <svg class="ft-acc-chev" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6"/></svg>
+        </summary>
+        <div class="ft-acc-body">
+          <ul class="ft-links text-xs">
+            <li><a href="/privacy">プライバシーポリシー</a></li>
+            <li><a href="/terms">利用規約</a></li>
+            <li><a href="/tokushoho">特定商取引法表記</a></li>
+            <li><a href="/contact">お問い合わせ</a></li>
+          </ul>
+        </div>
+      </details>
+
     </div>
   </div>
 
   <div class="max-w-container mx-auto px-5 lg:px-8 mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-3 text-xs text-white/50">
     <p>&copy; <span id="footer-year">2026</span> 合同会社リバイラル ／ クローズドASP運営事務局. All rights reserved.</p>
-    <p>v3.0.1 / community-monitor / messaging-v2 (福利厚生軸)</p>
+    <p>v3.0.2 / community-monitor / messaging-v3 (福利厚生軸)</p>
   </div>
 </footer>
 <!-- BLOCK_12_END -->

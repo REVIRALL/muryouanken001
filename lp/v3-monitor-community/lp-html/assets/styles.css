@@ -1983,6 +1983,78 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
 .footer h4 { color: white; font-weight: 700; font-size: 0.92rem; margin-bottom: 14px; }
 .footer a { color: rgba(255,255,255,0.78); transition: color .2s; }
 .footer a:hover { color: var(--c-accent-light); }
+
+/* ===== Footer Accordion ===== */
+.footer-brand p:first-child { color: white; }
+.footer-accordion {
+  max-width: 880px;
+  margin-inline: auto;
+}
+.ft-acc-item {
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+.ft-acc-item:last-child { border-bottom: 1px solid rgba(255,255,255,0.10); }
+.ft-acc-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 4px;
+  cursor: pointer;
+  list-style: none;
+  color: white;
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.01em;
+  user-select: none;
+  transition: color .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.ft-acc-summary::-webkit-details-marker { display: none; }
+.ft-acc-summary::marker { display: none; content: ''; }
+.ft-acc-summary:hover { color: var(--c-accent-light); }
+.ft-acc-summary:focus-visible {
+  outline: 2px solid var(--c-accent);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.ft-acc-label { flex: 1 1 auto; }
+.ft-acc-chev {
+  flex: none;
+  color: rgba(255,255,255,0.55);
+  transition: transform .35s cubic-bezier(.22,.61,.36,1), color .2s ease;
+}
+.ft-acc-item[open] > .ft-acc-summary .ft-acc-chev {
+  transform: rotate(180deg);
+  color: var(--c-accent-light);
+}
+.ft-acc-body {
+  padding: 4px 4px 22px;
+  color: rgba(255,255,255,0.7);
+  animation: ft-acc-slide .35s ease-out;
+}
+@keyframes ft-acc-slide {
+  from { opacity: 0; transform: translateY(-4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.ft-dl { display: grid; gap: 6px 0; }
+.ft-dl > div {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+.ft-dl dt { color: rgba(255,255,255,0.55); }
+.ft-dl dd { color: rgba(255,255,255,0.78); }
+@media (max-width: 480px) {
+  .ft-dl > div { grid-template-columns: 84px 1fr; gap: 8px; }
+  .ft-acc-summary { padding: 16px 4px; font-size: 0.88rem; }
+  .ft-acc-label { line-height: 1.4; }
+}
+.ft-links { display: flex; flex-direction: column; gap: 8px; }
+.ft-links a { color: rgba(255,255,255,0.78); }
+.ft-links a:hover { color: var(--c-accent-light); text-decoration: underline; }
+
 .footer .ftbox {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
