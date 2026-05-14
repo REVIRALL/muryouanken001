@@ -2793,6 +2793,23 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
   .story-photo { max-width: 380px; margin-inline: auto; }
 }
 
+/* Mobile + Tablet (≤1023): num + label stack vertically (fix for default inline span layout) */
+@media (max-width: 1023px) {
+  .story-num-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    line-height: 1;
+  }
+  .story-num { display: inline-block; }
+  .story-act-label { align-self: flex-start; }
+  /* .reverse acts: 右寄せで mobile/tablet alternation を視覚的に表現 */
+  .story-act.reverse .story-num-block { align-items: flex-end; }
+  .story-act.reverse .story-act-label { align-self: flex-end; }
+}
+
 /* Mobile (≤767): tighten Story section dramatically */
 @media (max-width: 767px) {
   /* Smaller num so it doesn't eat 30% viewport */
@@ -2810,8 +2827,7 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
   .story-photo::after {
     background: linear-gradient(180deg, transparent 70%, rgba(0,0,0,0.10) 100%);
   }
-  /* .reverse acts get a visible mobile differentiator */
-  .story-act.reverse .story-num-block { text-align: right; margin-left: auto; }
+  /* .reverse acts のラベルチップ装飾 (縦積み + 右寄せは ≤1023 ブロックで設定済み) */
   .story-act.reverse .story-act-label {
     background: rgba(232,155,101,0.10);
     border: 1px solid rgba(232,155,101,0.22);
