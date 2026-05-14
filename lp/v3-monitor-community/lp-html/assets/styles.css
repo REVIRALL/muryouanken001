@@ -2317,16 +2317,16 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
 }
 .final-signoff strong { color: var(--c-accent-light); }
 
-/* No-fee promise notice (between final letter and CTA) */
+/* No-fee promise notice (consultation topics) */
 .final-no-fee {
   margin-top: 28px;
-  padding: 18px 20px;
+  padding: 20px 22px;
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 16px;
   background: linear-gradient(135deg, rgba(232,155,101,0.10), rgba(45,122,140,0.06));
   border: 1px solid rgba(232,155,101,0.28);
-  border-radius: 14px;
+  border-radius: 16px;
   color: rgba(255,255,255,0.92);
 }
 .final-no-fee-icon {
@@ -2334,22 +2334,59 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px; height: 36px;
+  width: 38px; height: 38px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--c-accent-deep), var(--c-accent));
   color: white;
   box-shadow: 0 6px 14px -4px rgba(232,155,101,0.55);
+  margin-top: 2px;
 }
-.final-no-fee p {
+.final-no-fee-body { flex: 1 1 0; min-width: 0; }
+.final-no-fee-lead {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+.final-topics {
+  margin: 12px 0 12px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px 18px;
+}
+@media (min-width: 640px) {
+  .final-topics { grid-template-columns: 1fr 1fr; }
+}
+.final-topics li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255,255,255,0.88);
+}
+.final-topics li::before {
+  content: '';
+  position: absolute;
+  left: 4px; top: 0.65em;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--c-accent-deep), var(--c-accent));
+  box-shadow: 0 0 0 3px rgba(232,155,101,0.16);
+}
+.final-no-fee-foot {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.65;
+  color: rgba(255,255,255,0.92);
 }
 .final-no-fee strong { color: var(--c-accent-light); font-weight: 700; }
 @media (max-width: 640px) {
-  .final-no-fee { padding: 16px 16px; gap: 12px; }
+  .final-no-fee { padding: 16px 16px; gap: 12px; border-radius: 14px; }
   .final-no-fee-icon { width: 32px; height: 32px; }
-  .final-no-fee p { font-size: 0.88rem; line-height: 1.7; }
+  .final-no-fee-lead, .final-no-fee-foot { font-size: 0.9rem; line-height: 1.7; }
+  .final-topics li { font-size: 0.84rem; padding-left: 18px; }
+  .final-topics li::before { width: 6px; height: 6px; left: 4px; }
 }
 
 /* =================================================
