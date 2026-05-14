@@ -199,11 +199,29 @@
     updateSticky();
   }
 
-  // ---------- Reveal on scroll ----------
-  var revealTargets = document.querySelectorAll(
-    '[data-block] header, .empathy-card, .step-card, .testimonial-card, .plan-card, .method-block, .story-act, .faq-item, .shift-card, .oos-row'
+  // ---------- Reveal on scroll (v2 — variants + stagger) ----------
+  var autoRevealSelectors = [
+    '[data-block] header',
+    '.empathy-card', '.step-card', '.testimonial-card', '.plan-card', '.peek-card',
+    '.method-block', '.story-act', '.faq-item', '.shift-card', '.oos-row',
+    '.problem-callout', '.problem-image-frame', '.peek-cta',
+    '.final-photo', '.final-letter', '.final-message',
+    '.ornament-divider', '.method-image', '.story-photo',
+    '.hero-portrait', '.method-iconrow'
+  ].join(', ');
+  var revealTargets = document.querySelectorAll(autoRevealSelectors);
+  revealTargets.forEach(function (el) {
+    if (!el.hasAttribute('data-reveal')) el.setAttribute('data-reveal', '');
+  });
+  // Auto stagger parents — apply to grids that contain cards
+  var staggerParents = document.querySelectorAll(
+    '.peek-grid, .method-iconrow, ul[aria-label="信頼情報"]'
   );
-  revealTargets.forEach(function (el) { el.setAttribute('data-reveal', ''); });
+  staggerParents.forEach(function (p) {
+    if (!p.hasAttribute('data-reveal-stagger')) p.setAttribute('data-reveal-stagger', '');
+  });
+  // Include parent triggers in the IO set
+  var triggerTargets = document.querySelectorAll(autoRevealSelectors + ', [data-reveal], [data-reveal-stagger]');
 
   if ('IntersectionObserver' in window) {
     var revealIO = new IntersectionObserver(function (entries) {
@@ -214,9 +232,29 @@
         }
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
-    revealTargets.forEach(function (el) { revealIO.observe(el); });
+    triggerTargets.forEach(function (el) { revealIO.observe(el); });
   } else {
-    revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+    triggerTargets.forEach(function (el) { el.classList.add('is-visible'); });
+  }
+
+  // ---------- Scroll progress bar ----------
+  if (!document.querySelector('.scroll-progress') && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    document.body.appendChild(bar);
+    var raf = null;
+    var updateBar = function () {
+      raf = null;
+      var doc = document.documentElement;
+      var scrollTop = window.scrollY || doc.scrollTop;
+      var max = (doc.scrollHeight - doc.clientHeight) || 1;
+      var pct = Math.min(100, Math.max(0, (scrollTop / max) * 100));
+      bar.style.width = pct + '%';
+    };
+    window.addEventListener('scroll', function () {
+      if (raf === null) raf = window.requestAnimationFrame(updateBar);
+    }, { passive: true });
+    updateBar();
   }
 
   // ---------- FAQ Q1 open tracking ----------
