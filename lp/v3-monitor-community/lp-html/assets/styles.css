@@ -886,8 +886,8 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
   pointer-events: none;
 }
 
-/* Mobile / tablet — image moves below text, hide accent rule */
-@media (max-width: 1023px) {
+/* Mobile only — image stacks below text */
+@media (max-width: 767px) {
   .problem-grid { gap: 32px; }
   .problem-text-col .problem-body,
   .problem-text-col .problem-callout { max-width: none; }
@@ -1445,7 +1445,10 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
   max-width: 1080px;
   margin-inline: auto;
 }
-@media (min-width: 640px) {
+@media (min-width: 640px) and (max-width: 767px) {
+  .peek-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+}
+@media (min-width: 768px) {
   .peek-grid { grid-template-columns: repeat(3, 1fr); gap: 22px; }
 }
 .peek-card {
@@ -1516,7 +1519,7 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
 /* CTA card */
 .peek-cta {
   position: relative;
-  max-width: 640px;
+  max-width: 720px;
   margin: 64px auto 0;
   padding: clamp(36px, 5vw, 56px) clamp(24px, 4vw, 48px);
   background: linear-gradient(180deg, white 0%, var(--c-cream) 100%);
@@ -1627,7 +1630,8 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
 /* mobile */
 @media (max-width: 640px) {
   .peek-cta { margin-top: 48px; padding: 32px 20px; border-radius: 20px; }
-  .peek-cta-btn { padding: 16px 22px; font-size: 0.96rem; }
+  .peek-cta-btn { padding: 18px 18px; font-size: 0.92rem; gap: 8px; min-height: 56px; max-width: 100%; }
+  .peek-cta-btn .peek-line-mark { width: 20px; height: 20px; }
   .peek-cta-trust { gap: 10px 16px; font-size: 0.78rem; }
   .peek-card { padding: 22px 20px 20px; }
   .peek-card-title { font-size: 1rem; }
@@ -2165,8 +2169,8 @@ p, .body, .lead, li, dd, .empathy-text, .method-body, .step-body, .step-summary,
 }
 .exit-card .exit-close {
   position: absolute;
-  top: 14px; right: 14px;
-  width: 36px; height: 36px;
+  top: 10px; right: 10px;
+  width: 44px; height: 44px;
   border-radius: 50%;
   background: var(--c-cream);
   color: var(--c-muted);
@@ -2330,17 +2334,39 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
   /* Sticky CTA がフッターに被らないように main 内に padding */
   .footer { padding-bottom: 96px; }
 
-  /* Cookie banner: max-height 90px相当 / コンパクト化 */
-  .cookie-banner { padding: 12px 14px; left: 8px; right: 8px; bottom: 92px; }
+  /* Cookie banner: コンパクト化 + WCAG 44px tap target */
+  .cookie-banner { padding: 12px 14px; left: 8px; right: 8px; bottom: calc(88px + env(safe-area-inset-bottom, 0px)); max-height: 50vh; overflow-y: auto; }
   .cookie-banner h5 { font-size: 0.84rem; margin-bottom: 3px; }
-  .cookie-banner p { font-size: 0.72rem; line-height: 1.55; }
-  .cookie-banner-btns { margin-top: 10px; gap: 8px; }
-  .cookie-banner-btns button { padding: 8px 14px; font-size: 0.76rem; }
+  .cookie-banner p { font-size: 0.74rem; line-height: 1.6; }
+  .cookie-banner-btns { margin-top: 12px; gap: 8px; flex-direction: column; }
+  .cookie-banner-btns button { padding: 12px 18px; font-size: 0.84rem; min-height: 44px; width: 100%; }
 
-  /* Sticky CTA テキスト調整 */
-  .sticky-cta { padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); }
-  .sticky-cta-text { font-size: 0.72rem; line-height: 1.4; }
-  .sticky-cta .btn-primary { padding: 12px 16px; font-size: 0.82rem; width: auto; flex: none; }
+  /* Sticky CTA テキスト + WCAG 44px tap target */
+  .sticky-cta { padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px)); }
+  .sticky-cta-inner { gap: 10px; }
+  .sticky-cta-text { font-size: 0.7rem; line-height: 1.4; min-width: 0; }
+  .sticky-cta-text small { font-size: 0.62rem; }
+  .sticky-cta .btn-primary { padding: 12px 16px; font-size: 0.82rem; width: auto; flex: none; min-height: 44px; }
+
+  /* btn-line mobile sizing: gap + icon shrink for long JP label */
+  .btn-line { gap: 10px; }
+  .btn-line .peek-line-mark { width: 20px; height: 20px; }
+
+  /* problem-callout コンパクト化 */
+  .problem-callout { padding: 24px 20px; margin-top: 32px; }
+  .problem-callout::before { font-size: 72px; top: -22px; left: 14px; }
+
+  /* method-numlabel コンパクト化 */
+  .method-numlabel { flex-wrap: wrap; gap: 6px 12px; margin-bottom: 14px; }
+  .method-numlabel .num { font-size: 48px; }
+  .method-numlabel .label { font-size: 0.7rem; letter-spacing: 0.22em; }
+
+  /* hero-annotation / peek-disclaimer サイズ上げ */
+  .hero-annotation { font-size: 0.86rem; line-height: 1.7; }
+  .peek-disclaimer { font-size: 0.78rem; line-height: 1.7; }
+
+  /* footer link tap target */
+  .ft-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 6px 0; }
 
   /* Plan card featured: モバイルで突出させない */
   .plan-card.featured { transform: none; }
@@ -2353,9 +2379,27 @@ a:focus-visible, button:focus-visible { outline-offset: 4px; }
 @media (min-width: 768px) and (max-width: 1023px) {
   .hero h1 { font-size: clamp(2rem, 4.6vw, 2.4rem); }
   .section-heading { font-size: clamp(1.75rem, 4vw, 2.1rem); }
-  .method-image { aspect-ratio: 5/4; }
+  .method-image { aspect-ratio: 5/4; max-width: 460px; margin-inline: auto; }
   .testimonial-card { transform: none !important; }
   .testimonial-card.t2 { transform: translateY(-6px) !important; }
+
+  /* problem-image-frame at tablet 2-col layout */
+  .problem-image-frame { aspect-ratio: 4 / 5; }
+
+  /* hero-portrait at tablet: keep proportions, prevent extreme height */
+  .hero-portrait { max-width: 420px; margin-inline: auto; }
+  .hero-portrait img { aspect-ratio: 4 / 5; }
+
+  /* sticky-cta + cookie-banner stacking at tablet (cookie above sticky) */
+  .cookie-banner { bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* PC narrow (1024-1279) — story-act + content cramped fix */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .story-act { grid-template-columns: 200px 1fr !important; gap: 36px !important; }
+  .story-content { grid-template-columns: minmax(240px, 280px) 1fr !important; gap: 28px !important; }
+  .story-act.reverse .story-content { grid-template-columns: 1fr minmax(240px, 280px) !important; }
+  .problem-image-frame { aspect-ratio: 4 / 5; }
 }
 
 /* PC小 (1024-1439px) */
