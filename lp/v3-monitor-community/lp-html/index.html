@@ -7,12 +7,12 @@
 <meta name="robots" content="index,follow" />
 
 <title>あなたのコミュニティに、福利厚生はありますか？｜クローズドASP運営事務局</title>
-<meta name="description" content="月¥30,000〜、メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム「クローズドASP運営事務局」（合同会社リバイラル運営）。30分の無料診断受付中。" />
+<meta name="description" content="メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム「クローズドASP運営事務局」（合同会社リバイラル運営）。30分の無料診断受付中。" />
 <link rel="canonical" href="https://revirall.jp/lp/v3-monitor-community/" />
 
 <!-- OGP -->
 <meta property="og:title" content="あなたのコミュニティに、福利厚生はありますか？｜クローズドASP運営事務局" />
-<meta property="og:description" content="月¥30,000〜、メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム。" />
+<meta property="og:description" content="メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム。" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://revirall.jp/lp/v3-monitor-community/" />
 <meta property="og:site_name" content="クローズドASP運営事務局" />
@@ -20,7 +20,7 @@
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="あなたのコミュニティに、福利厚生はありますか？｜クローズドASP運営事務局" />
-<meta name="twitter:description" content="月¥30,000〜、メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム。" />
+<meta name="twitter:description" content="メンバーに「無料の体験案件」を配れる仕組み。コミュニティ向け『お金の福利厚生』プラットフォーム。" />
 
 <!-- Preconnect Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -108,11 +108,15 @@ fbq('consent', 'revoke');
       "provider": { "@id": "https://revirall.jp/#organization" },
       "description": "コミュニティ向け『お金の福利厚生』プラットフォーム。提携先と事前交渉済みの体験案件をメンバーへ配布できる仕組み。",
       "areaServed": "JP",
-      "offers": [
-        { "@type": "Offer", "name": "ライト", "price": "30000", "priceCurrency": "JPY", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "30000", "priceCurrency": "JPY", "unitCode": "MON" } },
-        { "@type": "Offer", "name": "スタンダード", "price": "80000", "priceCurrency": "JPY", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "80000", "priceCurrency": "JPY", "unitCode": "MON" } },
-        { "@type": "Offer", "name": "プロ", "price": "200000", "priceCurrency": "JPY", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "200000", "priceCurrency": "JPY", "unitCode": "MON" } }
-      ]
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "プラン構成",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ライト" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "スタンダード" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "プロ" } }
+        ]
+      }
     },
     {
       "@type": "FAQPage",
@@ -124,7 +128,7 @@ fbq('consent', 'revoke');
         { "@type": "Question",
           "name": "結局いくらかかりますか？",
           "acceptedAnswer": { "@type": "Answer",
-            "text": "初期費298,000円（キャンペーン期間中は0円）に加え、ライト¥30,000/月、スタンダード¥80,000/月、プロ¥200,000/月のいずれかをお選びいただけます。初回6ヶ月の継続契約（税別）です。"}},
+            "text": "プラン構成は3段階（ライト／スタンダード／プロ）。コミュニティの規模に応じて個別にご案内しております。詳細は30分の無料相談にてお伝えしております。初回6ヶ月の継続契約（税別）。"}},
         { "@type": "Question",
           "name": "効果は保証されますか？",
           "acceptedAnswer": { "@type": "Answer",
@@ -233,7 +237,7 @@ fbq('consent', 'revoke');
         </h1>
 
         <p class="hero-sub mt-7 max-w-xl">
-          月<strong>¥30,000〜</strong>、<wbr />メンバーに<wbr /><br class="md:hidden" />「<strong>無料の体験案件</strong>」を<wbr />配れる仕組み。
+          メンバーに<wbr /><br class="md:hidden" />「<strong>無料の体験案件</strong>」を<wbr />配れる、<wbr />コミュニティ向け<strong>福利厚生プラットフォーム</strong>。
         </p>
         <p class="hero-annotation mt-3 max-w-xl text-sm text-brand-muted leading-relaxed">
           <em>※ 体験案件（モニター案件）＝ 提携先と事前交渉済みで、メンバーが無料または特別価格で体験できる案件のこと。</em>
@@ -247,7 +251,7 @@ fbq('consent', 'revoke');
           </li>
           <li class="trust-pill">
             <svg class="w-4 h-4" aria-hidden="true"><use href="#i-spark"/></svg>
-            初期費0円キャンペーン (2026/06/30まで)
+            2026/06/30まで先行受付
           </li>
           <li class="trust-pill">
             <svg class="w-4 h-4" aria-hidden="true"><use href="#i-shield"/></svg>
@@ -278,21 +282,6 @@ fbq('consent', 'revoke');
           </div>
         </div>
 
-        <div class="hero-floating-card fc-top">
-          <span class="ico"><svg class="w-5 h-5" aria-hidden="true"><use href="#i-gift"/></svg></span>
-          <div>
-            <div class="lbl">Catalog</div>
-            <div class="val">20+ 福利厚生メニュー</div>
-          </div>
-        </div>
-
-        <div class="hero-floating-card fc-bottom">
-          <span class="ico"><svg class="w-5 h-5" aria-hidden="true"><use href="#i-yen"/></svg></span>
-          <div>
-            <div class="lbl">Plan from</div>
-            <div class="val">¥30,000<span class="text-brand-mutedlight font-medium text-xs ml-1">/月〜</span></div>
-          </div>
-        </div>
       </div>
 
     </div>
@@ -528,7 +517,7 @@ fbq('consent', 'revoke');
           ご加入いただくと、<strong>20件以上の「福利厚生メニュー」</strong>がダッシュボードに並びます。<br />
           美容・食・体験・学習・健康 —— あなたのコミュニティの色に合うものを選んで、メンバーへ配るだけ。<br />
           すべての案件は提携先と事前に交渉済みで、メンバーは<strong>無料または特別価格</strong>で体験できます。<br />
-          良い会社が<strong>法人向け福利厚生サービス</strong>を導入するのと同じ感覚で、あなたのコミュニティ独自の福利厚生カタログが、<strong>月額¥30,000から</strong>手に入ります。
+          良い会社が<strong>法人向け福利厚生サービス</strong>を導入するのと同じ感覚で、あなたのコミュニティ独自の福利厚生カタログを手に入れていただけます。
         </p>
 
         <!-- Benefit categories icon row -->
@@ -856,7 +845,7 @@ fbq('consent', 'revoke');
   <div class="relative max-w-container mx-auto px-5 lg:px-8">
 
     <header class="text-center max-w-reading mx-auto">
-      <span class="eyebrow">Pricing</span>
+      <span class="eyebrow">Plans</span>
       <h2 id="pricing-h" class="section-heading mt-5">
         あなたのコミュニティに、<wbr /><br class="md:hidden" />
         <em>福利厚生</em>を整えるためのプラン
@@ -876,10 +865,6 @@ fbq('consent', 'revoke');
         <h3 class="plan-name">ライト</h3>
         <p class="plan-name-en">Light</p>
         <p class="plan-cohort">5〜15名のコミュニティ向け</p>
-        <div class="plan-price">
-          <span class="y">¥</span><span class="n">30,000</span><span class="u">/月</span>
-        </div>
-        <p class="plan-init">初期費 <span class="v">¥298,000</span>（キャンペーン期間中 0円）</p>
 
         <ul class="plan-features" role="list">
           <li class="plan-feature"><svg class="w-5 h-5" aria-hidden="true"><use href="#i-check"/></svg>福利厚生メニュー 10件 / 月</li>
@@ -890,7 +875,7 @@ fbq('consent', 'revoke');
 
         <div class="plan-cta">
           <a href="#booking" data-cta="pricing-light" class="btn-primary w-full"><span>このプランで相談する</span><svg class="w-4 h-4" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
-          <p class="plan-microcopy">初回6ヶ月の継続契約（税別）</p>
+          <p class="plan-microcopy">詳細は無料相談時にご案内 / 初回6ヶ月の継続契約</p>
         </div>
       </article>
 
@@ -901,10 +886,6 @@ fbq('consent', 'revoke');
         <h3 class="plan-name">スタンダード</h3>
         <p class="plan-name-en">Standard</p>
         <p class="plan-cohort">15〜50名のコミュニティ向け</p>
-        <div class="plan-price">
-          <span class="y">¥</span><span class="n">80,000</span><span class="u">/月</span>
-        </div>
-        <p class="plan-init">初期費 <span class="v">¥298,000</span>（キャンペーン期間中 0円）</p>
 
         <ul class="plan-features" role="list">
           <li class="plan-feature"><svg class="w-5 h-5" aria-hidden="true"><use href="#i-check"/></svg>福利厚生メニュー 25件 / 月</li>
@@ -916,7 +897,7 @@ fbq('consent', 'revoke');
 
         <div class="plan-cta">
           <a href="#booking" data-cta="pricing-standard" class="btn-primary w-full"><span>このプランで相談する</span><svg class="w-4 h-4" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
-          <p class="plan-microcopy">初回6ヶ月の継続契約（税別）</p>
+          <p class="plan-microcopy">詳細は無料相談時にご案内 / 初回6ヶ月の継続契約</p>
         </div>
       </article>
 
@@ -926,10 +907,6 @@ fbq('consent', 'revoke');
         <h3 class="plan-name">プロ</h3>
         <p class="plan-name-en">Pro</p>
         <p class="plan-cohort">50名以上のコミュニティ向け</p>
-        <div class="plan-price">
-          <span class="y">¥</span><span class="n">200,000</span><span class="u">/月</span>
-        </div>
-        <p class="plan-init">初期費 <span class="v">¥298,000</span>（キャンペーン期間中 0円）</p>
 
         <ul class="plan-features" role="list">
           <li class="plan-feature"><svg class="w-5 h-5" aria-hidden="true"><use href="#i-check"/></svg>福利厚生メニュー 50件 / 月（優先枠）</li>
@@ -941,7 +918,7 @@ fbq('consent', 'revoke');
 
         <div class="plan-cta">
           <a href="#booking" data-cta="pricing-pro" class="btn-primary w-full"><span>このプランで相談する</span><svg class="w-4 h-4" aria-hidden="true"><use href="#i-arrow-r"/></svg></a>
-          <p class="plan-microcopy">初回6ヶ月の継続契約（税別）</p>
+          <p class="plan-microcopy">詳細は無料相談時にご案内 / 初回6ヶ月の継続契約</p>
         </div>
       </article>
 
@@ -1039,7 +1016,7 @@ fbq('consent', 'revoke');
           <span class="q-toggle"><svg class="w-4 h-4" aria-hidden="true"><use href="#i-plus"/></svg></span>
         </summary>
         <div class="a-body">
-          初期費 <strong>¥298,000</strong>（2026/06/30までの導入で 0 円キャンペーン適用）に加え、ライト ¥30,000/月、スタンダード ¥80,000/月、プロ ¥200,000/月 のいずれかをお選びいただけます。<strong>初回6ヶ月の継続契約（税別）</strong>です。途中解約条件は契約書記載の通り。
+          プラン構成は<strong>3段階（ライト／スタンダード／プロ）</strong>。コミュニティの規模・運用方針に応じて<strong>個別にご案内</strong>しております。詳細は<strong>30分の無料相談</strong>でお伝えしております。<strong>初回6ヶ月の継続契約（税別）</strong>、途中解約条件は契約書記載の通りです。
         </div>
       </details>
 
@@ -1210,7 +1187,7 @@ fbq('consent', 'revoke');
         <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">所在地</dt><dd>〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング609</dd></div>
         <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">連絡先</dt><dd>TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a><br />Email: <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a></dd></div>
         <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">サービス名</dt><dd>クローズドASP運営事務局<br />（コミュニティ向け福利厚生プラットフォーム）</dd></div>
-        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">販売価格</dt><dd>月額 ¥30,000〜¥200,000／初期費 ¥298,000（いずれも税別）</dd></div>
+        <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">販売価格</dt><dd>個別お見積もり（無料相談時にご案内 / いずれも税別）</dd></div>
         <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">支払方法</dt><dd>クレジットカード／銀行振込（お申し込み時にご案内）</dd></div>
         <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">支払時期</dt><dd>契約時 初期費／毎月1日 月額</dd></div>
         <div class="flex gap-2"><dt class="text-white/55 w-24 flex-none">引渡時期</dt><dd>契約完了後3営業日以内にアカウント発行</dd></div>
