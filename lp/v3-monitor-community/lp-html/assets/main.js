@@ -23,62 +23,81 @@
     }
   }
 
-  // ---------- Cookie Consent (R4 CRIT-3 / Fix-13) ----------
-  var CONSENT_KEY = 'revirall_cookie_consent_v1';
-  var consent = (function () {
-    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  // ---------- Cookie Consent (purpose別opt-in / 改正個情法27・28条 + GDPRガイドライン推奨)
+  // R4: dark pattern回避のためUIのcheckbox状態を実際に読んでpurpose別grantを行う
+  var CONSENT_KEY = 'revirall_cookie_consent_v2';  // v1→v2 (構造変更)
+  var consentState = (function () {
+    try {
+      var raw = localStorage.getItem(CONSENT_KEY);
+      if (!raw) return null;
+      var parsed = JSON.parse(raw);
+      if (parsed && typeof parsed === 'object') return parsed;
+      return null;
+    } catch (e) { return null; }
   })();
-  var consentAccepted = consent === 'accepted_marketing';
+  // default state
+  var consent = consentState || { essential: true, analytics: false, ads: false };
 
   function pixelGated(fn) {
-    // run only if user accepted marketing/measurement cookies
-    if (consentAccepted) fn();
+    if (consent.ads) fn();
+  }
+  function analyticsGated(fn) {
+    if (consent.analytics) fn();
   }
 
-  function applyConsent(accepted) {
-    consentAccepted = !!accepted;
-    try { localStorage.setItem(CONSENT_KEY, accepted ? 'accepted_marketing' : 'denied'); } catch (e) {}
-    if (accepted) {
+  function applyConsent(state) {
+    consent = {
+      essential: true,
+      analytics: !!state.analytics,
+      ads: !!state.ads
+    };
+    try { localStorage.setItem(CONSENT_KEY, JSON.stringify(consent)); } catch (e) {}
+    if (consent.ads) {
       fbqSafe('consent', 'grant');
       fbqSafe('track', 'PageView');
-      // CAPI: send PageView with action_source=website (server-side mirror)
-      // POST /api/capi { event_name:'PageView', event_source_url, action_source:'website', user_data:{...hashed} }
+      // CAPI: POST /api/capi { event_name:'PageView', ... } を server-side で発火 (要実装)
     } else {
       fbqSafe('consent', 'revoke');
     }
+    // analytics(GA4)は別関数で発火制御
   }
 
   var banner = document.getElementById('cookieBanner');
   var btnAccept = document.getElementById('cookieAccept');
   var btnDeny = document.getElementById('cookieDeny');
-  // Fix-B (R2 CRIT-2): Hero被り回避。初回表示は scrollY>100 or 3秒経過後に出す。
-  if (consent === null && banner) {
+  var chkAnalytics = document.getElementById('cookieOptAnalytics');
+  var chkAds = document.getElementById('cookieOptAds');
+
+  // Hero被り回避。初回表示は scrollY>100 or 3秒経過後
+  if (consentState === null && banner) {
     var bannerShown = false;
     function showBanner() {
       if (bannerShown) return;
       bannerShown = true;
       banner.hidden = false;
     }
-    // 3秒遅延フォールバック
     setTimeout(showBanner, 3000);
-    // スクロール開始でも出す
     window.addEventListener('scroll', function onScrollOnce() {
       if (window.scrollY > 100) {
         showBanner();
         window.removeEventListener('scroll', onScrollOnce);
       }
     }, { passive: true });
-  } else if (consentAccepted) {
-    // Already opted in earlier — fire PageView immediately
+  } else if (consent.ads) {
     fbqSafe('consent', 'grant');
     fbqSafe('track', 'PageView');
   }
+
   if (btnAccept) btnAccept.addEventListener('click', function () {
-    applyConsent(true);
+    // checkbox状態を実際に読む (dark pattern回避)
+    applyConsent({
+      analytics: chkAnalytics ? chkAnalytics.checked : false,
+      ads: chkAds ? chkAds.checked : false
+    });
     if (banner) banner.hidden = true;
   });
   if (btnDeny) btnDeny.addEventListener('click', function () {
-    applyConsent(false);
+    applyConsent({ analytics: false, ads: false });
     if (banner) banner.hidden = true;
   });
 
