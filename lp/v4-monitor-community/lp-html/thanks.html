@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex,nofollow" />
+<title>ご登録ありがとうございます ｜ クローズドASP運営事務局</title>
+<meta name="description" content="公式LINEへのご登録ありがとうございます。あなたのコミュニティに合う『福利厚生メニュー』の30分診断、次のステップをご案内します。" />
+<link rel="canonical" href="https://revirall.jp/lp/v3-monitor-community/thanks.html" />
+<meta property="og:title" content="ご登録ありがとうございます ｜ クローズドASP運営事務局" />
+<meta property="og:url" content="https://revirall.jp/lp/v3-monitor-community/thanks.html" />
+<meta property="og:site_name" content="クローズドASP運営事務局" />
+<meta name="twitter:title" content="ご登録ありがとうございます ｜ クローズドASP運営事務局" />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          brand: { primary: '#2D7A8C', deep: '#265F70', accent: '#E89B65', warm: '#FAF7F2', paper: '#F5E6D3', ink: '#1F2937', muted: '#595F6A', dark: '#1A2332' }
+        },
+        fontFamily: {
+          jp:    ['"Noto Sans JP"','system-ui','sans-serif'],
+          serif: ['"Cormorant Garamond"','Georgia','serif']
+        }
+      }
+    }
+  };
+</script>
+<link rel="stylesheet" href="./assets/styles.css" />
+
+<!-- Meta Pixel - 同意ベース発火 (改正個情法27条 + Meta Consent API) -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '2450922202046153');
+fbq('consent', 'revoke');
+(function () {
+  var accepted = false;
+  try { accepted = localStorage.getItem('revirall_cookie_consent_v1') === 'accepted_marketing'; } catch (e) {}
+  if (accepted) {
+    fbq('consent', 'grant');
+    fbq('track', 'PageView');
+    fbq('track', 'CompleteRegistration', {
+      content_name: 'community-monitor LP - LINE friend add',
+      content_category: 'line_friend_add'
+    });
+    // CAPI: send CompleteRegistration with action_source=website
+    // POST /api/capi { event_name:'CompleteRegistration', event_source_url, action_source:'website',
+    //                  user_data:{...hashed (line_user_id if available)},
+    //                  custom_data:{ content_name:'LINE friend add' } }
+  }
+})();
+</script>
+</head>
+
+<body class="font-jp text-brand-ink bg-brand-warm antialiased min-h-screen flex flex-col">
+
+<a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:bg-white focus:text-brand-primary focus:px-3 focus:py-2 focus:rounded">本文へスキップ</a>
+
+<main id="main" class="flex-1 flex items-center justify-center px-5 py-16 md:py-24">
+  <section class="relative max-w-2xl w-full bg-white rounded-2xl shadow-xl border border-brand-primary/10 p-8 md:p-14 text-center overflow-hidden">
+
+    <!-- decorative paper texture -->
+    <img src="./assets/images/decor/bg-paper.png" alt="" aria-hidden="true" width="1920" height="1200" loading="lazy" class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply pointer-events-none" />
+
+    <div class="relative">
+      <p class="font-serif italic text-brand-primary text-sm tracking-[0.25em] uppercase">Thank you</p>
+
+      <!-- Big check -->
+      <div class="mt-8 inline-flex items-center justify-center w-20 h-20 rounded-full bg-brand-primary text-white shadow-lg">
+        <svg viewBox="0 0 24 24" class="w-10 h-10" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
+          <path d="M5 12l5 5L20 7" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <h1 class="mt-8 text-3xl md:text-4xl font-black leading-tight text-brand-ink">
+        ご登録、<wbr /><br class="md:hidden" />ありがとうございます
+      </h1>
+      <p class="mt-5 text-brand-muted text-base md:text-lg leading-relaxed">
+        公式LINEへの友だち追加が完了しました。<br />
+        24 時間以内に、<wbr />クローズドASP運営事務局より直接ご連絡いたします。<br />
+        <span class="text-xs text-brand-mutedlight">あなたのコミュニティに合う<wbr />「福利厚生メニュー」を、<wbr />一緒に整理させてください。</span>
+      </p>
+
+      <!-- Steps -->
+      <ol class="mt-10 text-left max-w-md mx-auto space-y-4">
+        <li class="flex items-start gap-4">
+          <span class="thanks-step-num">1</span>
+          <div>
+            <p class="font-bold text-brand-ink">LINE で簡単アンケート</p>
+            <p class="text-sm text-brand-muted mt-1">コミュニティ規模・属性など 3 問。<wbr />1 分で完了します。</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="thanks-step-num">2</span>
+          <div>
+            <p class="font-bold text-brand-ink">日程候補をご返信</p>
+            <p class="text-sm text-brand-muted mt-1">候補日から 30 分の枠をお選びください。</p>
+          </div>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="thanks-step-num">3</span>
+          <div>
+            <p class="font-bold text-brand-ink">Zoom で 30 分の福利厚生メニュー診断</p>
+            <p class="text-sm text-brand-muted mt-1">営業電話/強引な提案は一切ありません。<wbr />診断メモは無料でお渡しします。</p>
+          </div>
+        </li>
+      </ol>
+
+      <!-- LINE return CTA -->
+      <!-- TODO: 予約URL https://line.me/R/ → 公式LINE経由で日程調整。実URLは確定後差し替え。 -->
+      <a href="https://line.me/R/" class="btn-primary mt-10 inline-flex">
+        <span>LINE を開く</span>
+        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+
+      <p class="mt-8 font-serif italic text-brand-deep">&mdash; クローズドASP運営事務局 代表 / 坂本 純一</p>
+
+      <p class="mt-10 text-xs text-brand-muted leading-relaxed">
+        ※ メッセージが届かない場合、<wbr />LINE のブロック設定または受信制限をご確認ください。<br />
+        ※ ご登録情報は <a href="/privacy" class="underline">プライバシーポリシー</a> に基づき管理いたします。
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-[#0F1822] text-white/70 py-8 text-center text-xs">
+  <p>&copy; <span id="footer-year">2026</span> 合同会社リバイラル ／ クローズドASP運営事務局. All rights reserved.</p>
+  <p class="mt-2 text-white/40">〒150-0002 東京都渋谷区渋谷2-19-15 宮益坂ビルディング609 ／ TEL: <a href="tel:+81-50-3593-7239" class="underline">050-3593-7239</a> ／ <a href="mailto:info@revirall.jp" class="underline">info@revirall.jp</a></p>
+</footer>
+
+<style>
+  .thanks-step-num {
+    flex: none;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--c-paper, #F5E6D3);
+    color: var(--c-primary-deep, #1F5D6D);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 700;
+    font-size: 18px;
+    font-style: italic;
+  }
+</style>
+
+<script>
+  var y = document.getElementById('footer-year');
+  if (y) y.textContent = String(new Date().getFullYear());
+</script>
+</body>
+</html>
