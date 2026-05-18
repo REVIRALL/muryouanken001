@@ -126,7 +126,11 @@ fbq('consent', 'revoke');
         { "@type": "Question",
           "name": "家族や周囲に話しても問題ないビジネスですか？",
           "acceptedAnswer": { "@type": "Answer",
-            "text": "はい。会社の福利厚生と同じ位置づけで説明可能です。メンバーから紹介報酬を取り立てる構造はなく、勧誘を強要する仕組みもありません。"}}
+            "text": "はい。会社の福利厚生と同じ位置づけで説明可能です。メンバーから紹介報酬を取り立てる構造はなく、勧誘を強要する仕組みもありません。"}},
+        { "@type": "Question",
+          "name": "すでに色々試してきました。それでも有用ですか？",
+          "acceptedAnswer": { "@type": "Answer",
+            "text": "むしろ試してきた方ほど切り分けが速いです。打ち手の量ではなく、顧客選定／タイミング／順序の3軸のどこに詰まっているかを特定することが本質です。1時間で『あなたの場合はどこが詰まりか』を構造的に言語化してお渡しします。"}}
       ]
     }
   ]
@@ -228,6 +232,9 @@ fbq('consent', 'revoke');
 
         <p class="hero-sub mt-7 max-w-xl">
           もう一度、<strong>配信ボタンを押せるようになる</strong>方法を、<wbr />1時間だけ聞きにきませんか。
+        </p>
+        <p class="hero-sub-alt mt-4 max-w-xl text-brand-ink leading-relaxed">
+          ── または、<wbr />打ち手は試した。<wbr /><strong>効きが伸び切らない</strong>理由を、<wbr />1時間で<strong>構造化</strong>します。
         </p>
         <p class="hero-annotation mt-3 max-w-xl text-sm text-brand-muted leading-relaxed">
           <em>※「メンバーに無料の体験案件＋対象案件にはモニター報酬つきを配れる仕組み」のご案内です。「モニター案件」とは、私たちが提携先と事前に交渉し、メンバーが無料または特別価格で体験できる案件のこと。感想・レビューを提出いただいた方には、対象案件ごとに定められたモニター報酬をお渡ししています（金額・支給条件は案件ごとに異なります）。</em>
@@ -333,9 +340,14 @@ fbq('consent', 'revoke');
         <p class="empathy-text">自分が動けなくなった後にも<wbr /><strong>コミュニティに残る「形」</strong>を、<wbr />正直、まだ何ひとつ用意できていない</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
-      <li class="empathy-card md:col-span-2">
+      <li class="empathy-card">
         <span class="empathy-num">07</span>
         <p class="empathy-text">「ありがとう」と言われるたびに、<strong>自分は何を返せているんだろう</strong>と<wbr />ふと考えてしまう</p>
+        <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
+      </li>
+      <li class="empathy-card">
+        <span class="empathy-num">08</span>
+        <p class="empathy-text">打ち手は十分やっている。<wbr />ただ、<strong>どれが効いてどれが効いていないか</strong>を<wbr />自分で切り分けられない</p>
         <svg class="empathy-arrow w-5 h-5" aria-hidden="true"><use href="#i-arrow-r"/></svg>
       </li>
     </ul>
@@ -401,6 +413,23 @@ fbq('consent', 'revoke');
           <p>
             伸び悩みは「想いの問題」ではなく、<wbr /><br />
             <strong class="hl-accent-deep">「仕組みの問題」だった</strong>と気づくはずです。
+          </p>
+        </div>
+
+        <!-- ロジカル層向け 3軸構造説明 (Block 3 deep dive) -->
+        <div class="problem-deep mt-10 p-5 md:p-6 rounded-2xl border border-brand-paper bg-brand-cream/60">
+          <p class="text-sm text-brand-accentDeep tracking-wider font-semibold mb-3">3つの構造軸</p>
+          <p class="text-brand-ink leading-relaxed mb-4">
+            「打ち手は揃っているのに、効きが伸び切らない」と感じている方は、<wbr />
+            たいてい次の<strong>3つの軸のどこか1点に詰まり</strong>が集中しています。
+          </p>
+          <ol class="space-y-2 text-brand-ink">
+            <li class="flex gap-3"><span class="font-bold text-brand-accentDeep">①</span><span><strong>顧客選定</strong>：メンバーに渡しているものが、<wbr />本当にそのメンバーの「次の一歩」とずれていないか</span></li>
+            <li class="flex gap-3"><span class="font-bold text-brand-accentDeep">②</span><span><strong>タイミング</strong>：配信が早すぎる／遅すぎる、<wbr />前後の文脈と切れている</span></li>
+            <li class="flex gap-3"><span class="font-bold text-brand-accentDeep">③</span><span><strong>順序</strong>：信頼が積み上がる前にオファーが出ている、<wbr />または順番が逆転している</span></li>
+          </ol>
+          <p class="mt-4 text-sm text-brand-muted leading-relaxed">
+            どの軸が詰まっているかは、<wbr />一人ひとり違います。<wbr />打ち手の量ではなく、<wbr /><strong>「3軸のどこを直すか」</strong>で景色が変わります。
           </p>
         </div>
 
@@ -1133,6 +1162,17 @@ fbq('consent', 'revoke');
         </div>
       </details>
 
+      <details class="faq-item" data-q="q8">
+        <summary>
+          <span class="q-mark" aria-hidden="true">Q</span>
+          <span class="q-text">すでに色々試してきました。<wbr />それでも<wbr /><span class="nowrap">有用ですか？</span></span>
+          <span class="q-toggle"><svg class="w-4 h-4" aria-hidden="true"><use href="#i-plus"/></svg></span>
+        </summary>
+        <div class="a-body">
+          <strong>むしろ、試してきた方ほど切り分けが速い</strong>です。打ち手の量が問題ではなく、<strong>顧客選定／タイミング／順序の3軸のどこに詰まっているか</strong>を特定することが本質です。すでに手を打ってきた経験は、その特定作業の精度を上げる材料になります。1時間で「あなたの場合はどこが詰まりか」を構造的に言語化してお渡しします。
+        </div>
+      </details>
+
     </div>
   </div>
 </section>
@@ -1182,6 +1222,13 @@ fbq('consent', 'revoke');
             ただ、<strong>あなたのコミュニティに合う打ち手</strong>を、<wbr />
             会員特典・メンバー定着・LINE運用・口コミ設計まで、<wbr />
             <strong>1時間ご一緒に整理</strong>します。
+          </p>
+          <p class="final-message-alt mt-5 pt-5 border-t border-white/20 text-white/90 leading-relaxed">
+            ── または、<wbr />すでに打ち手は十分やっている、という方には。<br />
+            あなたが<strong class="text-brand-accentLight">「あと一手」と感じているもの</strong>の正体を、<wbr />
+            <strong class="text-brand-accentLight">3軸(顧客選定・タイミング・順序)</strong>で<wbr />
+            1時間で<strong class="text-brand-accentLight">言語化</strong>してお渡しします。<wbr />
+            受け取って動くかどうかは、<wbr />その後で構いません。
           </p>
         </div>
 
